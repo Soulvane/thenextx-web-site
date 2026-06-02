@@ -1,0 +1,366 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import SectionHeader from "@/components/SectionHeader";
+
+export const metadata: Metadata = {
+  title: "AI Agent Operations — TheNextX",
+  description:
+    "Deploy intelligent AI agents that run your workflows autonomously. TheNextX designs, builds, and manages AI agent systems integrated into your existing operations.",
+};
+
+const capabilities = [
+  {
+    icon: "💬",
+    title: "Conversational AI Agents",
+    body: "Customer-facing agents that handle support tickets, answer product questions, and qualify leads — indistinguishable from a human operator at scale.",
+  },
+  {
+    icon: "🔍",
+    title: "Data Extraction & Enrichment",
+    body: "Agents that read, parse, and structure unstructured data from emails, PDFs, web pages, and APIs into clean databases or CRM records.",
+  },
+  {
+    icon: "📋",
+    title: "Document Processing",
+    body: "Automated review, summarization, classification, and routing of contracts, invoices, reports, and forms — without human bottlenecks.",
+  },
+  {
+    icon: "🔔",
+    title: "Monitoring & Alerting",
+    body: "Agents that watch your systems, detect anomalies, and take corrective action or alert the right person before issues escalate.",
+  },
+  {
+    icon: "🔗",
+    title: "Multi-System Orchestration",
+    body: "Chain actions across Shopify, HubSpot, Slack, Google Workspace, and any REST API — triggered by events or on a schedule.",
+  },
+  {
+    icon: "📊",
+    title: "Reporting & Analysis",
+    body: "Agents that pull data from disparate sources, compute KPIs, and deliver scheduled reports or real-time dashboards to your team.",
+  },
+];
+
+const techStack = [
+  "OpenAI GPT-4o",
+  "Claude 3.5 Sonnet",
+  "LangChain / LangGraph",
+  "n8n",
+  "Make (Integromat)",
+  "Custom REST APIs",
+  "Webhooks",
+  "Vector Databases",
+];
+
+export default function AIAgentsPage() {
+  return (
+    <>
+      {/* Hero */}
+      <section
+        className="relative pt-28 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
+        style={{ background: "#0a0a0f" }}
+      >
+        <div
+          className="absolute inset-0 pointer-events-none"
+          aria-hidden="true"
+        >
+          <div
+            className="absolute top-1/4 left-1/3 w-96 h-96 rounded-full blur-3xl opacity-20"
+            style={{
+              background: "radial-gradient(circle, #3b82f6, transparent)",
+            }}
+          />
+          <div
+            className="absolute bottom-0 right-1/4 w-72 h-72 rounded-full blur-3xl opacity-15"
+            style={{
+              background: "radial-gradient(circle, #8b5cf6, transparent)",
+            }}
+          />
+          <div
+            className="absolute inset-0 opacity-4"
+            style={{
+              backgroundImage:
+                "linear-gradient(rgba(59, 130, 246, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.3) 1px, transparent 1px)",
+              backgroundSize: "60px 60px",
+            }}
+          />
+        </div>
+
+        <div className="relative z-10 max-w-4xl mx-auto text-center">
+          <span
+            className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6"
+            style={{
+              color: "#3b82f6",
+              background: "rgba(59, 130, 246, 0.08)",
+              border: "1px solid rgba(59, 130, 246, 0.2)",
+            }}
+          >
+            <span
+              className="w-1.5 h-1.5 rounded-full"
+              style={{
+                background: "#3b82f6",
+                animation: "pulse 2s infinite",
+              }}
+            />
+            AI Agent Operations
+          </span>
+          <h1
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-6"
+            style={{ color: "#f0f0f8" }}
+          >
+            Your business runs{" "}
+            <span
+              style={{
+                background: "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
+            >
+              24/7 on autopilot
+            </span>
+          </h1>
+          <p
+            className="text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto mb-10"
+            style={{ color: "#6b6b8a" }}
+          >
+            We design and deploy AI agent systems that take over repetitive,
+            high-volume, and complex tasks — integrated with your existing tools
+            and supervised by your team.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/contact"
+              className="px-8 py-3.5 rounded-xl text-base font-semibold text-white"
+              style={{
+                background: "linear-gradient(135deg, #3b82f6, #8b5cf6)",
+                boxShadow: "0 0 30px rgba(59, 130, 246, 0.35)",
+              }}
+            >
+              Deploy Your First Agent
+            </Link>
+            <Link
+              href="/services"
+              className="px-8 py-3.5 rounded-xl text-base font-semibold"
+              style={{
+                color: "#a0a0b8",
+                background: "rgba(255,255,255,0.04)",
+                border: "1px solid rgba(255,255,255,0.1)",
+              }}
+            >
+              All Services
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Stat bar */}
+      <section
+        className="py-12 px-4 sm:px-6 lg:px-8"
+        style={{
+          background: "#0d0d1a",
+          borderTop: "1px solid rgba(59,130,246,0.1)",
+          borderBottom: "1px solid rgba(59,130,246,0.1)",
+        }}
+      >
+        <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
+          {[
+            { value: "70%", label: "Reduction in manual ops" },
+            { value: "24/7", label: "Continuous operation" },
+            { value: "<48h", label: "Typical deployment time" },
+            { value: "10x", label: "Throughput increase" },
+          ].map((stat) => (
+            <div key={stat.label}>
+              <div
+                className="text-3xl font-bold mb-1"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                {stat.value}
+              </div>
+              <div className="text-xs" style={{ color: "#4a4a6a" }}>
+                {stat.label}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Capabilities */}
+      <section
+        className="py-24 px-4 sm:px-6 lg:px-8"
+        style={{ background: "#0a0a0f" }}
+      >
+        <div className="max-w-7xl mx-auto">
+          <SectionHeader
+            eyebrow="Agent Capabilities"
+            title="What our agents"
+            titleGradient="can do for you"
+            subtitle="From simple task automation to multi-step reasoning pipelines — we build agents that fit your exact operational needs."
+          />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {capabilities.map((cap) => (
+              <div
+                key={cap.title}
+                className="rounded-2xl p-6"
+                style={{
+                  background: "rgba(13, 13, 26, 0.8)",
+                  border: "1px solid rgba(59, 130, 246, 0.12)",
+                }}
+              >
+                <div className="text-3xl mb-4">{cap.icon}</div>
+                <h3
+                  className="text-base font-semibold mb-2"
+                  style={{ color: "#f0f0f8" }}
+                >
+                  {cap.title}
+                </h3>
+                <p
+                  className="text-sm leading-relaxed"
+                  style={{ color: "#6b6b8a" }}
+                >
+                  {cap.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How it works */}
+      <section
+        className="py-24 px-4 sm:px-6 lg:px-8"
+        style={{ background: "#0d0d1a" }}
+      >
+        <div className="max-w-5xl mx-auto">
+          <SectionHeader
+            eyebrow="Deployment Process"
+            title="From zero to operating agent"
+            titleGradient="in days"
+            subtitle="We handle the complexity of AI agent architecture so you don't have to."
+          />
+          <div className="space-y-4">
+            {[
+              {
+                step: "01",
+                title: "Process Audit",
+                body: "We map your existing workflows, identify the highest-ROI automation targets, and define success metrics.",
+              },
+              {
+                step: "02",
+                title: "Agent Design",
+                body: "We architect the agent — selecting the right model, tools, memory, and retrieval strategy for your use case.",
+              },
+              {
+                step: "03",
+                title: "Integration",
+                body: "We connect the agent to your existing systems via API, webhook, or direct database access — no disruption to live operations.",
+              },
+              {
+                step: "04",
+                title: "Testing & Tuning",
+                body: "Rigorous evaluation against real-world edge cases before going live. We tune until accuracy meets your standard.",
+              },
+              {
+                step: "05",
+                title: "Monitoring & Improvement",
+                body: "Post-launch monitoring, performance dashboards, and continuous improvement cycles included in our support retainer.",
+              },
+            ].map((item) => (
+              <div
+                key={item.step}
+                className="flex gap-6 rounded-2xl p-6"
+                style={{
+                  background: "rgba(13, 13, 26, 0.7)",
+                  border: "1px solid rgba(59, 130, 246, 0.1)",
+                }}
+              >
+                <div
+                  className="text-xl font-bold shrink-0 w-10"
+                  style={{ color: "rgba(59, 130, 246, 0.4)" }}
+                >
+                  {item.step}
+                </div>
+                <div>
+                  <h3
+                    className="font-semibold mb-1"
+                    style={{ color: "#f0f0f8" }}
+                  >
+                    {item.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed" style={{ color: "#6b6b8a" }}>
+                    {item.body}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Tech stack */}
+      <section
+        className="py-16 px-4 sm:px-6 lg:px-8"
+        style={{ background: "#0a0a0f" }}
+      >
+        <div className="max-w-4xl mx-auto text-center">
+          <h2
+            className="text-xl font-semibold mb-8"
+            style={{ color: "#4a4a6a" }}
+          >
+            Technologies we work with
+          </h2>
+          <div className="flex flex-wrap justify-center gap-3">
+            {techStack.map((tech) => (
+              <span
+                key={tech}
+                className="px-4 py-2 rounded-xl text-sm font-medium"
+                style={{
+                  color: "#a0a0b8",
+                  background: "rgba(13, 13, 26, 0.8)",
+                  border: "1px solid rgba(59, 130, 246, 0.15)",
+                }}
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section
+        className="py-20 px-4 sm:px-6 lg:px-8"
+        style={{ background: "#0d0d1a" }}
+      >
+        <div className="max-w-2xl mx-auto text-center">
+          <h2
+            className="text-3xl font-bold mb-4"
+            style={{ color: "#f0f0f8" }}
+          >
+            Ready to deploy your first agent?
+          </h2>
+          <p className="mb-8" style={{ color: "#6b6b8a" }}>
+            Share a workflow you want automated and we&apos;ll scope it within
+            24 hours.
+          </p>
+          <Link
+            href="/contact"
+            className="inline-block px-8 py-3.5 rounded-xl text-base font-semibold text-white"
+            style={{
+              background: "linear-gradient(135deg, #3b82f6, #8b5cf6)",
+              boxShadow: "0 0 30px rgba(59, 130, 246, 0.35)",
+            }}
+          >
+            Start a Conversation
+          </Link>
+        </div>
+      </section>
+    </>
+  );
+}
