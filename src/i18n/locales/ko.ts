@@ -465,4 +465,65 @@ export const ko: Record<string, string> = {
   "shopify.cta.body":
     "DTC든 B2B든 요구사항을 공유해주시면 24시간 내에 범위 제안서를 드립니다.",
   "shopify.cta.button": "제안 받기",
+
+  "team.hero.eyebrow": "팀 소개",
+  "team.hero.title": "TheNextX를 만드는",
+  "team.hero.highlight": "팀을 소개합니다",
+  "team.hero.body":
+    "깊은 전문성과 AI 기반 운영을 결합한 한국 팀입니다. 두 배 큰 에이전시보다 더 빠르게 만들고, 디자인하고, 성장시킵니다.",
+
+  "team.values.eyebrow": "일하는 방식",
+  "team.values.title": "문화와",
+  "team.values.highlight": "가치관",
+  "team.value.ethic.title": "한국적 업무 방식",
+  "team.value.ethic.body":
+    "한국 팀이 세계적으로 인정받는 정밀함, 헌신, 실행력을 그대로 발휘합니다. 마감은 약속이지 참고사항이 아닙니다.",
+  "team.value.ai.title": "AI 우선 접근",
+  "team.value.ai.body":
+    "캠페인 자동화부터 코드 생성까지 모든 워크플로의 중심에 AI가 있습니다. 인프라를 이미 구축했기 때문에 더 빠르게 움직입니다.",
+  "team.value.fullstack.title": "풀스택 역량",
+  "team.value.fullstack.body":
+    "개발, 디자인, 마케팅이 한 지붕 아래 있습니다. 인수인계 마찰도, 책임 떠넘기기도 없습니다. 한 팀이 전체 결과를 책임집니다.",
+  "team.value.comms.title": "직접 소통",
+  "team.value.comms.body":
+    "수평 구조, 비동기 친화, 한/영 이중 언어. 실제로 일하는 사람과 직접 소통합니다. 현황 보고서를 읽는 어카운트 매니저가 아닙니다.",
+
+  "team.units.eyebrow": "팀 구성",
+  "team.units.title": "세 팀,",
+  "team.units.highlight": "하나의 결과",
+  "team.units.body":
+    "개발, 디자인, 마케팅이 하나의 통합 조직으로 운영됩니다. Jira 티켓을 넘기는 사일로 부서가 아닙니다.",
+  "team.unit.dev.role": "엔지니어",
+  "team.unit.dev.name": "개발팀",
+  "team.unit.dev.body":
+    "프로덕션 품질의 코드를 빠르게 납품하는 풀스택·모바일 개발자들입니다. 백엔드 API부터 정교한 프론트엔드, 크로스플랫폼 앱까지 전부 맡습니다.",
+  "team.unit.design.role": "디자이너",
+  "team.unit.design.name": "디자인팀",
+  "team.unit.design.body":
+    "실제 사용자 행동에 기반한 깔끔하고 현대적인 인터페이스를 만드는 UI/UX 디자이너들입니다. 와이어프레임부터 픽셀 퍼펙트 구현까지 이어갑니다.",
+  "team.unit.marketing.role": "마케터",
+  "team.unit.marketing.name": "마케팅팀",
+  "team.unit.marketing.body":
+    "AI 기반 캠페인, B2B 리드 생성 파이프라인, 다이렉트 메일 운영, 심층 분석을 담당하는 퍼포먼스·그로스 마케터들입니다.",
+
+  "team.why.eyebrow": "선택 이유",
+  "team.why.title": "왜 한국 팀과",
+  "team.why.highlight": "일해야 할까요?",
+  "team.why.timezone.title": "아시아태평양 시간대 커버리지",
+  "team.why.timezone.body":
+    "한국(UTC+9) 기반으로 서양 에이전시가 놓치는 아시아태평양 시간대를 자연스럽게 커버합니다. 글로벌 클라이언트에게는 겹치는 시간대를 통한 24시간에 가까운 실행력을 의미합니다.",
+  "team.why.education.title": "탄탄한 기술 교육 배경",
+  "team.why.education.body":
+    "한국 공학 프로그램은 세계 최상위권에 꾸준히 오릅니다. 저희 개발자와 디자이너는 그 기반 위에 있습니다. 엄밀하고 체계적이며 정밀합니다.",
+  "team.why.speed.title": "빠른 실행 문화",
+  "team.why.speed.body":
+    "속도는 문화적 기본값입니다. 빠른 반복, 당일 응답, 짧은 피드백 루프는 기본 제공입니다. 추가 비용이 발생하지 않습니다.",
+  "team.why.bilingual.title": "한/영 이중 언어 운영",
+  "team.why.bilingual.body":
+    "모든 클라이언트 커뮤니케이션은 영어로 진행됩니다. 내부는 한국어로 운영합니다. 영어 네이티브 수준의 산출물과 촘촘히 조율된 로컬 팀의 효율을 동시에 얻습니다.",
+
+  "team.cta.title": "함께 일할 준비가 되셨나요?",
+  "team.cta.body":
+    "무엇을 만들고 계신지 알려주세요. 어떻게 도울 수 있는지 정확하게 안내드리겠습니다.",
+  "team.cta.button": "문의하기",
 };

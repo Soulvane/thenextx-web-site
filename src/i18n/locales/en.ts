@@ -465,4 +465,65 @@ export const en: Record<string, string> = {
   "shopify.cta.body":
     "DTC or B2B — share your requirements and we'll respond with a scoped proposal within 24 hours.",
   "shopify.cta.button": "Get a Proposal",
+
+  "team.hero.eyebrow": "The Team",
+  "team.hero.title": "Meet the team",
+  "team.hero.highlight": "behind TheNextX",
+  "team.hero.body":
+    "A Korean team combining deep human expertise with AI-powered operations. We build, design, and grow — faster than agencies twice our size.",
+
+  "team.values.eyebrow": "How We Work",
+  "team.values.title": "Culture &",
+  "team.values.highlight": "Values",
+  "team.value.ethic.title": "Korean Work Ethic",
+  "team.value.ethic.body":
+    "We bring the precision, dedication, and relentless execution culture that Korean teams are known for globally. Deadlines are commitments, not suggestions.",
+  "team.value.ai.title": "AI-First Approach",
+  "team.value.ai.body":
+    "Every workflow is built with AI at the core — from campaign automation to code generation. We move faster because we've built the infrastructure to do so.",
+  "team.value.fullstack.title": "Full-Stack Capability",
+  "team.value.fullstack.body":
+    "Development, design, and marketing under one roof. No hand-off friction, no agency blame games — one team owns the full outcome.",
+  "team.value.comms.title": "Direct Communication",
+  "team.value.comms.body":
+    "Flat structure, async-friendly, bilingual. You speak to the people actually doing the work — not account managers reading status updates.",
+
+  "team.units.eyebrow": "Team Units",
+  "team.units.title": "Three teams,",
+  "team.units.highlight": "one output",
+  "team.units.body":
+    "Development, design, and marketing operate as a single integrated unit — not siloed departments handing off Jira tickets.",
+  "team.unit.dev.role": "Engineers",
+  "team.unit.dev.name": "Development Team",
+  "team.unit.dev.body":
+    "Full-stack and mobile developers who ship production-quality code fast. We handle everything from backend APIs to pixel-perfect frontends and cross-platform apps.",
+  "team.unit.design.role": "Designers",
+  "team.unit.design.name": "Design Team",
+  "team.unit.design.body":
+    "UI/UX designers who create clean, modern interfaces grounded in real user behavior. We take projects from wireframe all the way to pixel-perfect implementation.",
+  "team.unit.marketing.role": "Marketers",
+  "team.unit.marketing.name": "Marketing Team",
+  "team.unit.marketing.body":
+    "Performance and growth marketers running AI-powered campaigns, B2B lead generation pipelines, direct mail operations, and deep analytics.",
+
+  "team.why.eyebrow": "The Advantage",
+  "team.why.title": "Why work with a",
+  "team.why.highlight": "Korean team?",
+  "team.why.timezone.title": "Asia-Pacific Timezone Coverage",
+  "team.why.timezone.body":
+    "Based in Korea (UTC+9), we naturally cover the Asia-Pacific window that Western agencies miss. For global clients, this means near-24h execution across overlapping hours.",
+  "team.why.education.title": "Strong Technical Education Background",
+  "team.why.education.body":
+    "Korea's engineering programs consistently rank among the world's best. Our developers and designers come from that foundation — rigorous, methodical, and precise.",
+  "team.why.speed.title": "Fast Execution Culture",
+  "team.why.speed.body":
+    "Speed is cultural here. Rapid iteration, same-day responses, and short feedback loops are the default — not something we charge extra for.",
+  "team.why.bilingual.title": "Bilingual EN / KO Operations",
+  "team.why.bilingual.body":
+    "All client communication happens in English. Internally we operate in Korean. You get the clarity of a native-English deliverable with the efficiency of a tightly-coordinated local team.",
+
+  "team.cta.title": "Ready to work together?",
+  "team.cta.body":
+    "Tell us what you are building. We will tell you exactly how we can help — no fluff, no discovery calls that go nowhere.",
+  "team.cta.button": "Get in touch",
 };

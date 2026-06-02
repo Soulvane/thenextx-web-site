@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import T from "@/components/T";
 
 export const metadata: Metadata = {
   title: "Team — Korean Development, Design & Marketing Team — TheNextX",
@@ -16,72 +17,41 @@ export const metadata: Metadata = {
 };
 
 const values = [
-  {
-    icon: "🇰🇷",
-    title: "Korean Work Ethic",
-    body: "We bring the precision, dedication, and relentless execution culture that Korean teams are known for globally. Deadlines are commitments, not suggestions.",
-  },
-  {
-    icon: "🤖",
-    title: "AI-First Approach",
-    body: "Every workflow is built with AI at the core — from campaign automation to code generation. We move faster because we've built the infrastructure to do so.",
-  },
-  {
-    icon: "⚡",
-    title: "Full-Stack Capability",
-    body: "Development, design, and marketing under one roof. No hand-off friction, no agency blame games — one team owns the full outcome.",
-  },
-  {
-    icon: "💬",
-    title: "Direct Communication",
-    body: "Flat structure, async-friendly, bilingual. You speak to the people actually doing the work — not account managers reading status updates.",
-  },
+  { icon: "🇰🇷", titleKey: "team.value.ethic.title", bodyKey: "team.value.ethic.body" },
+  { icon: "🤖", titleKey: "team.value.ai.title", bodyKey: "team.value.ai.body" },
+  { icon: "⚡", titleKey: "team.value.fullstack.title", bodyKey: "team.value.fullstack.body" },
+  { icon: "💬", titleKey: "team.value.comms.title", bodyKey: "team.value.comms.body" },
 ];
 
 const teams = [
   {
     icon: "💻",
-    name: "Development Team",
-    role: "Engineers",
-    description:
-      "Full-stack and mobile developers who ship production-quality code fast. We handle everything from backend APIs to pixel-perfect frontends and cross-platform apps.",
+    roleKey: "team.unit.dev.role",
+    nameKey: "team.unit.dev.name",
+    bodyKey: "team.unit.dev.body",
     tags: ["Next.js", "React", "Flutter", "Shopify Liquid"],
   },
   {
     icon: "🎨",
-    name: "Design Team",
-    role: "Designers",
-    description:
-      "UI/UX designers who create clean, modern interfaces grounded in real user behavior. We take projects from wireframe all the way to pixel-perfect implementation.",
+    roleKey: "team.unit.design.role",
+    nameKey: "team.unit.design.name",
+    bodyKey: "team.unit.design.body",
     tags: ["UI / UX", "Figma", "Design Systems", "Prototyping"],
   },
   {
     icon: "📈",
-    name: "Marketing Team",
-    role: "Marketers",
-    description:
-      "Performance and growth marketers running AI-powered campaigns, B2B lead generation pipelines, direct mail operations, and deep analytics.",
+    roleKey: "team.unit.marketing.role",
+    nameKey: "team.unit.marketing.name",
+    bodyKey: "team.unit.marketing.body",
     tags: ["AI Campaigns", "B2B Leads", "Direct Mail", "Analytics"],
   },
 ];
 
 const advantages = [
-  {
-    title: "Asia-Pacific Timezone Coverage",
-    body: "Based in Korea (UTC+9), we naturally cover the Asia-Pacific window that Western agencies miss. For global clients, this means near-24h execution across overlapping hours.",
-  },
-  {
-    title: "Strong Technical Education Background",
-    body: "Korea's engineering programs consistently rank among the world's best. Our developers and designers come from that foundation — rigorous, methodical, and precise.",
-  },
-  {
-    title: "Fast Execution Culture",
-    body: "Speed is cultural here. Rapid iteration, same-day responses, and short feedback loops are the default — not something we charge extra for.",
-  },
-  {
-    title: "Bilingual EN / KO Operations",
-    body: "All client communication happens in English. Internally we operate in Korean. You get the clarity of a native-English deliverable with the efficiency of a tightly-coordinated local team.",
-  },
+  { titleKey: "team.why.timezone.title", bodyKey: "team.why.timezone.body" },
+  { titleKey: "team.why.education.title", bodyKey: "team.why.education.body" },
+  { titleKey: "team.why.speed.title", bodyKey: "team.why.speed.body" },
+  { titleKey: "team.why.bilingual.title", bodyKey: "team.why.bilingual.body" },
 ];
 
 export default function TeamPage() {
@@ -101,24 +71,22 @@ export default function TeamPage() {
               border: "1px solid var(--border)",
             }}
           >
-            The Team
+            <T>team.hero.eyebrow</T>
           </span>
           <h1
             className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-6"
             style={{ color: "var(--foreground)" }}
           >
-            Meet the team{" "}
+            <T>team.hero.title</T>{" "}
             <span style={{ color: "var(--accent-2)" }}>
-              behind TheNextX
+              <T>team.hero.highlight</T>
             </span>
           </h1>
           <p
             className="text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto"
             style={{ color: "var(--muted-foreground)" }}
           >
-            A Korean team combining deep human expertise with AI-powered
-            operations. We build, design, and grow — faster than agencies twice
-            our size.
+            <T>team.hero.body</T>
           </p>
         </div>
       </section>
@@ -138,20 +106,22 @@ export default function TeamPage() {
                 border: "1px solid var(--border)",
               }}
             >
-              How We Work
+              <T>team.values.eyebrow</T>
             </span>
             <h2
               className="text-3xl sm:text-4xl font-bold tracking-tight"
               style={{ color: "var(--foreground)" }}
             >
-              Culture &{" "}
-              <span style={{ color: "var(--accent-2)" }}>Values</span>
+              <T>team.values.title</T>{" "}
+              <span style={{ color: "var(--accent-2)" }}>
+                <T>team.values.highlight</T>
+              </span>
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((v) => (
               <div
-                key={v.title}
+                key={v.titleKey}
                 className="rounded-lg p-6"
                 style={{
                   background: "var(--background)",
@@ -163,13 +133,13 @@ export default function TeamPage() {
                   className="text-base font-semibold mb-2"
                   style={{ color: "var(--foreground)" }}
                 >
-                  {v.title}
+                  <T>{v.titleKey}</T>
                 </h3>
                 <p
                   className="text-sm leading-relaxed"
                   style={{ color: "var(--muted-foreground)" }}
                 >
-                  {v.body}
+                  <T>{v.bodyKey}</T>
                 </p>
               </div>
             ))}
@@ -192,27 +162,28 @@ export default function TeamPage() {
                 border: "1px solid var(--border)",
               }}
             >
-              Team Units
+              <T>team.units.eyebrow</T>
             </span>
             <h2
               className="text-3xl sm:text-4xl font-bold tracking-tight"
               style={{ color: "var(--foreground)" }}
             >
-              Three teams,{" "}
-              <span style={{ color: "var(--accent-2)" }}>one output</span>
+              <T>team.units.title</T>{" "}
+              <span style={{ color: "var(--accent-2)" }}>
+                <T>team.units.highlight</T>
+              </span>
             </h2>
             <p
               className="mt-4 text-base max-w-xl mx-auto"
               style={{ color: "var(--muted-foreground)" }}
             >
-              Development, design, and marketing operate as a single integrated
-              unit — not siloed departments handing off Jira tickets.
+              <T>team.units.body</T>
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {teams.map((team) => (
               <div
-                key={team.name}
+                key={team.nameKey}
                 className="rounded-lg p-8 flex flex-col gap-5"
                 style={{
                   background: "var(--surface)",
@@ -233,20 +204,20 @@ export default function TeamPage() {
                     className="text-xs font-semibold uppercase tracking-widest mb-1"
                     style={{ color: "var(--accent)" }}
                   >
-                    {team.role}
+                    <T>{team.roleKey}</T>
                   </p>
                   <h3
                     className="text-xl font-bold"
                     style={{ color: "var(--foreground)" }}
                   >
-                    {team.name}
+                    <T>{team.nameKey}</T>
                   </h3>
                 </div>
                 <p
                   className="text-sm leading-relaxed flex-1"
                   style={{ color: "var(--muted-foreground)" }}
                 >
-                  {team.description}
+                  <T>{team.bodyKey}</T>
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {team.tags.map((tag) => (
@@ -284,20 +255,22 @@ export default function TeamPage() {
                 border: "1px solid var(--border)",
               }}
             >
-              The Advantage
+              <T>team.why.eyebrow</T>
             </span>
             <h2
               className="text-3xl sm:text-4xl font-bold tracking-tight"
               style={{ color: "var(--foreground)" }}
             >
-              Why work with a{" "}
-              <span style={{ color: "var(--accent-2)" }}>Korean team?</span>
+              <T>team.why.title</T>{" "}
+              <span style={{ color: "var(--accent-2)" }}>
+                <T>team.why.highlight</T>
+              </span>
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {advantages.map((adv, i) => (
               <div
-                key={adv.title}
+                key={adv.titleKey}
                 className="rounded-lg p-6 flex gap-5"
                 style={{
                   background: "var(--background)",
@@ -315,13 +288,13 @@ export default function TeamPage() {
                     className="text-base font-semibold mb-2"
                     style={{ color: "var(--foreground)" }}
                   >
-                    {adv.title}
+                    <T>{adv.titleKey}</T>
                   </h3>
                   <p
                     className="text-sm leading-relaxed"
                     style={{ color: "var(--muted-foreground)" }}
                   >
-                    {adv.body}
+                    <T>{adv.bodyKey}</T>
                   </p>
                 </div>
               </div>
@@ -340,11 +313,10 @@ export default function TeamPage() {
             className="text-3xl font-bold mb-4"
             style={{ color: "var(--foreground)" }}
           >
-            Ready to work together?
+            <T>team.cta.title</T>
           </h2>
           <p className="mb-8 text-base" style={{ color: "var(--muted-foreground)" }}>
-            Tell us what you are building. We will tell you exactly how we can
-            help — no fluff, no discovery calls that go nowhere.
+            <T>team.cta.body</T>
           </p>
           <Link
             href="/contact"
@@ -355,7 +327,7 @@ export default function TeamPage() {
               boxShadow: "0 8px 18px rgba(23, 23, 23, 0.12)",
             }}
           >
-            Get in touch
+            <T>team.cta.button</T>
           </Link>
         </div>
       </section>
