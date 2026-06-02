@@ -14,7 +14,7 @@ export default function SectionHeader({
   centered = true,
 }: SectionHeaderProps) {
   return (
-    <div className={`mb-16 ${centered ? "text-center" : ""}`}>
+    <div className={`mb-12 ${centered ? "text-center" : ""}`}>
       {eyebrow && (
         <span
           className="inline-block text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4"

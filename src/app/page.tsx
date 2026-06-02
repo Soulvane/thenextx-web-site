@@ -92,6 +92,12 @@ const whyItems = [
   },
 ];
 
+const operatingMetrics = [
+  { label: "Strategy", value: "Discovery + scope" },
+  { label: "Build", value: "Weekly production slices" },
+  { label: "Launch", value: "Docs, handoff, support" },
+];
+
 export default function HomePage() {
   return (
     <>
@@ -107,7 +113,7 @@ export default function HomePage() {
 
       {/* Services section */}
       <section
-        className="py-24 px-4 sm:px-6 lg:px-8 border-b"
+        className="py-20 px-4 sm:px-6 lg:px-8 border-b"
         style={{ background: "var(--surface)" }}
       >
         <div className="max-w-7xl mx-auto">
@@ -117,6 +123,24 @@ export default function HomePage() {
             titleGradient="to grow"
             subtitle="Seven core services, one integrated team. We handle execution so you can focus on strategy."
           />
+          <div className="mb-8 grid grid-cols-1 md:grid-cols-3 gap-3">
+            {operatingMetrics.map((item) => (
+              <div key={item.label} className="ui-card rounded-lg px-5 py-4">
+                <div
+                  className="text-xs font-semibold uppercase tracking-widest"
+                  style={{ color: "var(--subtle-foreground)" }}
+                >
+                  {item.label}
+                </div>
+                <div
+                  className="mt-1 text-base font-semibold"
+                  style={{ color: "var(--foreground)" }}
+                >
+                  {item.value}
+                </div>
+              </div>
+            ))}
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((svc) => (
               <ServiceCard key={svc.title} {...svc} />
@@ -147,7 +171,7 @@ export default function HomePage() {
 
       {/* Why TheNextX */}
       <section
-        className="py-24 px-4 sm:px-6 lg:px-8 border-b"
+        className="py-20 px-4 sm:px-6 lg:px-8 border-b"
         style={{ background: "var(--background)" }}
       >
         <div className="max-w-7xl mx-auto">
@@ -184,33 +208,33 @@ export default function HomePage() {
 
       {/* CTA Banner */}
       <section
-        className="py-24 px-4 sm:px-6 lg:px-8"
+        className="py-20 px-4 sm:px-6 lg:px-8"
         style={{ background: "var(--surface)" }}
       >
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-5xl mx-auto">
           <div
-            className="ui-card relative rounded-lg p-8 sm:p-12 overflow-hidden"
+            className="ui-card relative rounded-lg p-6 sm:p-8 overflow-hidden"
           >
-            <div className="relative z-10">
-              <h2
-                className="text-3xl sm:text-4xl font-bold tracking-tight mb-4"
-                style={{ color: "var(--foreground)" }}
-              >
-                Ready to activate your{" "}
-                <span
-                  style={{ color: "var(--accent-2)" }}
+            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-6 items-center">
+              <div>
+                <h2
+                  className="text-3xl sm:text-4xl font-bold tracking-tight mb-3"
+                  style={{ color: "var(--foreground)" }}
                 >
-                  agent workforce?
-                </span>
-              </h2>
-              <p
-                className="text-lg mb-8 max-w-xl mx-auto"
-                style={{ color: "var(--muted-foreground)" }}
-              >
-                Tell us about your project. We&apos;ll reply with a clear plan,
-                timeline, and pricing within 24 hours.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  Ready to activate your{" "}
+                  <span style={{ color: "var(--accent-2)" }}>
+                    agent workforce?
+                  </span>
+                </h2>
+                <p
+                  className="text-base sm:text-lg max-w-2xl"
+                  style={{ color: "var(--muted-foreground)" }}
+                >
+                  Tell us about your project. We&apos;ll reply with a clear
+                  plan, timeline, and pricing within 24 hours.
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-3 lg:justify-end">
                 <Link
                   href="/contact"
                   className="btn-primary px-8 py-3.5 rounded-lg text-base font-semibold"

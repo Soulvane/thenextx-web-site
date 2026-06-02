@@ -21,9 +21,23 @@ export default function HeroSection({
   secondaryCTA,
   showBadges = false,
 }: HeroSectionProps) {
+  const proofStats = [
+    { value: "7", label: "service lanes" },
+    { value: "24h", label: "scope response" },
+    { value: "60%", label: "faster cycles" },
+  ];
+
+  const operatingStack = [
+    "AI agent ops",
+    "Shopify / B2B",
+    "Flutter apps",
+    "Mailing campaigns",
+    "Workflow automation",
+  ];
+
   return (
     <section
-      className="relative min-h-[calc(100vh-4rem)] flex items-center justify-center overflow-hidden border-b"
+      className="relative min-h-[calc(100vh-4rem)] flex items-center overflow-hidden border-b"
       style={{ background: "var(--background)" }}
     >
       <div
@@ -40,120 +54,237 @@ export default function HeroSection({
         />
       </div>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {eyebrow && (
-          <div className="mb-6">
-            <span
-              className="ui-pill inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full"
-            >
-              <span
-                className="w-1.5 h-1.5 rounded-full animate-pulse"
-                style={{ background: "var(--accent)" }}
-              />
-              {eyebrow}
-            </span>
-          </div>
-        )}
-
-        <h1
-          className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] mb-6"
-          style={{ color: "var(--foreground)" }}
-        >
-          {headline}
-          {headlineGradient && (
-            <>
-              {" "}
-              <span
-                style={{
-                  color: "var(--accent-2)",
-                }}
-              >
-                {headlineGradient}
-              </span>
-            </>
-          )}
-        </h1>
-
-        <p
-          className="text-lg sm:text-xl leading-relaxed mb-10 max-w-2xl mx-auto"
-          style={{ color: "var(--muted-foreground)" }}
-        >
-          {subheadline}
-        </p>
-
-        {(primaryCTA || secondaryCTA) && (
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            {primaryCTA && (
-              <Link
-                href={primaryCTA.href}
-                className="btn-primary px-8 py-3.5 rounded-lg text-base font-semibold transition-all duration-200 w-full sm:w-auto text-center"
-                onMouseEnter={(e) => {
-                  const el = e.currentTarget as HTMLAnchorElement;
-                  el.style.boxShadow = "0 12px 26px rgba(23, 23, 23, 0.14)";
-                  el.style.transform = "translateY(-2px)";
-                }}
-                onMouseLeave={(e) => {
-                  const el = e.currentTarget as HTMLAnchorElement;
-                  el.style.boxShadow = "0 8px 18px rgba(23, 23, 23, 0.1)";
-                  el.style.transform = "translateY(0)";
-                }}
-              >
-                {primaryCTA.label}
-              </Link>
-            )}
-            {secondaryCTA && (
-              <Link
-                href={secondaryCTA.href}
-                className="btn-secondary px-8 py-3.5 rounded-lg text-base font-semibold transition-all duration-200 w-full sm:w-auto text-center"
-                onMouseEnter={(e) => {
-                  const el = e.currentTarget as HTMLAnchorElement;
-                  el.style.color = "var(--foreground)";
-                  el.style.border = "1px solid var(--border-strong)";
-                  el.style.background = "var(--surface-2)";
-                }}
-                onMouseLeave={(e) => {
-                  const el = e.currentTarget as HTMLAnchorElement;
-                  el.style.color = "var(--secondary-foreground)";
-                  el.style.border = "1px solid var(--border)";
-                  el.style.background = "var(--surface)";
-                }}
-              >
-                {secondaryCTA.label}
-              </Link>
-            )}
-          </div>
-        )}
-
-        {showBadges && (
-          <div className="mt-14 flex flex-wrap items-center justify-center gap-6">
-            {[
-              "AI-First Approach",
-              "7 Core Services",
-              "Global Clients",
-              "Rapid Delivery",
-            ].map((badge) => (
-              <div
-                key={badge}
-                className="flex items-center gap-2 text-sm"
-                style={{ color: "var(--subtle-foreground)" }}
-              >
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="var(--accent)"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                {badge}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-14 items-center">
+          <div>
+            {eyebrow && (
+              <div className="mb-6">
+                <span className="ui-pill inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full">
+                  <span
+                    className="w-1.5 h-1.5 rounded-full animate-pulse"
+                    style={{ background: "var(--accent)" }}
+                  />
+                  {eyebrow}
+                </span>
               </div>
-            ))}
+            )}
+
+            <h1
+              className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.02] mb-6"
+              style={{ color: "var(--foreground)" }}
+            >
+              {headline}
+              {headlineGradient && (
+                <>
+                  {" "}
+                  <span style={{ color: "var(--accent-2)" }}>
+                    {headlineGradient}
+                  </span>
+                </>
+              )}
+            </h1>
+
+            <p
+              className="text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl"
+              style={{ color: "var(--muted-foreground)" }}
+            >
+              {subheadline}
+            </p>
+
+            {(primaryCTA || secondaryCTA) && (
+              <div className="flex flex-col sm:flex-row gap-3 mb-10">
+                {primaryCTA && (
+                  <Link
+                    href={primaryCTA.href}
+                    className="btn-primary px-8 py-3.5 rounded-lg text-base font-semibold transition-all duration-200 w-full sm:w-auto text-center"
+                    onMouseEnter={(e) => {
+                      const el = e.currentTarget as HTMLAnchorElement;
+                      el.style.boxShadow =
+                        "0 12px 26px rgba(23, 23, 23, 0.14)";
+                      el.style.transform = "translateY(-2px)";
+                    }}
+                    onMouseLeave={(e) => {
+                      const el = e.currentTarget as HTMLAnchorElement;
+                      el.style.boxShadow =
+                        "0 8px 18px rgba(23, 23, 23, 0.1)";
+                      el.style.transform = "translateY(0)";
+                    }}
+                  >
+                    {primaryCTA.label}
+                  </Link>
+                )}
+                {secondaryCTA && (
+                  <Link
+                    href={secondaryCTA.href}
+                    className="btn-secondary px-8 py-3.5 rounded-lg text-base font-semibold transition-all duration-200 w-full sm:w-auto text-center"
+                    onMouseEnter={(e) => {
+                      const el = e.currentTarget as HTMLAnchorElement;
+                      el.style.color = "var(--foreground)";
+                      el.style.border = "1px solid var(--border-strong)";
+                      el.style.background = "var(--surface-2)";
+                    }}
+                    onMouseLeave={(e) => {
+                      const el = e.currentTarget as HTMLAnchorElement;
+                      el.style.color = "var(--secondary-foreground)";
+                      el.style.border = "1px solid var(--border)";
+                      el.style.background = "var(--surface)";
+                    }}
+                  >
+                    {secondaryCTA.label}
+                  </Link>
+                )}
+              </div>
+            )}
+
+            {showBadges && (
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl">
+                {[
+                  "AI-First Approach",
+                  "7 Core Services",
+                  "Global Clients",
+                  "Rapid Delivery",
+                ].map((badge) => (
+                  <div
+                    key={badge}
+                    className="ui-card flex items-center gap-2 rounded-lg px-3 py-3 text-sm"
+                    style={{ color: "var(--secondary-foreground)" }}
+                  >
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="var(--accent)"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    <span>{badge}</span>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
-        )}
+
+          <div className="ui-card rounded-lg overflow-hidden">
+            <div
+              className="flex items-center justify-between border-b px-5 py-4"
+              style={{ borderColor: "var(--border)" }}
+            >
+              <div>
+                <div
+                  className="text-xs font-semibold uppercase tracking-widest"
+                  style={{ color: "var(--subtle-foreground)" }}
+                >
+                  Operating board
+                </div>
+                <div
+                  className="mt-1 text-lg font-semibold"
+                  style={{ color: "var(--foreground)" }}
+                >
+                  Human + AI delivery system
+                </div>
+              </div>
+              <div
+                className="rounded-full px-3 py-1 text-xs font-semibold"
+                style={{
+                  background: "var(--surface-2)",
+                  color: "var(--secondary-foreground)",
+                }}
+              >
+                Live model
+              </div>
+            </div>
+
+            <div className="grid grid-cols-3 border-b" style={{ borderColor: "var(--border)" }}>
+              {proofStats.map((stat) => (
+                <div
+                  key={stat.label}
+                  className="px-5 py-5 border-r last:border-r-0"
+                  style={{ borderColor: "var(--border)" }}
+                >
+                  <div
+                    className="text-3xl font-bold tracking-tight"
+                    style={{ color: "var(--foreground)" }}
+                  >
+                    {stat.value}
+                  </div>
+                  <div
+                    className="mt-1 text-xs uppercase tracking-wide"
+                    style={{ color: "var(--subtle-foreground)" }}
+                  >
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-[0.9fr_1.1fr]">
+              <div
+                className="border-b sm:border-b-0 sm:border-r p-5"
+                style={{ borderColor: "var(--border)" }}
+              >
+                <div
+                  className="text-xs font-semibold uppercase tracking-widest mb-4"
+                  style={{ color: "var(--subtle-foreground)" }}
+                >
+                  Lanes
+                </div>
+                <div className="space-y-2">
+                  {operatingStack.map((item) => (
+                    <div
+                      key={item}
+                      className="flex items-center justify-between rounded-md px-3 py-2 text-sm"
+                      style={{
+                        background: "var(--surface-2)",
+                        color: "var(--secondary-foreground)",
+                      }}
+                    >
+                      <span>{item}</span>
+                      <span style={{ color: "var(--subtle-foreground)" }}>→</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="p-5">
+                <div
+                  className="text-xs font-semibold uppercase tracking-widest mb-4"
+                  style={{ color: "var(--subtle-foreground)" }}
+                >
+                  Delivery rhythm
+                </div>
+                <div className="space-y-4">
+                  {[
+                    ["01", "Map the workflow and success metric"],
+                    ["02", "Build the smallest useful production slice"],
+                    ["03", "Demo, measure, iterate, and hand off"],
+                  ].map(([step, label]) => (
+                    <div key={step} className="flex gap-3">
+                      <div
+                        className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md text-xs font-bold"
+                        style={{
+                          background: "var(--foreground)",
+                          color: "#ffffff",
+                        }}
+                      >
+                        {step}
+                      </div>
+                      <div
+                        className="pt-1 text-sm leading-relaxed"
+                        style={{ color: "var(--secondary-foreground)" }}
+                      >
+                        {label}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
