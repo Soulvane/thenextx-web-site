@@ -81,32 +81,32 @@ export default function ServicesPage() {
       {/* Page Hero */}
       <section
         className="relative pt-28 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
-        style={{ background: "#0a0a0f" }}
+        style={{ background: "var(--background)" }}
       >
         <div
-          className="absolute top-1/3 right-1/4 w-72 h-72 rounded-full blur-3xl opacity-15 pointer-events-none"
-          style={{ background: "radial-gradient(circle, #8b5cf6, transparent)" }}
+          className="hidden"
+          style={{ background: "radial-gradient(circle, var(--accent-2), transparent)" }}
           aria-hidden="true"
         />
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <span
             className="inline-block text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6"
             style={{
-              color: "#3b82f6",
-              background: "rgba(59, 130, 246, 0.1)",
-              border: "1px solid rgba(59, 130, 246, 0.2)",
+              color: "var(--accent)",
+              background: "var(--surface)",
+              border: "1px solid var(--border)",
             }}
           >
             All Services
           </span>
           <h1
             className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-6"
-            style={{ color: "#f0f0f8" }}
+            style={{ color: "var(--foreground)" }}
           >
             Seven services.{" "}
             <span
               style={{
-                background: "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)",
+                background: "linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -117,7 +117,7 @@ export default function ServicesPage() {
           </h1>
           <p
             className="text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto"
-            style={{ color: "#6b6b8a" }}
+            style={{ color: "var(--muted-foreground)" }}
           >
             Every service is designed to integrate with the others, creating a
             compounding advantage for your business as you grow with TheNextX.
@@ -128,7 +128,7 @@ export default function ServicesPage() {
       {/* Services Grid */}
       <section
         className="py-16 px-4 sm:px-6 lg:px-8"
-        style={{ background: "#0d0d1a" }}
+        style={{ background: "var(--surface)" }}
       >
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -142,7 +142,7 @@ export default function ServicesPage() {
       {/* Process section */}
       <section
         className="py-24 px-4 sm:px-6 lg:px-8"
-        style={{ background: "#0a0a0f" }}
+        style={{ background: "var(--background)" }}
       >
         <div className="max-w-5xl mx-auto">
           <SectionHeader
@@ -176,17 +176,17 @@ export default function ServicesPage() {
             ].map((step) => (
               <div
                 key={step.step}
-                className="rounded-2xl p-6 relative overflow-hidden"
+                className="rounded-lg p-6 relative overflow-hidden"
                 style={{
-                  background: "rgba(13, 13, 26, 0.7)",
-                  border: "1px solid rgba(59, 130, 246, 0.1)",
+                  background: "var(--surface)",
+                  border: "1px solid var(--border)",
                 }}
               >
                 <div
                   className="text-5xl font-bold mb-4 leading-none"
                   style={{
                     background:
-                      "linear-gradient(135deg, rgba(59,130,246,0.2), rgba(139,92,246,0.1))",
+                      "linear-gradient(135deg, rgba(17, 24, 39, 0.2), rgba(17, 24, 39, 0.1))",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     backgroundClip: "text",
@@ -196,13 +196,13 @@ export default function ServicesPage() {
                 </div>
                 <h3
                   className="text-base font-semibold mb-2"
-                  style={{ color: "#f0f0f8" }}
+                  style={{ color: "var(--foreground)" }}
                 >
                   {step.title}
                 </h3>
                 <p
                   className="text-sm leading-relaxed"
-                  style={{ color: "#6b6b8a" }}
+                  style={{ color: "var(--muted-foreground)" }}
                 >
                   {step.body}
                 </p>
@@ -215,16 +215,16 @@ export default function ServicesPage() {
       {/* CTA */}
       <section
         className="py-20 px-4 sm:px-6 lg:px-8"
-        style={{ background: "#0d0d1a" }}
+        style={{ background: "var(--surface)" }}
       >
         <div className="max-w-2xl mx-auto text-center">
           <h2
             className="text-3xl font-bold mb-4"
-            style={{ color: "#f0f0f8" }}
+            style={{ color: "var(--foreground)" }}
           >
             Not sure which service you need?
           </h2>
-          <p className="mb-8" style={{ color: "#6b6b8a" }}>
+          <p className="mb-8" style={{ color: "var(--muted-foreground)" }}>
             Tell us your goal and we&apos;ll recommend the right approach — no
             commitment required.
           </p>
@@ -232,8 +232,8 @@ export default function ServicesPage() {
             href="/contact"
             className="inline-block px-8 py-3.5 rounded-xl text-base font-semibold text-white"
             style={{
-              background: "linear-gradient(135deg, #3b82f6, #8b5cf6)",
-              boxShadow: "0 0 30px rgba(59, 130, 246, 0.35)",
+              background: "var(--foreground)",
+              boxShadow: "0 8px 18px rgba(23, 23, 23, 0.12)",
             }}
           >
             Talk to Us

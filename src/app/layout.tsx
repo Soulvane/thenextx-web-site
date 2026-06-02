@@ -40,7 +40,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
       <body
         className="min-h-full flex flex-col"
-        style={{ background: "#0a0a0f", color: "#f0f0f8" }}
+        style={{ background: "var(--background)", color: "var(--foreground)" }}
       >
         <Navbar />
         <main className="flex-1">{children}</main>

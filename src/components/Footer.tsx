@@ -21,8 +21,8 @@ export default function Footer() {
   return (
     <footer
       style={{
-        background: "#08080f",
-        borderTop: "1px solid rgba(59, 130, 246, 0.12)",
+        background: "var(--foreground)",
+        borderTop: "1px solid var(--foreground)",
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -33,7 +33,8 @@ export default function Footer() {
               <div
                 className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold text-sm"
                 style={{
-                  background: "linear-gradient(135deg, #3b82f6, #8b5cf6)",
+                  background: "#ffffff",
+                  color: "var(--foreground)",
                 }}
               >
                 NX
@@ -41,17 +42,13 @@ export default function Footer() {
               <span
                 className="text-lg font-bold"
                 style={{
-                  background:
-                    "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
+                  color: "#ffffff",
                 }}
               >
                 TheNextX
               </span>
             </Link>
-            <p className="text-sm leading-relaxed max-w-sm" style={{ color: "#6b6b8a" }}>
+            <p className="text-sm leading-relaxed max-w-sm" style={{ color: "#d4d4d4" }}>
               Building the next generation of digital operations through human
               + AI collaboration. From Shopify stores to AI-powered workflows,
               we scale your business with precision.
@@ -60,7 +57,7 @@ export default function Footer() {
               <a
                 href="mailto:hello@thenextx.com"
                 className="text-sm transition-colors duration-200"
-                style={{ color: "#3b82f6" }}
+                style={{ color: "#ffffff" }}
               >
                 hello@thenextx.com
               </a>
@@ -72,7 +69,7 @@ export default function Footer() {
             <div key={title}>
               <h3
                 className="text-xs font-semibold uppercase tracking-widest mb-4"
-                style={{ color: "#4a4a6a" }}
+                style={{ color: "#a3a3a3" }}
               >
                 {title}
               </h3>
@@ -82,14 +79,14 @@ export default function Footer() {
                     <Link
                       href={link.href}
                       className="text-sm transition-colors duration-200"
-                      style={{ color: "#6b6b8a" }}
+                      style={{ color: "#d4d4d4" }}
                       onMouseEnter={(e) => {
                         (e.currentTarget as HTMLAnchorElement).style.color =
-                          "#f0f0f8";
+                          "#ffffff";
                       }}
                       onMouseLeave={(e) => {
                         (e.currentTarget as HTMLAnchorElement).style.color =
-                          "#6b6b8a";
+                          "#d4d4d4";
                       }}
                     >
                       {link.label}
@@ -103,12 +100,12 @@ export default function Footer() {
 
         <div
           className="mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4"
-          style={{ borderTop: "1px solid rgba(59, 130, 246, 0.08)" }}
+          style={{ borderTop: "1px solid rgba(255, 255, 255, 0.12)" }}
         >
-          <p className="text-xs" style={{ color: "#4a4a6a" }}>
+          <p className="text-xs" style={{ color: "#a3a3a3" }}>
             &copy; {new Date().getFullYear()} TheNextX. All rights reserved.
           </p>
-          <p className="text-xs" style={{ color: "#4a4a6a" }}>
+          <p className="text-xs" style={{ color: "#a3a3a3" }}>
             Powered by Human + AI Collaboration
           </p>
         </div>

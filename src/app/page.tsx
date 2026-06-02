@@ -115,7 +115,7 @@ export default function HomePage() {
       {/* Services section */}
       <section
         className="py-24 px-4 sm:px-6 lg:px-8"
-        style={{ background: "#0d0d1a" }}
+        style={{ background: "var(--surface)" }}
       >
         <div className="max-w-7xl mx-auto">
           <SectionHeader
@@ -134,9 +134,9 @@ export default function HomePage() {
               href="/services"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-200"
               style={{
-                color: "#3b82f6",
-                background: "rgba(59, 130, 246, 0.08)",
-                border: "1px solid rgba(59, 130, 246, 0.2)",
+                color: "var(--accent)",
+                background: "rgba(17, 24, 39, 0.08)",
+                border: "1px solid rgba(17, 24, 39, 0.2)",
               }}
             >
               View all services
@@ -160,7 +160,7 @@ export default function HomePage() {
       {/* Why TheNextX */}
       <section
         className="py-24 px-4 sm:px-6 lg:px-8"
-        style={{ background: "#0a0a0f" }}
+        style={{ background: "var(--background)" }}
       >
         <div className="max-w-7xl mx-auto">
           <SectionHeader
@@ -173,22 +173,22 @@ export default function HomePage() {
             {whyItems.map((item) => (
               <div
                 key={item.title}
-                className="rounded-2xl p-6"
+                className="rounded-lg p-6"
                 style={{
-                  background: "rgba(13, 13, 26, 0.6)",
-                  border: "1px solid rgba(59, 130, 246, 0.1)",
+                  background: "var(--surface)",
+                  border: "1px solid var(--border)",
                 }}
               >
                 <div className="text-3xl mb-4">{item.icon}</div>
                 <h3
                   className="text-base font-semibold mb-2"
-                  style={{ color: "#f0f0f8" }}
+                  style={{ color: "var(--foreground)" }}
                 >
                   {item.title}
                 </h3>
                 <p
                   className="text-sm leading-relaxed"
-                  style={{ color: "#6b6b8a" }}
+                  style={{ color: "var(--muted-foreground)" }}
                 >
                   {item.body}
                 </p>
@@ -201,28 +201,28 @@ export default function HomePage() {
       {/* CTA Banner */}
       <section
         className="py-24 px-4 sm:px-6 lg:px-8"
-        style={{ background: "#0d0d1a" }}
+        style={{ background: "var(--surface)" }}
       >
         <div className="max-w-4xl mx-auto text-center">
           <div
-            className="relative rounded-3xl p-12 overflow-hidden"
+            className="relative rounded-xl p-12 overflow-hidden"
             style={{
               background:
-                "linear-gradient(135deg, rgba(59,130,246,0.12) 0%, rgba(139,92,246,0.12) 100%)",
-              border: "1px solid rgba(59,130,246,0.2)",
+                "linear-gradient(135deg, rgba(17, 24, 39, 0.12) 0%, rgba(17, 24, 39, 0.12) 100%)",
+              border: "1px solid rgba(17, 24, 39, 0.2)",
             }}
           >
             <div
-              className="absolute top-0 right-0 w-64 h-64 rounded-full blur-3xl opacity-20 pointer-events-none"
+              className="hidden"
               style={{
-                background: "radial-gradient(circle, #8b5cf6, transparent)",
+                background: "radial-gradient(circle, var(--accent-2), transparent)",
               }}
               aria-hidden="true"
             />
             <div
-              className="absolute bottom-0 left-0 w-64 h-64 rounded-full blur-3xl opacity-20 pointer-events-none"
+              className="hidden"
               style={{
-                background: "radial-gradient(circle, #3b82f6, transparent)",
+                background: "radial-gradient(circle, var(--accent), transparent)",
               }}
               aria-hidden="true"
             />
@@ -230,13 +230,13 @@ export default function HomePage() {
             <div className="relative z-10">
               <h2
                 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4"
-                style={{ color: "#f0f0f8" }}
+                style={{ color: "var(--foreground)" }}
               >
                 Ready to activate your{" "}
                 <span
                   style={{
                     background:
-                      "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)",
+                      "linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%)",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     backgroundClip: "text",
@@ -247,7 +247,7 @@ export default function HomePage() {
               </h2>
               <p
                 className="text-lg mb-8 max-w-xl mx-auto"
-                style={{ color: "#6b6b8a" }}
+                style={{ color: "var(--muted-foreground)" }}
               >
                 Tell us about your project. We&apos;ll reply with a clear plan,
                 timeline, and pricing within 24 hours.
@@ -257,8 +257,8 @@ export default function HomePage() {
                   href="/contact"
                   className="px-8 py-3.5 rounded-xl text-base font-semibold text-white"
                   style={{
-                    background: "linear-gradient(135deg, #3b82f6, #8b5cf6)",
-                    boxShadow: "0 0 30px rgba(59, 130, 246, 0.35)",
+                    background: "var(--foreground)",
+                    boxShadow: "0 8px 18px rgba(23, 23, 23, 0.12)",
                   }}
                 >
                   Get in Touch
@@ -267,9 +267,9 @@ export default function HomePage() {
                   href="/services"
                   className="px-8 py-3.5 rounded-xl text-base font-semibold"
                   style={{
-                    color: "#a0a0b8",
-                    background: "rgba(255,255,255,0.04)",
-                    border: "1px solid rgba(255,255,255,0.1)",
+                    color: "var(--secondary-foreground)",
+                    background: "#ffffff",
+                    border: "1px solid var(--border)",
                   }}
                 >
                   Browse Services

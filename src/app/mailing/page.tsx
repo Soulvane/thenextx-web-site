@@ -58,32 +58,32 @@ export default function MailingPage() {
       {/* Hero */}
       <section
         className="relative pt-28 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
-        style={{ background: "#0a0a0f" }}
+        style={{ background: "var(--background)" }}
       >
         <div
-          className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full blur-3xl opacity-15 pointer-events-none"
-          style={{ background: "radial-gradient(circle, #8b5cf6, transparent)" }}
+          className="hidden"
+          style={{ background: "radial-gradient(circle, var(--accent-2), transparent)" }}
           aria-hidden="true"
         />
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <span
             className="inline-block text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6"
             style={{
-              color: "#8b5cf6",
-              background: "rgba(139, 92, 246, 0.1)",
-              border: "1px solid rgba(139, 92, 246, 0.2)",
+              color: "var(--accent-2)",
+              background: "var(--surface)",
+              border: "1px solid var(--border)",
             }}
           >
             Direct Mail & Offline Marketing
           </span>
           <h1
             className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-6"
-            style={{ color: "#f0f0f8" }}
+            style={{ color: "var(--foreground)" }}
           >
             Offline mail that{" "}
             <span
               style={{
-                background: "linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%)",
+                background: "linear-gradient(135deg, var(--accent-2) 0%, var(--accent) 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -94,7 +94,7 @@ export default function MailingPage() {
           </h1>
           <p
             className="text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto mb-10"
-            style={{ color: "#6b6b8a" }}
+            style={{ color: "var(--muted-foreground)" }}
           >
             We manage your physical mail marketing from start to finish —
             strategy, design, print production, and delivery. Postcards,
@@ -105,8 +105,8 @@ export default function MailingPage() {
             href="/contact"
             className="inline-block px-8 py-3.5 rounded-xl text-base font-semibold text-white"
             style={{
-              background: "linear-gradient(135deg, #8b5cf6, #3b82f6)",
-              boxShadow: "0 0 30px rgba(139, 92, 246, 0.35)",
+              background: "var(--foreground)",
+              boxShadow: "0 8px 18px rgba(23, 23, 23, 0.12)",
             }}
           >
             Start a Mail Campaign
@@ -118,9 +118,9 @@ export default function MailingPage() {
       <section
         className="py-12 px-4 sm:px-6 lg:px-8"
         style={{
-          background: "#0d0d1a",
-          borderTop: "1px solid rgba(139,92,246,0.1)",
-          borderBottom: "1px solid rgba(139,92,246,0.1)",
+          background: "var(--surface)",
+          borderTop: "1px solid rgba(17, 24, 39, 0.1)",
+          borderBottom: "1px solid rgba(17, 24, 39, 0.1)",
         }}
       >
         <div className="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
@@ -134,7 +134,7 @@ export default function MailingPage() {
               <div
                 className="text-3xl font-bold mb-1"
                 style={{
-                  background: "linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%)",
+                  background: "linear-gradient(135deg, var(--accent-2) 0%, var(--accent) 100%)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
@@ -142,7 +142,7 @@ export default function MailingPage() {
               >
                 {stat.value}
               </div>
-              <div className="text-xs" style={{ color: "#4a4a6a" }}>
+              <div className="text-xs" style={{ color: "var(--subtle-foreground)" }}>
                 {stat.label}
               </div>
             </div>
@@ -153,7 +153,7 @@ export default function MailingPage() {
       {/* Services */}
       <section
         className="py-24 px-4 sm:px-6 lg:px-8"
-        style={{ background: "#0a0a0f" }}
+        style={{ background: "var(--background)" }}
       >
         <div className="max-w-7xl mx-auto">
           <SectionHeader
@@ -166,22 +166,22 @@ export default function MailingPage() {
             {services.map((svc) => (
               <div
                 key={svc.title}
-                className="rounded-2xl p-6"
+                className="rounded-lg p-6"
                 style={{
-                  background: "rgba(13, 13, 26, 0.8)",
-                  border: "1px solid rgba(139, 92, 246, 0.12)",
+                  background: "var(--surface)",
+                  border: "1px solid var(--border)",
                 }}
               >
                 <div className="text-3xl mb-4">{svc.icon}</div>
                 <h3
                   className="text-base font-semibold mb-2"
-                  style={{ color: "#f0f0f8" }}
+                  style={{ color: "var(--foreground)" }}
                 >
                   {svc.title}
                 </h3>
                 <p
                   className="text-sm leading-relaxed"
-                  style={{ color: "#6b6b8a" }}
+                  style={{ color: "var(--muted-foreground)" }}
                 >
                   {svc.body}
                 </p>
@@ -194,7 +194,7 @@ export default function MailingPage() {
       {/* How it works */}
       <section
         className="py-24 px-4 sm:px-6 lg:px-8"
-        style={{ background: "#0d0d1a" }}
+        style={{ background: "var(--surface)" }}
       >
         <div className="max-w-4xl mx-auto">
           <SectionHeader
@@ -233,16 +233,16 @@ export default function MailingPage() {
             ].map((item) => (
               <div
                 key={item.step}
-                className="flex gap-6 rounded-2xl px-6 py-5"
+                className="flex gap-6 rounded-lg px-6 py-5"
                 style={{
-                  background: "rgba(13, 13, 26, 0.7)",
-                  border: "1px solid rgba(139, 92, 246, 0.1)",
+                  background: "var(--surface)",
+                  border: "1px solid var(--border)",
                 }}
               >
                 <span
                   className="text-2xl font-bold shrink-0 leading-none pt-1"
                   style={{
-                    background: "linear-gradient(135deg, #8b5cf6, #3b82f6)",
+                    background: "var(--foreground)",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     backgroundClip: "text",
@@ -253,11 +253,11 @@ export default function MailingPage() {
                 <div>
                   <h3
                     className="text-base font-semibold mb-1"
-                    style={{ color: "#f0f0f8" }}
+                    style={{ color: "var(--foreground)" }}
                   >
                     {item.title}
                   </h3>
-                  <p className="text-sm leading-relaxed" style={{ color: "#6b6b8a" }}>
+                  <p className="text-sm leading-relaxed" style={{ color: "var(--muted-foreground)" }}>
                     {item.body}
                   </p>
                 </div>
@@ -270,12 +270,12 @@ export default function MailingPage() {
       {/* Formats */}
       <section
         className="py-16 px-4 sm:px-6 lg:px-8"
-        style={{ background: "#0a0a0f" }}
+        style={{ background: "var(--background)" }}
       >
         <div className="max-w-4xl mx-auto text-center">
           <h2
             className="text-xl font-semibold mb-8"
-            style={{ color: "#4a4a6a" }}
+            style={{ color: "var(--subtle-foreground)" }}
           >
             Mail formats we produce
           </h2>
@@ -285,9 +285,9 @@ export default function MailingPage() {
                 key={f}
                 className="px-4 py-2 rounded-xl text-sm font-medium"
                 style={{
-                  color: "#a0a0b8",
-                  background: "rgba(13, 13, 26, 0.8)",
-                  border: "1px solid rgba(139, 92, 246, 0.15)",
+                  color: "var(--secondary-foreground)",
+                  background: "var(--surface)",
+                  border: "1px solid var(--border)",
                 }}
               >
                 {f}
@@ -300,16 +300,16 @@ export default function MailingPage() {
       {/* CTA */}
       <section
         className="py-20 px-4 sm:px-6 lg:px-8"
-        style={{ background: "#0d0d1a" }}
+        style={{ background: "var(--surface)" }}
       >
         <div className="max-w-2xl mx-auto text-center">
           <h2
             className="text-3xl font-bold mb-4"
-            style={{ color: "#f0f0f8" }}
+            style={{ color: "var(--foreground)" }}
           >
             Ready to put your brand in every mailbox?
           </h2>
-          <p className="mb-8" style={{ color: "#6b6b8a" }}>
+          <p className="mb-8" style={{ color: "var(--muted-foreground)" }}>
             Tell us about your target audience and goals — we&apos;ll propose a
             direct mail campaign plan.
           </p>
@@ -317,8 +317,8 @@ export default function MailingPage() {
             href="/contact"
             className="inline-block px-8 py-3.5 rounded-xl text-base font-semibold text-white"
             style={{
-              background: "linear-gradient(135deg, #8b5cf6, #3b82f6)",
-              boxShadow: "0 0 30px rgba(139, 92, 246, 0.35)",
+              background: "var(--foreground)",
+              boxShadow: "0 8px 18px rgba(23, 23, 23, 0.12)",
             }}
           >
             Get a Campaign Plan

@@ -22,10 +22,10 @@ export default function Navbar() {
     <header
       className="sticky top-0 z-50 w-full"
       style={{
-        background: "rgba(10, 10, 15, 0.85)",
+        background: "rgba(247, 247, 245, 0.86)",
         backdropFilter: "blur(16px)",
         WebkitBackdropFilter: "blur(16px)",
-        borderBottom: "1px solid rgba(59, 130, 246, 0.12)",
+        borderBottom: "1px solid var(--border)",
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -35,7 +35,7 @@ export default function Navbar() {
             <div
               className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold text-sm"
               style={{
-                background: "linear-gradient(135deg, #3b82f6, #8b5cf6)",
+                background: "var(--foreground)",
               }}
             >
               NX
@@ -43,10 +43,7 @@ export default function Navbar() {
             <span
               className="text-lg font-bold tracking-tight"
               style={{
-                background: "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
+                color: "var(--foreground)",
               }}
             >
               TheNextX
@@ -63,21 +60,21 @@ export default function Navbar() {
                   href={link.href}
                   className="px-3 py-2 text-sm rounded-md transition-colors duration-200"
                   style={{
-                    color: active ? "#3b82f6" : "#a0a0b8",
+                    color: active ? "var(--accent)" : "var(--secondary-foreground)",
                     background: active
-                      ? "rgba(59, 130, 246, 0.08)"
+                      ? "var(--surface-2)"
                       : "transparent",
                   }}
                   onMouseEnter={(e) => {
                     if (!active) {
                       (e.currentTarget as HTMLAnchorElement).style.color =
-                        "#f0f0f8";
+                        "var(--foreground)";
                     }
                   }}
                   onMouseLeave={(e) => {
                     if (!active) {
                       (e.currentTarget as HTMLAnchorElement).style.color =
-                        "#a0a0b8";
+                        "var(--secondary-foreground)";
                     }
                   }}
                 >
@@ -93,18 +90,18 @@ export default function Navbar() {
               href="/contact"
               className="px-4 py-2 rounded-lg text-sm font-semibold text-white transition-all duration-200"
               style={{
-                background: "linear-gradient(135deg, #3b82f6, #8b5cf6)",
-                boxShadow: "0 0 20px rgba(59, 130, 246, 0.3)",
+                background: "var(--foreground)",
+                boxShadow: "0 6px 16px rgba(23, 23, 23, 0.12)",
               }}
               onMouseEnter={(e) => {
                 (e.currentTarget as HTMLAnchorElement).style.boxShadow =
-                  "0 0 30px rgba(59, 130, 246, 0.5)";
+                  "0 10px 22px rgba(23, 23, 23, 0.16)";
                 (e.currentTarget as HTMLAnchorElement).style.transform =
                   "translateY(-1px)";
               }}
               onMouseLeave={(e) => {
                 (e.currentTarget as HTMLAnchorElement).style.boxShadow =
-                  "0 0 20px rgba(59, 130, 246, 0.3)";
+                  "0 6px 16px rgba(23, 23, 23, 0.12)";
                 (e.currentTarget as HTMLAnchorElement).style.transform =
                   "translateY(0)";
               }}
@@ -116,7 +113,7 @@ export default function Navbar() {
           {/* Mobile hamburger */}
           <button
             className="md:hidden p-2 rounded-md"
-            style={{ color: "#a0a0b8" }}
+            style={{ color: "var(--secondary-foreground)" }}
             onClick={() => setMobileOpen((v) => !v)}
             aria-label="Toggle menu"
           >
@@ -156,7 +153,7 @@ export default function Navbar() {
       {mobileOpen && (
         <div
           className="md:hidden px-4 pb-4 pt-2 flex flex-col gap-1"
-          style={{ borderTop: "1px solid rgba(59, 130, 246, 0.12)" }}
+          style={{ borderTop: "1px solid var(--border)" }}
         >
           {navLinks.map((link) => {
             const active = pathname === link.href;
@@ -166,9 +163,9 @@ export default function Navbar() {
                 href={link.href}
                 className="px-3 py-2.5 text-sm rounded-md"
                 style={{
-                  color: active ? "#3b82f6" : "#a0a0b8",
+                  color: active ? "var(--accent)" : "var(--secondary-foreground)",
                   background: active
-                    ? "rgba(59, 130, 246, 0.08)"
+                    ? "var(--surface-2)"
                     : "transparent",
                 }}
                 onClick={() => setMobileOpen(false)}
@@ -181,7 +178,7 @@ export default function Navbar() {
             href="/contact"
             className="mt-2 px-4 py-2.5 rounded-lg text-sm font-semibold text-white text-center"
             style={{
-              background: "linear-gradient(135deg, #3b82f6, #8b5cf6)",
+              background: "var(--foreground)",
             }}
             onClick={() => setMobileOpen(false)}
           >

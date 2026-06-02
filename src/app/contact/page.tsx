@@ -13,32 +13,32 @@ export default function ContactPage() {
       {/* Hero */}
       <section
         className="relative pt-28 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
-        style={{ background: "#0a0a0f" }}
+        style={{ background: "var(--background)" }}
       >
         <div
-          className="absolute top-1/3 right-1/3 w-80 h-80 rounded-full blur-3xl opacity-15 pointer-events-none"
-          style={{ background: "radial-gradient(circle, #3b82f6, transparent)" }}
+          className="hidden"
+          style={{ background: "radial-gradient(circle, var(--accent), transparent)" }}
           aria-hidden="true"
         />
         <div className="max-w-3xl mx-auto text-center relative z-10">
           <span
             className="inline-block text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6"
             style={{
-              color: "#3b82f6",
-              background: "rgba(59, 130, 246, 0.1)",
-              border: "1px solid rgba(59, 130, 246, 0.2)",
+              color: "var(--accent)",
+              background: "var(--surface)",
+              border: "1px solid var(--border)",
             }}
           >
             Get in Touch
           </span>
           <h1
             className="text-4xl sm:text-5xl font-bold tracking-tight leading-tight mb-4"
-            style={{ color: "#f0f0f8" }}
+            style={{ color: "var(--foreground)" }}
           >
             Start your project with{" "}
             <span
               style={{
-                background: "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)",
+                background: "linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -49,7 +49,7 @@ export default function ContactPage() {
           </h1>
           <p
             className="text-lg leading-relaxed max-w-xl mx-auto"
-            style={{ color: "#6b6b8a" }}
+            style={{ color: "var(--muted-foreground)" }}
           >
             Fill out the form and we&apos;ll respond within 24 hours with a
             clear plan and next steps.
@@ -60,7 +60,7 @@ export default function ContactPage() {
       {/* Form + Info */}
       <section
         className="py-16 px-4 sm:px-6 lg:px-8"
-        style={{ background: "#0d0d1a" }}
+        style={{ background: "var(--surface)" }}
       >
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-12">
           {/* Info column */}
@@ -68,13 +68,13 @@ export default function ContactPage() {
             <div>
               <h2
                 className="text-xl font-semibold mb-2"
-                style={{ color: "#f0f0f8" }}
+                style={{ color: "var(--foreground)" }}
               >
                 What to expect
               </h2>
               <p
                 className="text-sm leading-relaxed"
-                style={{ color: "#6b6b8a" }}
+                style={{ color: "var(--muted-foreground)" }}
               >
                 After receiving your message, a senior member of the TheNextX
                 team will review your requirements and respond with a proposed
@@ -104,19 +104,19 @@ export default function ContactPage() {
                   key={item.title}
                   className="flex gap-4 rounded-xl p-4"
                   style={{
-                    background: "rgba(13, 13, 26, 0.7)",
-                    border: "1px solid rgba(59, 130, 246, 0.1)",
+                    background: "var(--surface)",
+                    border: "1px solid var(--border)",
                   }}
                 >
                   <span className="text-2xl shrink-0">{item.icon}</span>
                   <div>
                     <div
                       className="text-sm font-semibold mb-0.5"
-                      style={{ color: "#f0f0f8" }}
+                      style={{ color: "var(--foreground)" }}
                     >
                       {item.title}
                     </div>
-                    <div className="text-xs" style={{ color: "#6b6b8a" }}>
+                    <div className="text-xs" style={{ color: "var(--muted-foreground)" }}>
                       {item.body}
                     </div>
                   </div>
@@ -127,20 +127,20 @@ export default function ContactPage() {
             <div
               className="rounded-xl p-5"
               style={{
-                background: "rgba(13, 13, 26, 0.7)",
-                border: "1px solid rgba(59, 130, 246, 0.12)",
+                background: "var(--surface)",
+                border: "1px solid var(--border)",
               }}
             >
               <div
                 className="text-xs font-semibold uppercase tracking-widest mb-3"
-                style={{ color: "#4a4a6a" }}
+                style={{ color: "var(--subtle-foreground)" }}
               >
                 Direct contact
               </div>
               <a
                 href="mailto:info@thenextx.net"
                 className="text-sm font-medium"
-                style={{ color: "#3b82f6" }}
+                style={{ color: "var(--accent)" }}
               >
                 info@thenextx.net
               </a>

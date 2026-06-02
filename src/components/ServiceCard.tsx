@@ -19,43 +19,34 @@ export default function ServiceCard({
   tags,
   accentColor = "blue",
 }: ServiceCardProps) {
-  const gradients = {
-    blue: "linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(59, 130, 246, 0.05))",
-    violet:
-      "linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(139, 92, 246, 0.05))",
-    mixed:
-      "linear-gradient(135deg, rgba(59, 130, 246, 0.12), rgba(139, 92, 246, 0.08))",
-  };
-
   const iconBgs = {
-    blue: "rgba(59, 130, 246, 0.15)",
-    violet: "rgba(139, 92, 246, 0.15)",
-    mixed: "rgba(99, 111, 246, 0.15)",
+    blue: "var(--surface-2)",
+    violet: "var(--surface-2)",
+    mixed: "var(--surface-2)",
   };
 
   const iconColors = {
-    blue: "#3b82f6",
-    violet: "#8b5cf6",
-    mixed: "#6366f1",
+    blue: "var(--accent)",
+    violet: "var(--accent-2)",
+    mixed: "var(--accent)",
   };
 
   const card = (
     <div
-      className="group rounded-2xl p-6 h-full flex flex-col transition-all duration-300"
+      className="group rounded-lg p-6 h-full flex flex-col transition-all duration-300"
       style={{
-        background: "rgba(13, 13, 26, 0.8)",
-        border: "1px solid rgba(59, 130, 246, 0.12)",
-        backdropFilter: "blur(12px)",
+        background: "var(--surface)",
+        border: "1px solid var(--border)",
       }}
       onMouseEnter={(e) => {
         const el = e.currentTarget as HTMLDivElement;
-        el.style.border = "1px solid rgba(59, 130, 246, 0.35)";
-        el.style.boxShadow = "0 8px 40px rgba(59, 130, 246, 0.12)";
+        el.style.border = "1px solid var(--border-strong)";
+        el.style.boxShadow = "0 12px 28px rgba(23, 23, 23, 0.08)";
         el.style.transform = "translateY(-2px)";
       }}
       onMouseLeave={(e) => {
         const el = e.currentTarget as HTMLDivElement;
-        el.style.border = "1px solid rgba(59, 130, 246, 0.12)";
+        el.style.border = "1px solid var(--border)";
         el.style.boxShadow = "none";
         el.style.transform = "translateY(0)";
       }}
@@ -71,13 +62,13 @@ export default function ServiceCard({
       {/* Title */}
       <h3
         className="text-lg font-semibold mb-3 leading-snug"
-        style={{ color: "#f0f0f8" }}
+        style={{ color: "var(--foreground)" }}
       >
         {title}
       </h3>
 
       {/* Description */}
-      <p className="text-sm leading-relaxed flex-1" style={{ color: "#6b6b8a" }}>
+      <p className="text-sm leading-relaxed flex-1" style={{ color: "var(--muted-foreground)" }}>
         {description}
       </p>
 

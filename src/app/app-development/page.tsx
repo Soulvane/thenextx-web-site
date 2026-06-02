@@ -58,37 +58,37 @@ export default function AppDevelopmentPage() {
       {/* Hero */}
       <section
         className="relative pt-28 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
-        style={{ background: "#0a0a0f" }}
+        style={{ background: "var(--background)" }}
       >
         <div
-          className="absolute top-1/4 right-1/3 w-80 h-80 rounded-full blur-3xl opacity-20 pointer-events-none"
-          style={{ background: "radial-gradient(circle, #3b82f6, transparent)" }}
+          className="hidden"
+          style={{ background: "radial-gradient(circle, var(--accent), transparent)" }}
           aria-hidden="true"
         />
         <div
-          className="absolute bottom-1/4 left-1/4 w-64 h-64 rounded-full blur-3xl opacity-15 pointer-events-none"
-          style={{ background: "radial-gradient(circle, #8b5cf6, transparent)" }}
+          className="hidden"
+          style={{ background: "radial-gradient(circle, var(--accent-2), transparent)" }}
           aria-hidden="true"
         />
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <span
             className="inline-block text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6"
             style={{
-              color: "#3b82f6",
-              background: "rgba(59, 130, 246, 0.1)",
-              border: "1px solid rgba(59, 130, 246, 0.2)",
+              color: "var(--accent)",
+              background: "var(--surface)",
+              border: "1px solid var(--border)",
             }}
           >
             Flutter App Development
           </span>
           <h1
             className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-6"
-            style={{ color: "#f0f0f8" }}
+            style={{ color: "var(--foreground)" }}
           >
             Beautiful apps on{" "}
             <span
               style={{
-                background: "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)",
+                background: "linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -99,7 +99,7 @@ export default function AppDevelopmentPage() {
           </h1>
           <p
             className="text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto mb-10"
-            style={{ color: "#6b6b8a" }}
+            style={{ color: "var(--muted-foreground)" }}
           >
             We build production-ready Flutter applications from design to App
             Store launch — fast, polished, and built to grow with your user
@@ -109,8 +109,8 @@ export default function AppDevelopmentPage() {
             href="/contact"
             className="inline-block px-8 py-3.5 rounded-xl text-base font-semibold text-white"
             style={{
-              background: "linear-gradient(135deg, #3b82f6, #8b5cf6)",
-              boxShadow: "0 0 30px rgba(59, 130, 246, 0.35)",
+              background: "var(--foreground)",
+              boxShadow: "0 8px 18px rgba(23, 23, 23, 0.12)",
             }}
           >
             Start Your App
@@ -122,9 +122,9 @@ export default function AppDevelopmentPage() {
       <section
         className="py-16 px-4 sm:px-6 lg:px-8"
         style={{
-          background: "#0d0d1a",
-          borderTop: "1px solid rgba(59,130,246,0.1)",
-          borderBottom: "1px solid rgba(59,130,246,0.1)",
+          background: "var(--surface)",
+          borderTop: "1px solid rgba(17, 24, 39, 0.1)",
+          borderBottom: "1px solid rgba(17, 24, 39, 0.1)",
         }}
       >
         <div className="max-w-5xl mx-auto">
@@ -148,7 +148,7 @@ export default function AppDevelopmentPage() {
                   className="text-2xl font-bold mb-1"
                   style={{
                     background:
-                      "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)",
+                      "linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%)",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     backgroundClip: "text",
@@ -156,7 +156,7 @@ export default function AppDevelopmentPage() {
                 >
                   {item.stat}
                 </div>
-                <div className="text-sm" style={{ color: "#6b6b8a" }}>
+                <div className="text-sm" style={{ color: "var(--muted-foreground)" }}>
                   {item.label}
                 </div>
               </div>
@@ -168,7 +168,7 @@ export default function AppDevelopmentPage() {
       {/* Features */}
       <section
         className="py-24 px-4 sm:px-6 lg:px-8"
-        style={{ background: "#0a0a0f" }}
+        style={{ background: "var(--background)" }}
       >
         <div className="max-w-7xl mx-auto">
           <SectionHeader
@@ -181,22 +181,22 @@ export default function AppDevelopmentPage() {
             {features.map((feat) => (
               <div
                 key={feat.title}
-                className="rounded-2xl p-6"
+                className="rounded-lg p-6"
                 style={{
-                  background: "rgba(13, 13, 26, 0.8)",
-                  border: "1px solid rgba(59, 130, 246, 0.12)",
+                  background: "var(--surface)",
+                  border: "1px solid var(--border)",
                 }}
               >
                 <div className="text-3xl mb-4">{feat.icon}</div>
                 <h3
                   className="text-base font-semibold mb-2"
-                  style={{ color: "#f0f0f8" }}
+                  style={{ color: "var(--foreground)" }}
                 >
                   {feat.title}
                 </h3>
                 <p
                   className="text-sm leading-relaxed"
-                  style={{ color: "#6b6b8a" }}
+                  style={{ color: "var(--muted-foreground)" }}
                 >
                   {feat.body}
                 </p>
@@ -209,7 +209,7 @@ export default function AppDevelopmentPage() {
       {/* Deliverables */}
       <section
         className="py-24 px-4 sm:px-6 lg:px-8"
-        style={{ background: "#0d0d1a" }}
+        style={{ background: "var(--surface)" }}
       >
         <div className="max-w-4xl mx-auto">
           <SectionHeader
@@ -224,8 +224,8 @@ export default function AppDevelopmentPage() {
                 key={item}
                 className="flex items-center gap-3 rounded-xl px-5 py-4"
                 style={{
-                  background: "rgba(13, 13, 26, 0.7)",
-                  border: "1px solid rgba(59, 130, 246, 0.1)",
+                  background: "var(--surface)",
+                  border: "1px solid var(--border)",
                 }}
               >
                 <svg
@@ -233,14 +233,14 @@ export default function AppDevelopmentPage() {
                   height="16"
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke="#3b82f6"
+                  stroke="var(--accent)"
                   strokeWidth="2.5"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 >
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span className="text-sm" style={{ color: "#a0a0b8" }}>
+                <span className="text-sm" style={{ color: "var(--secondary-foreground)" }}>
                   {item}
                 </span>
               </div>
@@ -252,16 +252,16 @@ export default function AppDevelopmentPage() {
       {/* CTA */}
       <section
         className="py-20 px-4 sm:px-6 lg:px-8"
-        style={{ background: "#0a0a0f" }}
+        style={{ background: "var(--background)" }}
       >
         <div className="max-w-2xl mx-auto text-center">
           <h2
             className="text-3xl font-bold mb-4"
-            style={{ color: "#f0f0f8" }}
+            style={{ color: "var(--foreground)" }}
           >
             Have an app idea?
           </h2>
-          <p className="mb-8" style={{ color: "#6b6b8a" }}>
+          <p className="mb-8" style={{ color: "var(--muted-foreground)" }}>
             Tell us about your app concept and we&apos;ll send back a scoped
             proposal with timeline and cost estimate.
           </p>
@@ -269,8 +269,8 @@ export default function AppDevelopmentPage() {
             href="/contact"
             className="inline-block px-8 py-3.5 rounded-xl text-base font-semibold text-white"
             style={{
-              background: "linear-gradient(135deg, #3b82f6, #8b5cf6)",
-              boxShadow: "0 0 30px rgba(59, 130, 246, 0.35)",
+              background: "var(--foreground)",
+              boxShadow: "0 8px 18px rgba(23, 23, 23, 0.12)",
             }}
           >
             Discuss Your App

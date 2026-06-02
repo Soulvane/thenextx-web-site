@@ -19,9 +19,9 @@ export default function SectionHeader({
         <span
           className="inline-block text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4"
           style={{
-            color: "#3b82f6",
-            background: "rgba(59, 130, 246, 0.1)",
-            border: "1px solid rgba(59, 130, 246, 0.2)",
+            color: "var(--accent)",
+            background: "var(--surface)",
+            border: "1px solid var(--border)",
           }}
         >
           {eyebrow}
@@ -29,17 +29,14 @@ export default function SectionHeader({
       )}
       <h2
         className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight"
-        style={{ color: "#f0f0f8" }}
+        style={{ color: "var(--foreground)" }}
       >
         {titleGradient ? (
           <>
             {title}{" "}
             <span
               style={{
-                background: "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
+                color: "var(--accent-2)",
               }}
             >
               {titleGradient}
@@ -52,7 +49,7 @@ export default function SectionHeader({
       {subtitle && (
         <p
           className={`mt-4 text-lg leading-relaxed ${centered ? "mx-auto" : ""} max-w-2xl`}
-          style={{ color: "#6b6b8a" }}
+          style={{ color: "var(--muted-foreground)" }}
         >
           {subtitle}
         </p>

@@ -58,29 +58,29 @@ export default function AIAgentsPage() {
       {/* Hero */}
       <section
         className="relative pt-28 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
-        style={{ background: "#0a0a0f" }}
+        style={{ background: "var(--background)" }}
       >
         <div
           className="absolute inset-0 pointer-events-none"
           aria-hidden="true"
         >
           <div
-            className="absolute top-1/4 left-1/3 w-96 h-96 rounded-full blur-3xl opacity-20"
+            className="hidden"
             style={{
-              background: "radial-gradient(circle, #3b82f6, transparent)",
+              background: "radial-gradient(circle, var(--accent), transparent)",
             }}
           />
           <div
-            className="absolute bottom-0 right-1/4 w-72 h-72 rounded-full blur-3xl opacity-15"
+            className="hidden"
             style={{
-              background: "radial-gradient(circle, #8b5cf6, transparent)",
+              background: "radial-gradient(circle, var(--accent-2), transparent)",
             }}
           />
           <div
             className="absolute inset-0 opacity-4"
             style={{
               backgroundImage:
-                "linear-gradient(rgba(59, 130, 246, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.3) 1px, transparent 1px)",
+                "linear-gradient(rgba(17, 24, 39, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(17, 24, 39, 0.3) 1px, transparent 1px)",
               backgroundSize: "60px 60px",
             }}
           />
@@ -90,15 +90,15 @@ export default function AIAgentsPage() {
           <span
             className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6"
             style={{
-              color: "#3b82f6",
-              background: "rgba(59, 130, 246, 0.08)",
-              border: "1px solid rgba(59, 130, 246, 0.2)",
+              color: "var(--accent)",
+              background: "rgba(17, 24, 39, 0.08)",
+              border: "1px solid rgba(17, 24, 39, 0.2)",
             }}
           >
             <span
               className="w-1.5 h-1.5 rounded-full"
               style={{
-                background: "#3b82f6",
+                background: "var(--accent)",
                 animation: "pulse 2s infinite",
               }}
             />
@@ -106,12 +106,12 @@ export default function AIAgentsPage() {
           </span>
           <h1
             className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-6"
-            style={{ color: "#f0f0f8" }}
+            style={{ color: "var(--foreground)" }}
           >
             Your business runs{" "}
             <span
               style={{
-                background: "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)",
+                background: "linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -122,7 +122,7 @@ export default function AIAgentsPage() {
           </h1>
           <p
             className="text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto mb-10"
-            style={{ color: "#6b6b8a" }}
+            style={{ color: "var(--muted-foreground)" }}
           >
             We design and deploy AI agent systems that take over repetitive,
             high-volume, and complex tasks — integrated with your existing tools
@@ -133,8 +133,8 @@ export default function AIAgentsPage() {
               href="/contact"
               className="px-8 py-3.5 rounded-xl text-base font-semibold text-white"
               style={{
-                background: "linear-gradient(135deg, #3b82f6, #8b5cf6)",
-                boxShadow: "0 0 30px rgba(59, 130, 246, 0.35)",
+                background: "var(--foreground)",
+                boxShadow: "0 8px 18px rgba(23, 23, 23, 0.12)",
               }}
             >
               Deploy Your First Agent
@@ -143,9 +143,9 @@ export default function AIAgentsPage() {
               href="/services"
               className="px-8 py-3.5 rounded-xl text-base font-semibold"
               style={{
-                color: "#a0a0b8",
-                background: "rgba(255,255,255,0.04)",
-                border: "1px solid rgba(255,255,255,0.1)",
+                color: "var(--secondary-foreground)",
+                background: "#ffffff",
+                border: "1px solid var(--border)",
               }}
             >
               All Services
@@ -158,9 +158,9 @@ export default function AIAgentsPage() {
       <section
         className="py-12 px-4 sm:px-6 lg:px-8"
         style={{
-          background: "#0d0d1a",
-          borderTop: "1px solid rgba(59,130,246,0.1)",
-          borderBottom: "1px solid rgba(59,130,246,0.1)",
+          background: "var(--surface)",
+          borderTop: "1px solid rgba(17, 24, 39, 0.1)",
+          borderBottom: "1px solid rgba(17, 24, 39, 0.1)",
         }}
       >
         <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
@@ -175,7 +175,7 @@ export default function AIAgentsPage() {
                 className="text-3xl font-bold mb-1"
                 style={{
                   background:
-                    "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)",
+                    "linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
@@ -183,7 +183,7 @@ export default function AIAgentsPage() {
               >
                 {stat.value}
               </div>
-              <div className="text-xs" style={{ color: "#4a4a6a" }}>
+              <div className="text-xs" style={{ color: "var(--subtle-foreground)" }}>
                 {stat.label}
               </div>
             </div>
@@ -194,7 +194,7 @@ export default function AIAgentsPage() {
       {/* Capabilities */}
       <section
         className="py-24 px-4 sm:px-6 lg:px-8"
-        style={{ background: "#0a0a0f" }}
+        style={{ background: "var(--background)" }}
       >
         <div className="max-w-7xl mx-auto">
           <SectionHeader
@@ -207,22 +207,22 @@ export default function AIAgentsPage() {
             {capabilities.map((cap) => (
               <div
                 key={cap.title}
-                className="rounded-2xl p-6"
+                className="rounded-lg p-6"
                 style={{
-                  background: "rgba(13, 13, 26, 0.8)",
-                  border: "1px solid rgba(59, 130, 246, 0.12)",
+                  background: "var(--surface)",
+                  border: "1px solid var(--border)",
                 }}
               >
                 <div className="text-3xl mb-4">{cap.icon}</div>
                 <h3
                   className="text-base font-semibold mb-2"
-                  style={{ color: "#f0f0f8" }}
+                  style={{ color: "var(--foreground)" }}
                 >
                   {cap.title}
                 </h3>
                 <p
                   className="text-sm leading-relaxed"
-                  style={{ color: "#6b6b8a" }}
+                  style={{ color: "var(--muted-foreground)" }}
                 >
                   {cap.body}
                 </p>
@@ -235,7 +235,7 @@ export default function AIAgentsPage() {
       {/* How it works */}
       <section
         className="py-24 px-4 sm:px-6 lg:px-8"
-        style={{ background: "#0d0d1a" }}
+        style={{ background: "var(--surface)" }}
       >
         <div className="max-w-5xl mx-auto">
           <SectionHeader
@@ -274,26 +274,26 @@ export default function AIAgentsPage() {
             ].map((item) => (
               <div
                 key={item.step}
-                className="flex gap-6 rounded-2xl p-6"
+                className="flex gap-6 rounded-lg p-6"
                 style={{
-                  background: "rgba(13, 13, 26, 0.7)",
-                  border: "1px solid rgba(59, 130, 246, 0.1)",
+                  background: "var(--surface)",
+                  border: "1px solid var(--border)",
                 }}
               >
                 <div
                   className="text-xl font-bold shrink-0 w-10"
-                  style={{ color: "rgba(59, 130, 246, 0.4)" }}
+                  style={{ color: "rgba(17, 24, 39, 0.4)" }}
                 >
                   {item.step}
                 </div>
                 <div>
                   <h3
                     className="font-semibold mb-1"
-                    style={{ color: "#f0f0f8" }}
+                    style={{ color: "var(--foreground)" }}
                   >
                     {item.title}
                   </h3>
-                  <p className="text-sm leading-relaxed" style={{ color: "#6b6b8a" }}>
+                  <p className="text-sm leading-relaxed" style={{ color: "var(--muted-foreground)" }}>
                     {item.body}
                   </p>
                 </div>
@@ -306,12 +306,12 @@ export default function AIAgentsPage() {
       {/* Tech stack */}
       <section
         className="py-16 px-4 sm:px-6 lg:px-8"
-        style={{ background: "#0a0a0f" }}
+        style={{ background: "var(--background)" }}
       >
         <div className="max-w-4xl mx-auto text-center">
           <h2
             className="text-xl font-semibold mb-8"
-            style={{ color: "#4a4a6a" }}
+            style={{ color: "var(--subtle-foreground)" }}
           >
             Technologies we work with
           </h2>
@@ -321,9 +321,9 @@ export default function AIAgentsPage() {
                 key={tech}
                 className="px-4 py-2 rounded-xl text-sm font-medium"
                 style={{
-                  color: "#a0a0b8",
-                  background: "rgba(13, 13, 26, 0.8)",
-                  border: "1px solid rgba(59, 130, 246, 0.15)",
+                  color: "var(--secondary-foreground)",
+                  background: "var(--surface)",
+                  border: "1px solid var(--border)",
                 }}
               >
                 {tech}
@@ -336,16 +336,16 @@ export default function AIAgentsPage() {
       {/* CTA */}
       <section
         className="py-20 px-4 sm:px-6 lg:px-8"
-        style={{ background: "#0d0d1a" }}
+        style={{ background: "var(--surface)" }}
       >
         <div className="max-w-2xl mx-auto text-center">
           <h2
             className="text-3xl font-bold mb-4"
-            style={{ color: "#f0f0f8" }}
+            style={{ color: "var(--foreground)" }}
           >
             Ready to deploy your first agent?
           </h2>
-          <p className="mb-8" style={{ color: "#6b6b8a" }}>
+          <p className="mb-8" style={{ color: "var(--muted-foreground)" }}>
             Share a workflow you want automated and we&apos;ll scope it within
             24 hours.
           </p>
@@ -353,8 +353,8 @@ export default function AIAgentsPage() {
             href="/contact"
             className="inline-block px-8 py-3.5 rounded-xl text-base font-semibold text-white"
             style={{
-              background: "linear-gradient(135deg, #3b82f6, #8b5cf6)",
-              boxShadow: "0 0 30px rgba(59, 130, 246, 0.35)",
+              background: "var(--foreground)",
+              boxShadow: "0 8px 18px rgba(23, 23, 23, 0.12)",
             }}
           >
             Start a Conversation

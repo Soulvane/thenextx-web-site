@@ -54,11 +54,11 @@ export default function ContactForm() {
 
   const inputStyle: React.CSSProperties = {
     width: "100%",
-    background: "rgba(13, 13, 26, 0.8)",
-    border: "1px solid rgba(59, 130, 246, 0.2)",
+    background: "var(--surface)",
+    border: "1px solid rgba(17, 24, 39, 0.2)",
     borderRadius: "0.75rem",
     padding: "0.75rem 1rem",
-    color: "#f0f0f8",
+    color: "var(--foreground)",
     fontSize: "0.875rem",
     outline: "none",
     transition: "border-color 0.2s",
@@ -69,23 +69,23 @@ export default function ContactForm() {
     fontSize: "0.8125rem",
     fontWeight: 500,
     marginBottom: "0.5rem",
-    color: "#a0a0b8",
+    color: "var(--secondary-foreground)",
   };
 
   if (status === "success") {
     return (
       <div
-        className="rounded-2xl p-12 text-center"
+        className="rounded-lg p-12 text-center"
         style={{
-          background: "rgba(13, 13, 26, 0.8)",
-          border: "1px solid rgba(59, 130, 246, 0.2)",
+          background: "var(--surface)",
+          border: "1px solid rgba(17, 24, 39, 0.2)",
         }}
       >
         <div className="text-5xl mb-4">✅</div>
-        <h3 className="text-2xl font-bold mb-2" style={{ color: "#f0f0f8" }}>
+        <h3 className="text-2xl font-bold mb-2" style={{ color: "var(--foreground)" }}>
           Message received!
         </h3>
-        <p style={{ color: "#6b6b8a" }}>
+        <p style={{ color: "var(--muted-foreground)" }}>
           We&apos;ll be in touch within 24 hours with a detailed response. Check
           your inbox.
         </p>
@@ -96,17 +96,17 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-2xl p-8 space-y-5"
+      className="rounded-lg p-8 space-y-5"
       style={{
-        background: "rgba(13, 13, 26, 0.8)",
-        border: "1px solid rgba(59, 130, 246, 0.15)",
+        background: "var(--surface)",
+        border: "1px solid var(--border)",
       }}
     >
       {/* Name + Email */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label htmlFor="name" style={labelStyle}>
-            Full name <span style={{ color: "#3b82f6" }}>*</span>
+            Full name <span style={{ color: "var(--accent)" }}>*</span>
           </label>
           <input
             id="name"
@@ -119,17 +119,17 @@ export default function ContactForm() {
             style={inputStyle}
             onFocus={(e) => {
               (e.target as HTMLInputElement).style.borderColor =
-                "rgba(59, 130, 246, 0.6)";
+                "rgba(17, 24, 39, 0.6)";
             }}
             onBlur={(e) => {
               (e.target as HTMLInputElement).style.borderColor =
-                "rgba(59, 130, 246, 0.2)";
+                "rgba(17, 24, 39, 0.2)";
             }}
           />
         </div>
         <div>
           <label htmlFor="email" style={labelStyle}>
-            Email address <span style={{ color: "#3b82f6" }}>*</span>
+            Email address <span style={{ color: "var(--accent)" }}>*</span>
           </label>
           <input
             id="email"
@@ -142,11 +142,11 @@ export default function ContactForm() {
             style={inputStyle}
             onFocus={(e) => {
               (e.target as HTMLInputElement).style.borderColor =
-                "rgba(59, 130, 246, 0.6)";
+                "rgba(17, 24, 39, 0.6)";
             }}
             onBlur={(e) => {
               (e.target as HTMLInputElement).style.borderColor =
-                "rgba(59, 130, 246, 0.2)";
+                "rgba(17, 24, 39, 0.2)";
             }}
           />
         </div>
@@ -167,11 +167,11 @@ export default function ContactForm() {
           style={inputStyle}
           onFocus={(e) => {
             (e.target as HTMLInputElement).style.borderColor =
-              "rgba(59, 130, 246, 0.6)";
+              "rgba(17, 24, 39, 0.6)";
           }}
           onBlur={(e) => {
             (e.target as HTMLInputElement).style.borderColor =
-              "rgba(59, 130, 246, 0.2)";
+              "rgba(17, 24, 39, 0.2)";
           }}
         />
       </div>
@@ -190,18 +190,18 @@ export default function ContactForm() {
             style={{ ...inputStyle, cursor: "pointer" }}
             onFocus={(e) => {
               (e.target as HTMLSelectElement).style.borderColor =
-                "rgba(59, 130, 246, 0.6)";
+                "rgba(17, 24, 39, 0.6)";
             }}
             onBlur={(e) => {
               (e.target as HTMLSelectElement).style.borderColor =
-                "rgba(59, 130, 246, 0.2)";
+                "rgba(17, 24, 39, 0.2)";
             }}
           >
-            <option value="" style={{ background: "#0d0d1a" }}>
+            <option value="" style={{ background: "var(--surface)" }}>
               Select a service
             </option>
             {services.map((s) => (
-              <option key={s} value={s} style={{ background: "#0d0d1a" }}>
+              <option key={s} value={s} style={{ background: "var(--surface)" }}>
                 {s}
               </option>
             ))}
@@ -219,14 +219,14 @@ export default function ContactForm() {
             style={{ ...inputStyle, cursor: "pointer" }}
             onFocus={(e) => {
               (e.target as HTMLSelectElement).style.borderColor =
-                "rgba(59, 130, 246, 0.6)";
+                "rgba(17, 24, 39, 0.6)";
             }}
             onBlur={(e) => {
               (e.target as HTMLSelectElement).style.borderColor =
-                "rgba(59, 130, 246, 0.2)";
+                "rgba(17, 24, 39, 0.2)";
             }}
           >
-            <option value="" style={{ background: "#0d0d1a" }}>
+            <option value="" style={{ background: "var(--surface)" }}>
               Select budget
             </option>
             {[
@@ -236,7 +236,7 @@ export default function ContactForm() {
               "$50,000+",
               "Ongoing retainer",
             ].map((b) => (
-              <option key={b} value={b} style={{ background: "#0d0d1a" }}>
+              <option key={b} value={b} style={{ background: "var(--surface)" }}>
                 {b}
               </option>
             ))}
@@ -248,7 +248,7 @@ export default function ContactForm() {
       <div>
         <label htmlFor="message" style={labelStyle}>
           Tell us about your project{" "}
-          <span style={{ color: "#3b82f6" }}>*</span>
+          <span style={{ color: "var(--accent)" }}>*</span>
         </label>
         <textarea
           id="message"
@@ -261,11 +261,11 @@ export default function ContactForm() {
           style={{ ...inputStyle, resize: "vertical" }}
           onFocus={(e) => {
             (e.target as HTMLTextAreaElement).style.borderColor =
-              "rgba(59, 130, 246, 0.6)";
+              "rgba(17, 24, 39, 0.6)";
           }}
           onBlur={(e) => {
             (e.target as HTMLTextAreaElement).style.borderColor =
-              "rgba(59, 130, 246, 0.2)";
+              "rgba(17, 24, 39, 0.2)";
           }}
         />
       </div>
@@ -278,19 +278,19 @@ export default function ContactForm() {
         style={{
           background:
             status === "submitting"
-              ? "rgba(59, 130, 246, 0.4)"
-              : "linear-gradient(135deg, #3b82f6, #8b5cf6)",
+              ? "rgba(17, 24, 39, 0.4)"
+              : "linear-gradient(135deg, var(--accent), var(--accent-2))",
           boxShadow:
             status === "submitting"
               ? "none"
-              : "0 0 30px rgba(59, 130, 246, 0.3)",
+              : "0 8px 18px rgba(23, 23, 23, 0.12)",
           cursor: status === "submitting" ? "not-allowed" : "pointer",
         }}
       >
         {status === "submitting" ? "Sending..." : "Send Message"}
       </button>
 
-      <p className="text-xs text-center" style={{ color: "#4a4a6a" }}>
+      <p className="text-xs text-center" style={{ color: "var(--subtle-foreground)" }}>
         We respond within 24 hours. No spam, ever.
       </p>
     </form>
