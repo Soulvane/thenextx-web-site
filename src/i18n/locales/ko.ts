@@ -509,9 +509,9 @@ export const ko: Record<string, string> = {
   "team.why.eyebrow": "선택 이유",
   "team.why.title": "왜 한국 팀과",
   "team.why.highlight": "일해야 할까요?",
-  "team.why.timezone.title": "아시아태평양 시간대 커버리지",
+  "team.why.timezone.title": "미국 기반, 한국 뿌리",
   "team.why.timezone.body":
-    "한국(UTC+9) 기반으로 서양 에이전시가 놓치는 아시아태평양 시간대를 자연스럽게 커버합니다. 글로벌 클라이언트에게는 겹치는 시간대를 통한 24시간에 가까운 실행력을 의미합니다.",
+    "미국에서 운영되기 때문에 북미 클라이언트와 직접 소통할 수 있고, 한국 팀의 기술력과 실행 문화를 그대로 갖추고 있습니다. 두 가지 장점을 동시에 누릴 수 있습니다.",
   "team.why.education.title": "탄탄한 기술 교육 배경",
   "team.why.education.body":
     "한국 공학 프로그램은 세계 최상위권에 꾸준히 오릅니다. 저희 개발자와 디자이너는 그 기반 위에 있습니다. 엄밀하고 체계적이며 정밀합니다.",

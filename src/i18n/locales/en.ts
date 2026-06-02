@@ -509,9 +509,9 @@ export const en: Record<string, string> = {
   "team.why.eyebrow": "The Advantage",
   "team.why.title": "Why work with a",
   "team.why.highlight": "Korean team?",
-  "team.why.timezone.title": "Asia-Pacific Timezone Coverage",
+  "team.why.timezone.title": "US-Based, Korean-Rooted",
   "team.why.timezone.body":
-    "Based in Korea (UTC+9), we naturally cover the Asia-Pacific window that Western agencies miss. For global clients, this means near-24h execution across overlapping hours.",
+    "We operate from the US, which means direct access to North American clients with the cultural depth and technical excellence of a Korean team. Best of both worlds.",
   "team.why.education.title": "Strong Technical Education Background",
   "team.why.education.body":
     "Korea's engineering programs consistently rank among the world's best. Our developers and designers come from that foundation — rigorous, methodical, and precise.",
