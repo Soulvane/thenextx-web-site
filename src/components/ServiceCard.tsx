@@ -19,25 +19,11 @@ export default function ServiceCard({
   tags,
   accentColor = "blue",
 }: ServiceCardProps) {
-  const iconBgs = {
-    blue: "var(--surface-2)",
-    violet: "var(--surface-2)",
-    mixed: "var(--surface-2)",
-  };
-
-  const iconColors = {
-    blue: "var(--accent)",
-    violet: "var(--accent-2)",
-    mixed: "var(--accent)",
-  };
+  void accentColor;
 
   const card = (
     <div
-      className="group rounded-lg p-6 h-full flex flex-col transition-all duration-300"
-      style={{
-        background: "var(--surface)",
-        border: "1px solid var(--border)",
-      }}
+      className="ui-card group rounded-lg p-6 h-full flex flex-col transition-all duration-300"
       onMouseEnter={(e) => {
         const el = e.currentTarget as HTMLDivElement;
         el.style.border = "1px solid var(--border-strong)";
@@ -53,8 +39,8 @@ export default function ServiceCard({
     >
       {/* Icon */}
       <div
-        className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-5"
-        style={{ background: iconBgs[accentColor] }}
+        className="w-12 h-12 rounded-lg flex items-center justify-center text-2xl mb-5"
+        style={{ background: "var(--surface-2)" }}
       >
         {icon}
       </div>
@@ -80,8 +66,8 @@ export default function ServiceCard({
               key={tag}
               className="text-xs px-2.5 py-1 rounded-full"
               style={{
-                color: iconColors[accentColor],
-                background: iconBgs[accentColor],
+                color: "var(--secondary-foreground)",
+                background: "var(--surface-2)",
               }}
             >
               {tag}
@@ -94,7 +80,7 @@ export default function ServiceCard({
       {href && (
         <div
           className="mt-5 flex items-center gap-1.5 text-sm font-medium"
-          style={{ color: iconColors[accentColor] }}
+          style={{ color: "var(--foreground)" }}
         >
           Learn more
           <svg

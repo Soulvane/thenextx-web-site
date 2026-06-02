@@ -81,13 +81,7 @@ export default function ShopifyPage() {
       <section
         className="relative pt-28 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
         style={{ background: "var(--background)" }}
-      >
-        <div
-          className="hidden"
-          style={{ background: "radial-gradient(circle, var(--accent-2), transparent)" }}
-          aria-hidden="true"
-        />
-        <div className="max-w-4xl mx-auto text-center relative z-10">
+      >        <div className="max-w-4xl mx-auto text-center relative z-10">
           <span
             className="inline-block text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6"
             style={{
@@ -104,12 +98,7 @@ export default function ShopifyPage() {
           >
             Shopify stores that{" "}
             <span
-              style={{
-                background: "linear-gradient(135deg, var(--accent-2) 0%, var(--accent) 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
+              style={{ color: "var(--accent-2)" }}
             >
               convert and scale
             </span>
@@ -124,7 +113,7 @@ export default function ShopifyPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-block px-8 py-3.5 rounded-xl text-base font-semibold text-white"
+            className="btn-primary inline-block px-8 py-3.5 rounded-lg text-base font-semibold"
             style={{
               background: "var(--foreground)",
               boxShadow: "0 8px 18px rgba(23, 23, 23, 0.12)",
@@ -179,11 +168,11 @@ export default function ShopifyPage() {
       {/* B2B divider */}
       <div
         className="px-4 sm:px-6 lg:px-8 py-px"
-        style={{ background: "rgba(17, 24, 39, 0.06)" }}
+        style={{ background: "var(--surface-2)" }}
       >
         <div
           className="max-w-7xl mx-auto"
-          style={{ borderTop: "1px solid rgba(17, 24, 39, 0.12)" }}
+          style={{ borderTop: "1px solid var(--border)" }}
         />
       </div>
 
@@ -204,8 +193,7 @@ export default function ShopifyPage() {
           <div
             className="rounded-lg p-8 mb-12"
             style={{
-              background:
-                "linear-gradient(135deg, rgba(17, 24, 39, 0.08) 0%, rgba(17, 24, 39, 0.08) 100%)",
+              background: "var(--surface-2)",
               border: "1px solid var(--border)",
             }}
           >
@@ -286,7 +274,7 @@ export default function ShopifyPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-block px-8 py-3.5 rounded-xl text-base font-semibold text-white"
+            className="btn-primary inline-block px-8 py-3.5 rounded-lg text-base font-semibold"
             style={{
               background: "var(--foreground)",
               boxShadow: "0 8px 18px rgba(23, 23, 23, 0.12)",

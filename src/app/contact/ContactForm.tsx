@@ -55,7 +55,7 @@ export default function ContactForm() {
   const inputStyle: React.CSSProperties = {
     width: "100%",
     background: "var(--surface)",
-    border: "1px solid rgba(17, 24, 39, 0.2)",
+    border: "1px solid var(--border)",
     borderRadius: "0.75rem",
     padding: "0.75rem 1rem",
     color: "var(--foreground)",
@@ -78,7 +78,7 @@ export default function ContactForm() {
         className="rounded-lg p-12 text-center"
         style={{
           background: "var(--surface)",
-          border: "1px solid rgba(17, 24, 39, 0.2)",
+          border: "1px solid var(--border)",
         }}
       >
         <div className="text-5xl mb-4">✅</div>
@@ -119,11 +119,11 @@ export default function ContactForm() {
             style={inputStyle}
             onFocus={(e) => {
               (e.target as HTMLInputElement).style.borderColor =
-                "rgba(17, 24, 39, 0.6)";
+                "var(--border-strong)";
             }}
             onBlur={(e) => {
               (e.target as HTMLInputElement).style.borderColor =
-                "rgba(17, 24, 39, 0.2)";
+                "var(--border)";
             }}
           />
         </div>
@@ -142,11 +142,11 @@ export default function ContactForm() {
             style={inputStyle}
             onFocus={(e) => {
               (e.target as HTMLInputElement).style.borderColor =
-                "rgba(17, 24, 39, 0.6)";
+                "var(--border-strong)";
             }}
             onBlur={(e) => {
               (e.target as HTMLInputElement).style.borderColor =
-                "rgba(17, 24, 39, 0.2)";
+                "var(--border)";
             }}
           />
         </div>
@@ -167,11 +167,11 @@ export default function ContactForm() {
           style={inputStyle}
           onFocus={(e) => {
             (e.target as HTMLInputElement).style.borderColor =
-              "rgba(17, 24, 39, 0.6)";
+              "var(--border-strong)";
           }}
           onBlur={(e) => {
             (e.target as HTMLInputElement).style.borderColor =
-              "rgba(17, 24, 39, 0.2)";
+              "var(--border)";
           }}
         />
       </div>
@@ -190,11 +190,11 @@ export default function ContactForm() {
             style={{ ...inputStyle, cursor: "pointer" }}
             onFocus={(e) => {
               (e.target as HTMLSelectElement).style.borderColor =
-                "rgba(17, 24, 39, 0.6)";
+                "var(--border-strong)";
             }}
             onBlur={(e) => {
               (e.target as HTMLSelectElement).style.borderColor =
-                "rgba(17, 24, 39, 0.2)";
+                "var(--border)";
             }}
           >
             <option value="" style={{ background: "var(--surface)" }}>
@@ -219,11 +219,11 @@ export default function ContactForm() {
             style={{ ...inputStyle, cursor: "pointer" }}
             onFocus={(e) => {
               (e.target as HTMLSelectElement).style.borderColor =
-                "rgba(17, 24, 39, 0.6)";
+                "var(--border-strong)";
             }}
             onBlur={(e) => {
               (e.target as HTMLSelectElement).style.borderColor =
-                "rgba(17, 24, 39, 0.2)";
+                "var(--border)";
             }}
           >
             <option value="" style={{ background: "var(--surface)" }}>
@@ -261,11 +261,11 @@ export default function ContactForm() {
           style={{ ...inputStyle, resize: "vertical" }}
           onFocus={(e) => {
             (e.target as HTMLTextAreaElement).style.borderColor =
-              "rgba(17, 24, 39, 0.6)";
+              "var(--border-strong)";
           }}
           onBlur={(e) => {
             (e.target as HTMLTextAreaElement).style.borderColor =
-              "rgba(17, 24, 39, 0.2)";
+              "var(--border)";
           }}
         />
       </div>
@@ -274,12 +274,12 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="w-full py-3.5 rounded-xl text-base font-semibold text-white transition-all duration-200"
+        className="w-full py-3.5 rounded-lg text-base font-semibold text-white transition-all duration-200"
         style={{
           background:
             status === "submitting"
-              ? "rgba(17, 24, 39, 0.4)"
-              : "linear-gradient(135deg, var(--accent), var(--accent-2))",
+              ? "var(--subtle-foreground)"
+              : "var(--foreground)",
           boxShadow:
             status === "submitting"
               ? "none"

@@ -82,13 +82,7 @@ export default function ServicesPage() {
       <section
         className="relative pt-28 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
         style={{ background: "var(--background)" }}
-      >
-        <div
-          className="hidden"
-          style={{ background: "radial-gradient(circle, var(--accent-2), transparent)" }}
-          aria-hidden="true"
-        />
-        <div className="max-w-4xl mx-auto text-center relative z-10">
+      >        <div className="max-w-4xl mx-auto text-center relative z-10">
           <span
             className="inline-block text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6"
             style={{
@@ -105,12 +99,7 @@ export default function ServicesPage() {
           >
             Seven services.{" "}
             <span
-              style={{
-                background: "linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
+              style={{ color: "var(--accent-2)" }}
             >
               One team.
             </span>
@@ -184,13 +173,7 @@ export default function ServicesPage() {
               >
                 <div
                   className="text-5xl font-bold mb-4 leading-none"
-                  style={{
-                    background:
-                      "linear-gradient(135deg, rgba(17, 24, 39, 0.2), rgba(17, 24, 39, 0.1))",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text",
-                  }}
+                  style={{ color: "var(--accent-2)" }}
                 >
                   {step.step}
                 </div>
@@ -230,7 +213,7 @@ export default function ServicesPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-block px-8 py-3.5 rounded-xl text-base font-semibold text-white"
+            className="btn-primary inline-block px-8 py-3.5 rounded-lg text-base font-semibold"
             style={{
               background: "var(--foreground)",
               boxShadow: "0 8px 18px rgba(23, 23, 23, 0.12)",

@@ -59,18 +59,7 @@ export default function AppDevelopmentPage() {
       <section
         className="relative pt-28 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
         style={{ background: "var(--background)" }}
-      >
-        <div
-          className="hidden"
-          style={{ background: "radial-gradient(circle, var(--accent), transparent)" }}
-          aria-hidden="true"
-        />
-        <div
-          className="hidden"
-          style={{ background: "radial-gradient(circle, var(--accent-2), transparent)" }}
-          aria-hidden="true"
-        />
-        <div className="max-w-4xl mx-auto text-center relative z-10">
+      >        <div className="max-w-4xl mx-auto text-center relative z-10">
           <span
             className="inline-block text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6"
             style={{
@@ -87,12 +76,7 @@ export default function AppDevelopmentPage() {
           >
             Beautiful apps on{" "}
             <span
-              style={{
-                background: "linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
+              style={{ color: "var(--accent-2)" }}
             >
               iOS and Android
             </span>
@@ -107,7 +91,7 @@ export default function AppDevelopmentPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-block px-8 py-3.5 rounded-xl text-base font-semibold text-white"
+            className="btn-primary inline-block px-8 py-3.5 rounded-lg text-base font-semibold"
             style={{
               background: "var(--foreground)",
               boxShadow: "0 8px 18px rgba(23, 23, 23, 0.12)",
@@ -123,8 +107,8 @@ export default function AppDevelopmentPage() {
         className="py-16 px-4 sm:px-6 lg:px-8"
         style={{
           background: "var(--surface)",
-          borderTop: "1px solid rgba(17, 24, 39, 0.1)",
-          borderBottom: "1px solid rgba(17, 24, 39, 0.1)",
+          borderTop: "1px solid var(--border)",
+          borderBottom: "1px solid var(--border)",
         }}
       >
         <div className="max-w-5xl mx-auto">
@@ -146,13 +130,7 @@ export default function AppDevelopmentPage() {
               <div key={item.label}>
                 <div
                   className="text-2xl font-bold mb-1"
-                  style={{
-                    background:
-                      "linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text",
-                  }}
+                  style={{ color: "var(--accent-2)" }}
                 >
                   {item.stat}
                 </div>
@@ -222,7 +200,7 @@ export default function AppDevelopmentPage() {
             {deliverables.map((item) => (
               <div
                 key={item}
-                className="flex items-center gap-3 rounded-xl px-5 py-4"
+                className="flex items-center gap-3 rounded-lg px-5 py-4"
                 style={{
                   background: "var(--surface)",
                   border: "1px solid var(--border)",
@@ -267,7 +245,7 @@ export default function AppDevelopmentPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-block px-8 py-3.5 rounded-xl text-base font-semibold text-white"
+            className="btn-primary inline-block px-8 py-3.5 rounded-lg text-base font-semibold"
             style={{
               background: "var(--foreground)",
               boxShadow: "0 8px 18px rgba(23, 23, 23, 0.12)",

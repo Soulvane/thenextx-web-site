@@ -114,7 +114,7 @@ export default function HomePage() {
 
       {/* Services section */}
       <section
-        className="py-24 px-4 sm:px-6 lg:px-8"
+        className="py-24 px-4 sm:px-6 lg:px-8 border-b"
         style={{ background: "var(--surface)" }}
       >
         <div className="max-w-7xl mx-auto">
@@ -132,12 +132,7 @@ export default function HomePage() {
           <div className="mt-12 text-center">
             <Link
               href="/services"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-200"
-              style={{
-                color: "var(--accent)",
-                background: "rgba(17, 24, 39, 0.08)",
-                border: "1px solid rgba(17, 24, 39, 0.2)",
-              }}
+              className="btn-secondary inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-200"
             >
               View all services
               <svg
@@ -159,7 +154,7 @@ export default function HomePage() {
 
       {/* Why TheNextX */}
       <section
-        className="py-24 px-4 sm:px-6 lg:px-8"
+        className="py-24 px-4 sm:px-6 lg:px-8 border-b"
         style={{ background: "var(--background)" }}
       >
         <div className="max-w-7xl mx-auto">
@@ -173,11 +168,7 @@ export default function HomePage() {
             {whyItems.map((item) => (
               <div
                 key={item.title}
-                className="rounded-lg p-6"
-                style={{
-                  background: "var(--surface)",
-                  border: "1px solid var(--border)",
-                }}
+                className="ui-card rounded-lg p-6"
               >
                 <div className="text-3xl mb-4">{item.icon}</div>
                 <h3
@@ -205,28 +196,8 @@ export default function HomePage() {
       >
         <div className="max-w-4xl mx-auto text-center">
           <div
-            className="relative rounded-xl p-12 overflow-hidden"
-            style={{
-              background:
-                "linear-gradient(135deg, rgba(17, 24, 39, 0.12) 0%, rgba(17, 24, 39, 0.12) 100%)",
-              border: "1px solid rgba(17, 24, 39, 0.2)",
-            }}
+            className="ui-card relative rounded-lg p-8 sm:p-12 overflow-hidden"
           >
-            <div
-              className="hidden"
-              style={{
-                background: "radial-gradient(circle, var(--accent-2), transparent)",
-              }}
-              aria-hidden="true"
-            />
-            <div
-              className="hidden"
-              style={{
-                background: "radial-gradient(circle, var(--accent), transparent)",
-              }}
-              aria-hidden="true"
-            />
-
             <div className="relative z-10">
               <h2
                 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4"
@@ -234,13 +205,7 @@ export default function HomePage() {
               >
                 Ready to activate your{" "}
                 <span
-                  style={{
-                    background:
-                      "linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text",
-                  }}
+                  style={{ color: "var(--accent-2)" }}
                 >
                   agent workforce?
                 </span>
@@ -255,22 +220,13 @@ export default function HomePage() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   href="/contact"
-                  className="px-8 py-3.5 rounded-xl text-base font-semibold text-white"
-                  style={{
-                    background: "var(--foreground)",
-                    boxShadow: "0 8px 18px rgba(23, 23, 23, 0.12)",
-                  }}
+                  className="btn-primary px-8 py-3.5 rounded-lg text-base font-semibold"
                 >
                   Get in Touch
                 </Link>
                 <Link
                   href="/services"
-                  className="px-8 py-3.5 rounded-xl text-base font-semibold"
-                  style={{
-                    color: "var(--secondary-foreground)",
-                    background: "#ffffff",
-                    border: "1px solid var(--border)",
-                  }}
+                  className="btn-secondary px-8 py-3.5 rounded-lg text-base font-semibold"
                 >
                   Browse Services
                 </Link>

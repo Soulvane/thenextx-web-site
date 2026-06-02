@@ -21,8 +21,8 @@ export default function Footer() {
   return (
     <footer
       style={{
-        background: "var(--foreground)",
-        borderTop: "1px solid var(--foreground)",
+        background: "var(--surface-2)",
+        borderTop: "1px solid var(--border)",
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -31,10 +31,10 @@ export default function Footer() {
           <div className="md:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-4 w-fit">
               <div
-                className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold text-sm"
+                className="w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm"
                 style={{
-                  background: "#ffffff",
-                  color: "var(--foreground)",
+                  background: "var(--foreground)",
+                  color: "#ffffff",
                 }}
               >
                 NX
@@ -42,13 +42,13 @@ export default function Footer() {
               <span
                 className="text-lg font-bold"
                 style={{
-                  color: "#ffffff",
+                  color: "var(--foreground)",
                 }}
               >
                 TheNextX
               </span>
             </Link>
-            <p className="text-sm leading-relaxed max-w-sm" style={{ color: "#d4d4d4" }}>
+            <p className="text-sm leading-relaxed max-w-sm" style={{ color: "var(--muted-foreground)" }}>
               Building the next generation of digital operations through human
               + AI collaboration. From Shopify stores to AI-powered workflows,
               we scale your business with precision.
@@ -57,7 +57,7 @@ export default function Footer() {
               <a
                 href="mailto:hello@thenextx.com"
                 className="text-sm transition-colors duration-200"
-                style={{ color: "#ffffff" }}
+                style={{ color: "var(--foreground)" }}
               >
                 hello@thenextx.com
               </a>
@@ -69,7 +69,7 @@ export default function Footer() {
             <div key={title}>
               <h3
                 className="text-xs font-semibold uppercase tracking-widest mb-4"
-                style={{ color: "#a3a3a3" }}
+                style={{ color: "var(--subtle-foreground)" }}
               >
                 {title}
               </h3>
@@ -79,14 +79,14 @@ export default function Footer() {
                     <Link
                       href={link.href}
                       className="text-sm transition-colors duration-200"
-                      style={{ color: "#d4d4d4" }}
+                      style={{ color: "var(--muted-foreground)" }}
                       onMouseEnter={(e) => {
                         (e.currentTarget as HTMLAnchorElement).style.color =
-                          "#ffffff";
+                          "var(--foreground)";
                       }}
                       onMouseLeave={(e) => {
                         (e.currentTarget as HTMLAnchorElement).style.color =
-                          "#d4d4d4";
+                          "var(--muted-foreground)";
                       }}
                     >
                       {link.label}
@@ -100,12 +100,12 @@ export default function Footer() {
 
         <div
           className="mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4"
-          style={{ borderTop: "1px solid rgba(255, 255, 255, 0.12)" }}
+          style={{ borderTop: "1px solid var(--border)" }}
         >
-          <p className="text-xs" style={{ color: "#a3a3a3" }}>
+          <p className="text-xs" style={{ color: "var(--subtle-foreground)" }}>
             &copy; {new Date().getFullYear()} TheNextX. All rights reserved.
           </p>
-          <p className="text-xs" style={{ color: "#a3a3a3" }}>
+          <p className="text-xs" style={{ color: "var(--subtle-foreground)" }}>
             Powered by Human + AI Collaboration
           </p>
         </div>

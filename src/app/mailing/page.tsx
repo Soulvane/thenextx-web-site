@@ -59,13 +59,7 @@ export default function MailingPage() {
       <section
         className="relative pt-28 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
         style={{ background: "var(--background)" }}
-      >
-        <div
-          className="hidden"
-          style={{ background: "radial-gradient(circle, var(--accent-2), transparent)" }}
-          aria-hidden="true"
-        />
-        <div className="max-w-4xl mx-auto text-center relative z-10">
+      >        <div className="max-w-4xl mx-auto text-center relative z-10">
           <span
             className="inline-block text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6"
             style={{
@@ -82,12 +76,7 @@ export default function MailingPage() {
           >
             Offline mail that{" "}
             <span
-              style={{
-                background: "linear-gradient(135deg, var(--accent-2) 0%, var(--accent) 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
+              style={{ color: "var(--accent-2)" }}
             >
               drives real results
             </span>
@@ -103,7 +92,7 @@ export default function MailingPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-block px-8 py-3.5 rounded-xl text-base font-semibold text-white"
+            className="btn-primary inline-block px-8 py-3.5 rounded-lg text-base font-semibold"
             style={{
               background: "var(--foreground)",
               boxShadow: "0 8px 18px rgba(23, 23, 23, 0.12)",
@@ -119,8 +108,8 @@ export default function MailingPage() {
         className="py-12 px-4 sm:px-6 lg:px-8"
         style={{
           background: "var(--surface)",
-          borderTop: "1px solid rgba(17, 24, 39, 0.1)",
-          borderBottom: "1px solid rgba(17, 24, 39, 0.1)",
+          borderTop: "1px solid var(--border)",
+          borderBottom: "1px solid var(--border)",
         }}
       >
         <div className="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
@@ -133,12 +122,7 @@ export default function MailingPage() {
             <div key={stat.label}>
               <div
                 className="text-3xl font-bold mb-1"
-                style={{
-                  background: "linear-gradient(135deg, var(--accent-2) 0%, var(--accent) 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
+                style={{ color: "var(--accent-2)" }}
               >
                 {stat.value}
               </div>
@@ -241,12 +225,7 @@ export default function MailingPage() {
               >
                 <span
                   className="text-2xl font-bold shrink-0 leading-none pt-1"
-                  style={{
-                    background: "var(--foreground)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text",
-                  }}
+                  style={{ color: "var(--subtle-foreground)" }}
                 >
                   {item.step}
                 </span>
@@ -283,7 +262,7 @@ export default function MailingPage() {
             {formats.map((f) => (
               <span
                 key={f}
-                className="px-4 py-2 rounded-xl text-sm font-medium"
+                className="px-4 py-2 rounded-lg text-sm font-medium"
                 style={{
                   color: "var(--secondary-foreground)",
                   background: "var(--surface)",
@@ -315,7 +294,7 @@ export default function MailingPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-block px-8 py-3.5 rounded-xl text-base font-semibold text-white"
+            className="btn-primary inline-block px-8 py-3.5 rounded-lg text-base font-semibold"
             style={{
               background: "var(--foreground)",
               boxShadow: "0 8px 18px rgba(23, 23, 23, 0.12)",

@@ -14,13 +14,7 @@ export default function ContactPage() {
       <section
         className="relative pt-28 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
         style={{ background: "var(--background)" }}
-      >
-        <div
-          className="hidden"
-          style={{ background: "radial-gradient(circle, var(--accent), transparent)" }}
-          aria-hidden="true"
-        />
-        <div className="max-w-3xl mx-auto text-center relative z-10">
+      >        <div className="max-w-3xl mx-auto text-center relative z-10">
           <span
             className="inline-block text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6"
             style={{
@@ -37,12 +31,7 @@ export default function ContactPage() {
           >
             Start your project with{" "}
             <span
-              style={{
-                background: "linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
+              style={{ color: "var(--accent-2)" }}
             >
               TheNextX
             </span>
@@ -102,7 +91,7 @@ export default function ContactPage() {
               ].map((item) => (
                 <div
                   key={item.title}
-                  className="flex gap-4 rounded-xl p-4"
+                  className="flex gap-4 rounded-lg p-4"
                   style={{
                     background: "var(--surface)",
                     border: "1px solid var(--border)",
@@ -125,7 +114,7 @@ export default function ContactPage() {
             </div>
 
             <div
-              className="rounded-xl p-5"
+              className="rounded-lg p-5"
               style={{
                 background: "var(--surface)",
                 border: "1px solid var(--border)",

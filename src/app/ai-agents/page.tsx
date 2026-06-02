@@ -60,40 +60,9 @@ export default function AIAgentsPage() {
         className="relative pt-28 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
         style={{ background: "var(--background)" }}
       >
-        <div
-          className="absolute inset-0 pointer-events-none"
-          aria-hidden="true"
-        >
-          <div
-            className="hidden"
-            style={{
-              background: "radial-gradient(circle, var(--accent), transparent)",
-            }}
-          />
-          <div
-            className="hidden"
-            style={{
-              background: "radial-gradient(circle, var(--accent-2), transparent)",
-            }}
-          />
-          <div
-            className="absolute inset-0 opacity-4"
-            style={{
-              backgroundImage:
-                "linear-gradient(rgba(17, 24, 39, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(17, 24, 39, 0.3) 1px, transparent 1px)",
-              backgroundSize: "60px 60px",
-            }}
-          />
-        </div>
-
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <span
-            className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6"
-            style={{
-              color: "var(--accent)",
-              background: "rgba(17, 24, 39, 0.08)",
-              border: "1px solid rgba(17, 24, 39, 0.2)",
-            }}
+            className="ui-pill inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6"
           >
             <span
               className="w-1.5 h-1.5 rounded-full"
@@ -110,12 +79,7 @@ export default function AIAgentsPage() {
           >
             Your business runs{" "}
             <span
-              style={{
-                background: "linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
+              style={{ color: "var(--accent-2)" }}
             >
               24/7 on autopilot
             </span>
@@ -131,22 +95,13 @@ export default function AIAgentsPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="px-8 py-3.5 rounded-xl text-base font-semibold text-white"
-              style={{
-                background: "var(--foreground)",
-                boxShadow: "0 8px 18px rgba(23, 23, 23, 0.12)",
-              }}
+              className="btn-primary px-8 py-3.5 rounded-lg text-base font-semibold"
             >
               Deploy Your First Agent
             </Link>
             <Link
               href="/services"
-              className="px-8 py-3.5 rounded-xl text-base font-semibold"
-              style={{
-                color: "var(--secondary-foreground)",
-                background: "#ffffff",
-                border: "1px solid var(--border)",
-              }}
+              className="btn-secondary px-8 py-3.5 rounded-lg text-base font-semibold"
             >
               All Services
             </Link>
@@ -159,8 +114,8 @@ export default function AIAgentsPage() {
         className="py-12 px-4 sm:px-6 lg:px-8"
         style={{
           background: "var(--surface)",
-          borderTop: "1px solid rgba(17, 24, 39, 0.1)",
-          borderBottom: "1px solid rgba(17, 24, 39, 0.1)",
+          borderTop: "1px solid var(--border)",
+          borderBottom: "1px solid var(--border)",
         }}
       >
         <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
@@ -173,13 +128,7 @@ export default function AIAgentsPage() {
             <div key={stat.label}>
               <div
                 className="text-3xl font-bold mb-1"
-                style={{
-                  background:
-                    "linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
+                style={{ color: "var(--accent-2)" }}
               >
                 {stat.value}
               </div>
@@ -282,7 +231,7 @@ export default function AIAgentsPage() {
               >
                 <div
                   className="text-xl font-bold shrink-0 w-10"
-                  style={{ color: "rgba(17, 24, 39, 0.4)" }}
+                  style={{ color: "var(--subtle-foreground)" }}
                 >
                   {item.step}
                 </div>
@@ -319,7 +268,7 @@ export default function AIAgentsPage() {
             {techStack.map((tech) => (
               <span
                 key={tech}
-                className="px-4 py-2 rounded-xl text-sm font-medium"
+                className="px-4 py-2 rounded-lg text-sm font-medium"
                 style={{
                   color: "var(--secondary-foreground)",
                   background: "var(--surface)",
@@ -351,7 +300,7 @@ export default function AIAgentsPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-block px-8 py-3.5 rounded-xl text-base font-semibold text-white"
+            className="btn-primary inline-block px-8 py-3.5 rounded-lg text-base font-semibold"
             style={{
               background: "var(--foreground)",
               boxShadow: "0 8px 18px rgba(23, 23, 23, 0.12)",

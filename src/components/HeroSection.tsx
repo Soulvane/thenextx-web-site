@@ -23,7 +23,7 @@ export default function HeroSection({
 }: HeroSectionProps) {
   return (
     <section
-      className="relative min-h-[calc(100vh-4rem)] flex items-center justify-center overflow-hidden"
+      className="relative min-h-[calc(100vh-4rem)] flex items-center justify-center overflow-hidden border-b"
       style={{ background: "var(--background)" }}
     >
       <div
@@ -34,7 +34,7 @@ export default function HeroSection({
           className="absolute inset-0 opacity-[0.45]"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(23, 23, 23, 0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(23, 23, 23, 0.045) 1px, transparent 1px)",
+              "linear-gradient(rgba(23, 23, 23, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(23, 23, 23, 0.035) 1px, transparent 1px)",
             backgroundSize: "60px 60px",
           }}
         />
@@ -44,12 +44,7 @@ export default function HeroSection({
         {eyebrow && (
           <div className="mb-6">
             <span
-              className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full"
-                style={{
-                  color: "var(--accent)",
-                  background: "var(--surface)",
-                  border: "1px solid var(--border)",
-                }}
+              className="ui-pill inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full"
             >
               <span
                 className="w-1.5 h-1.5 rounded-full animate-pulse"
@@ -91,19 +86,15 @@ export default function HeroSection({
             {primaryCTA && (
               <Link
                 href={primaryCTA.href}
-                className="px-8 py-3.5 rounded-xl text-base font-semibold text-white transition-all duration-200 w-full sm:w-auto text-center"
-                style={{
-                  background: "var(--foreground)",
-                  boxShadow: "0 8px 18px rgba(23, 23, 23, 0.12)",
-                }}
+                className="btn-primary px-8 py-3.5 rounded-lg text-base font-semibold transition-all duration-200 w-full sm:w-auto text-center"
                 onMouseEnter={(e) => {
                   const el = e.currentTarget as HTMLAnchorElement;
-                  el.style.boxShadow = "0 12px 26px rgba(23, 23, 23, 0.16)";
+                  el.style.boxShadow = "0 12px 26px rgba(23, 23, 23, 0.14)";
                   el.style.transform = "translateY(-2px)";
                 }}
                 onMouseLeave={(e) => {
                   const el = e.currentTarget as HTMLAnchorElement;
-                  el.style.boxShadow = "0 8px 18px rgba(23, 23, 23, 0.12)";
+                  el.style.boxShadow = "0 8px 18px rgba(23, 23, 23, 0.1)";
                   el.style.transform = "translateY(0)";
                 }}
               >
@@ -113,23 +104,18 @@ export default function HeroSection({
             {secondaryCTA && (
               <Link
                 href={secondaryCTA.href}
-                className="px-8 py-3.5 rounded-xl text-base font-semibold transition-all duration-200 w-full sm:w-auto text-center"
-                style={{
-                  color: "var(--secondary-foreground)",
-                  background: "#ffffff",
-                  border: "1px solid var(--border)",
-                }}
+                className="btn-secondary px-8 py-3.5 rounded-lg text-base font-semibold transition-all duration-200 w-full sm:w-auto text-center"
                 onMouseEnter={(e) => {
                   const el = e.currentTarget as HTMLAnchorElement;
                   el.style.color = "var(--foreground)";
-                  el.style.border = "1px solid #d1d5db";
-                  el.style.background = "#f8fafc";
+                  el.style.border = "1px solid var(--border-strong)";
+                  el.style.background = "var(--surface-2)";
                 }}
                 onMouseLeave={(e) => {
                   const el = e.currentTarget as HTMLAnchorElement;
                   el.style.color = "var(--secondary-foreground)";
                   el.style.border = "1px solid var(--border)";
-                  el.style.background = "#ffffff";
+                  el.style.background = "var(--surface)";
                 }}
               >
                 {secondaryCTA.label}
