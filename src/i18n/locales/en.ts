@@ -5,6 +5,7 @@ export const en: Record<string, string> = {
   "nav.shopify": "Shopify",
   "nav.appDevelopment": "App Dev",
   "nav.mailing": "Mailing",
+  "nav.team": "Team",
   "nav.contact": "Contact",
   "nav.getStarted": "Get Started",
   "nav.toggleMenu": "Toggle menu",

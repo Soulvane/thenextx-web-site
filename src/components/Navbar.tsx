@@ -13,6 +13,7 @@ const navLinks = [
   { href: "/shopify", label: "nav.shopify" },
   { href: "/app-development", label: "nav.appDevelopment" },
   { href: "/mailing", label: "nav.mailing" },
+  { href: "/team", label: "nav.team" },
   { href: "/contact", label: "nav.contact" },
 ];
 

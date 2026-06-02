@@ -5,6 +5,7 @@ export const ko: Record<string, string> = {
   "nav.shopify": "Shopify",
   "nav.appDevelopment": "앱 개발",
   "nav.mailing": "메일링",
+  "nav.team": "팀",
   "nav.contact": "문의",
   "nav.getStarted": "시작하기",
   "nav.toggleMenu": "메뉴 열기/닫기",
