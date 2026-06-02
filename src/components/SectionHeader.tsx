@@ -1,3 +1,7 @@
+"use client";
+
+import { useI18n } from "@/i18n/LanguageProvider";
+
 interface SectionHeaderProps {
   eyebrow?: string;
   title: string;
@@ -13,6 +17,8 @@ export default function SectionHeader({
   subtitle,
   centered = true,
 }: SectionHeaderProps) {
+  const { t } = useI18n();
+
   return (
     <div className={`mb-12 ${centered ? "text-center" : ""}`}>
       {eyebrow && (
@@ -24,7 +30,7 @@ export default function SectionHeader({
             border: "1px solid var(--border)",
           }}
         >
-          {eyebrow}
+          {t(eyebrow)}
         </span>
       )}
       <h2
@@ -33,17 +39,17 @@ export default function SectionHeader({
       >
         {titleGradient ? (
           <>
-            {title}{" "}
+            {t(title)}{" "}
             <span
               style={{
                 color: "var(--accent-2)",
               }}
             >
-              {titleGradient}
+              {t(titleGradient)}
             </span>
           </>
         ) : (
-          title
+          t(title)
         )}
       </h2>
       {subtitle && (
@@ -51,7 +57,7 @@ export default function SectionHeader({
           className={`mt-4 text-lg leading-relaxed ${centered ? "mx-auto" : ""} max-w-2xl`}
           style={{ color: "var(--muted-foreground)" }}
         >
-          {subtitle}
+          {t(subtitle)}
         </p>
       )}
     </div>

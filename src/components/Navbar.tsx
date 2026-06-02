@@ -4,20 +4,22 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { useI18n } from "@/i18n/LanguageProvider";
 
 const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/services", label: "Services" },
-  { href: "/ai-agents", label: "AI Agents" },
-  { href: "/shopify", label: "Shopify" },
-  { href: "/app-development", label: "App Dev" },
-  { href: "/mailing", label: "Mailing" },
-  { href: "/contact", label: "Contact" },
+  { href: "/", label: "nav.home" },
+  { href: "/services", label: "nav.services" },
+  { href: "/ai-agents", label: "nav.aiAgents" },
+  { href: "/shopify", label: "nav.shopify" },
+  { href: "/app-development", label: "nav.appDevelopment" },
+  { href: "/mailing", label: "nav.mailing" },
+  { href: "/contact", label: "nav.contact" },
 ];
 
 export default function Navbar() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { t } = useI18n();
 
   return (
     <header
@@ -79,7 +81,7 @@ export default function Navbar() {
                     }
                   }}
                 >
-                  {link.label}
+                  {t(link.label)}
                 </Link>
               );
             })}
@@ -108,7 +110,7 @@ export default function Navbar() {
                   "translateY(0)";
               }}
             >
-              Get Started
+              {t("nav.getStarted")}
             </Link>
           </div>
 
@@ -117,7 +119,7 @@ export default function Navbar() {
             className="md:hidden p-2 rounded-md"
             style={{ color: "var(--secondary-foreground)" }}
             onClick={() => setMobileOpen((v) => !v)}
-            aria-label="Toggle menu"
+            aria-label={t("nav.toggleMenu")}
           >
             {mobileOpen ? (
               <svg
@@ -172,7 +174,7 @@ export default function Navbar() {
                 }}
                 onClick={() => setMobileOpen(false)}
               >
-                {link.label}
+                {t(link.label)}
               </Link>
             );
           })}
@@ -187,7 +189,7 @@ export default function Navbar() {
             }}
             onClick={() => setMobileOpen(false)}
           >
-            Get Started
+            {t("nav.getStarted")}
           </Link>
         </div>
       )}

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useI18n } from "@/i18n/LanguageProvider";
 
 interface ServiceCardProps {
   icon: string;
@@ -17,6 +18,8 @@ export default function ServiceCard({
   href,
   tags,
 }: ServiceCardProps) {
+  const { t } = useI18n();
+
   const card = (
     <div
       className="ui-card group rounded-lg p-6 h-full flex flex-col transition-all duration-300"
@@ -46,12 +49,12 @@ export default function ServiceCard({
         className="text-lg font-semibold mb-3 leading-snug"
         style={{ color: "var(--foreground)" }}
       >
-        {title}
+        {t(title)}
       </h3>
 
       {/* Description */}
       <p className="text-sm leading-relaxed flex-1" style={{ color: "var(--muted-foreground)" }}>
-        {description}
+        {t(description)}
       </p>
 
       {/* Tags */}
@@ -66,7 +69,7 @@ export default function ServiceCard({
                 background: "var(--surface-2)",
               }}
             >
-              {tag}
+              {t(tag)}
             </span>
           ))}
         </div>
@@ -78,7 +81,7 @@ export default function ServiceCard({
           className="mt-5 flex items-center gap-1.5 text-sm font-medium"
           style={{ color: "var(--foreground)" }}
         >
-          Learn more
+          {t("common.learnMore")}
           <svg
             width="16"
             height="16"

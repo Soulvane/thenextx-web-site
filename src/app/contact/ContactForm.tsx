@@ -1,16 +1,25 @@
 "use client";
 
 import { useState } from "react";
+import { useI18n } from "@/i18n/LanguageProvider";
 
 const services = [
-  "AI Agent Operations",
-  "Shopify Development",
-  "Shopify B2B",
-  "Flutter App Development",
-  "Mailing Campaign Operations",
-  "PDF to HTML Conversion",
-  "Business Workflow Automation",
-  "Other / Not sure",
+  { label: "service.aiAgents.title", value: "AI Agent Operations" },
+  { label: "service.shopify.title", value: "Shopify Development" },
+  { label: "service.shopifyB2B.title", value: "Shopify B2B" },
+  { label: "service.flutter.title", value: "Flutter App Development" },
+  { label: "service.mailing.title", value: "Mailing Campaign Operations" },
+  { label: "service.pdf.title", value: "PDF to HTML Conversion" },
+  { label: "service.workflow.title", value: "Business Workflow Automation" },
+  { label: "contact.form.otherService", value: "Other / Not sure" },
+];
+
+const budgets = [
+  { label: "contact.form.budget.under5k", value: "Under $5,000" },
+  { label: "contact.form.budget.5to15", value: "$5,000 – $15,000" },
+  { label: "contact.form.budget.15to50", value: "$15,000 – $50,000" },
+  { label: "contact.form.budget.50plus", value: "$50,000+" },
+  { label: "contact.form.budget.retainer", value: "Ongoing retainer" },
 ];
 
 type FormState = {
@@ -25,6 +34,7 @@ type FormState = {
 type SubmitStatus = "idle" | "submitting" | "success" | "error";
 
 export default function ContactForm() {
+  const { t } = useI18n();
   const [form, setForm] = useState<FormState>({
     name: "",
     email: "",
@@ -61,7 +71,7 @@ export default function ContactForm() {
         const data = (await response.json().catch(() => null)) as {
           error?: string;
         } | null;
-        throw new Error(data?.error ?? "Unable to send your message.");
+        throw new Error(data?.error ?? "contact.form.error");
       }
 
       setStatus("success");
@@ -69,7 +79,7 @@ export default function ContactForm() {
       setErrorMessage(
         error instanceof Error
           ? error.message
-          : "Unable to send your message. Please email info@thenextx.net."
+          : "contact.form.errorEmail"
       );
       setStatus("error");
     }
@@ -106,11 +116,12 @@ export default function ContactForm() {
       >
         <div className="mono-icon text-5xl mb-4">✅</div>
         <h3 className="text-2xl font-bold mb-2" style={{ color: "var(--foreground)" }}>
-          Message received!
+          {t("contact.form.successTitle")}
         </h3>
         <p style={{ color: "var(--muted-foreground)" }}>
-          We&apos;ll be in touch within 24 hours with a detailed response. Check
-          your inbox.
+          {t(
+            "contact.form.successBody"
+          )}
         </p>
       </div>
     );
@@ -129,14 +140,14 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label htmlFor="name" style={labelStyle}>
-            Full name <span style={{ color: "var(--accent)" }}>*</span>
+            {t("contact.form.name")} <span style={{ color: "var(--accent)" }}>*</span>
           </label>
           <input
             id="name"
             name="name"
             type="text"
             required
-            placeholder="Jane Smith"
+            placeholder={t("contact.form.placeholder.name")}
             value={form.name}
             onChange={handleChange}
             style={inputStyle}
@@ -152,14 +163,14 @@ export default function ContactForm() {
         </div>
         <div>
           <label htmlFor="email" style={labelStyle}>
-            Email address <span style={{ color: "var(--accent)" }}>*</span>
+            {t("contact.form.email")} <span style={{ color: "var(--accent)" }}>*</span>
           </label>
           <input
             id="email"
             name="email"
             type="email"
             required
-            placeholder="jane@company.com"
+            placeholder={t("contact.form.placeholder.email")}
             value={form.email}
             onChange={handleChange}
             style={inputStyle}
@@ -178,13 +189,13 @@ export default function ContactForm() {
       {/* Company */}
       <div>
         <label htmlFor="company" style={labelStyle}>
-          Company / Brand
+          {t("contact.form.company")}
         </label>
         <input
           id="company"
           name="company"
           type="text"
-          placeholder="Acme Inc."
+          placeholder={t("contact.form.placeholder.company")}
           value={form.company}
           onChange={handleChange}
           style={inputStyle}
@@ -203,7 +214,7 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label htmlFor="service" style={labelStyle}>
-            Service needed
+            {t("contact.form.service")}
           </label>
           <select
             id="service"
@@ -221,18 +232,22 @@ export default function ContactForm() {
             }}
           >
             <option value="" style={{ background: "var(--surface)" }}>
-              Select a service
+              {t("contact.form.selectService")}
             </option>
-            {services.map((s) => (
-              <option key={s} value={s} style={{ background: "var(--surface)" }}>
-                {s}
+            {services.map((service) => (
+              <option
+                key={service.value}
+                value={service.value}
+                style={{ background: "var(--surface)" }}
+              >
+                {t(service.label)}
               </option>
             ))}
           </select>
         </div>
         <div>
           <label htmlFor="budget" style={labelStyle}>
-            Budget range
+            {t("contact.form.budget")}
           </label>
           <select
             id="budget"
@@ -250,17 +265,15 @@ export default function ContactForm() {
             }}
           >
             <option value="" style={{ background: "var(--surface)" }}>
-              Select budget
+              {t("contact.form.selectBudget")}
             </option>
-            {[
-              "Under $5,000",
-              "$5,000 – $15,000",
-              "$15,000 – $50,000",
-              "$50,000+",
-              "Ongoing retainer",
-            ].map((b) => (
-              <option key={b} value={b} style={{ background: "var(--surface)" }}>
-                {b}
+            {budgets.map((budget) => (
+              <option
+                key={budget.value}
+                value={budget.value}
+                style={{ background: "var(--surface)" }}
+              >
+                {t(budget.label)}
               </option>
             ))}
           </select>
@@ -270,7 +283,7 @@ export default function ContactForm() {
       {/* Message */}
       <div>
         <label htmlFor="message" style={labelStyle}>
-          Tell us about your project{" "}
+          {t("contact.form.message")}{" "}
           <span style={{ color: "var(--accent)" }}>*</span>
         </label>
         <textarea
@@ -278,7 +291,9 @@ export default function ContactForm() {
           name="message"
           required
           rows={5}
-          placeholder="Describe your goals, current setup, and any specific requirements..."
+          placeholder={t(
+            "contact.form.placeholder.message"
+          )}
           value={form.message}
           onChange={handleChange}
           style={{ ...inputStyle, resize: "vertical" }}
@@ -310,7 +325,7 @@ export default function ContactForm() {
           cursor: status === "submitting" ? "not-allowed" : "pointer",
         }}
       >
-        {status === "submitting" ? "Sending..." : "Send Message"}
+        {status === "submitting" ? t("contact.form.sending") : t("contact.form.send")}
       </button>
 
       {status === "error" && (
@@ -318,12 +333,12 @@ export default function ContactForm() {
           className="text-sm text-center"
           style={{ color: "var(--foreground)" }}
         >
-          {errorMessage}
+          {t(errorMessage)}
         </p>
       )}
 
       <p className="text-xs text-center" style={{ color: "var(--subtle-foreground)" }}>
-        We respond within 24 hours at info@thenextx.net. No spam, ever.
+        {t("contact.form.note")}
       </p>
     </form>
   );

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useI18n } from "@/i18n/LanguageProvider";
 
 interface HeroSectionProps {
   eyebrow?: string;
@@ -21,18 +22,20 @@ export default function HeroSection({
   secondaryCTA,
   showBadges = false,
 }: HeroSectionProps) {
+  const { t } = useI18n();
+
   const proofStats = [
-    { value: "7", label: "service lanes" },
-    { value: "24h", label: "scope response" },
-    { value: "60%", label: "faster cycles" },
+    { value: "7", label: "home.board.stat.services" },
+    { value: "24h", label: "home.board.stat.response" },
+    { value: "60%", label: "home.board.stat.cycles" },
   ];
 
   const operatingStack = [
-    "AI agent ops",
-    "Shopify / B2B",
-    "Flutter apps",
-    "Mailing campaigns",
-    "Workflow automation",
+    "home.board.lane.ai",
+    "home.board.lane.shopify",
+    "home.board.lane.flutter",
+    "home.board.lane.mailing",
+    "home.board.lane.workflow",
   ];
 
   return (
@@ -64,7 +67,7 @@ export default function HeroSection({
                     className="w-1.5 h-1.5 rounded-full animate-pulse"
                     style={{ background: "var(--accent)" }}
                   />
-                  {eyebrow}
+                  {t(eyebrow)}
                 </span>
               </div>
             )}
@@ -73,12 +76,12 @@ export default function HeroSection({
               className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.02] mb-6"
               style={{ color: "var(--foreground)" }}
             >
-              {headline}
+              {t(headline)}
               {headlineGradient && (
                 <>
                   {" "}
                   <span style={{ color: "var(--accent-2)" }}>
-                    {headlineGradient}
+                    {t(headlineGradient)}
                   </span>
                 </>
               )}
@@ -88,7 +91,7 @@ export default function HeroSection({
               className="text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl"
               style={{ color: "var(--muted-foreground)" }}
             >
-              {subheadline}
+              {t(subheadline)}
             </p>
 
             {(primaryCTA || secondaryCTA) && (
@@ -110,7 +113,7 @@ export default function HeroSection({
                       el.style.transform = "translateY(0)";
                     }}
                   >
-                    {primaryCTA.label}
+                    {t(primaryCTA.label)}
                   </Link>
                 )}
                 {secondaryCTA && (
@@ -130,7 +133,7 @@ export default function HeroSection({
                       el.style.background = "var(--surface)";
                     }}
                   >
-                    {secondaryCTA.label}
+                    {t(secondaryCTA.label)}
                   </Link>
                 )}
               </div>
@@ -139,10 +142,10 @@ export default function HeroSection({
             {showBadges && (
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl">
                 {[
-                  "AI-First Approach",
-                  "7 Core Services",
-                  "Global Clients",
-                  "Rapid Delivery",
+                  "home.badge.aiFirst",
+                  "home.badge.coreServices",
+                  "home.badge.globalClients",
+                  "home.badge.rapidDelivery",
                 ].map((badge) => (
                   <div
                     key={badge}
@@ -161,7 +164,7 @@ export default function HeroSection({
                     >
                       <polyline points="20 6 9 17 4 12" />
                     </svg>
-                    <span>{badge}</span>
+                    <span>{t(badge)}</span>
                   </div>
                 ))}
               </div>
@@ -178,13 +181,13 @@ export default function HeroSection({
                   className="text-xs font-semibold uppercase tracking-widest"
                   style={{ color: "var(--subtle-foreground)" }}
                 >
-                  Operating board
+                  {t("home.board.title")}
                 </div>
                 <div
                   className="mt-1 text-lg font-semibold"
                   style={{ color: "var(--foreground)" }}
                 >
-                  Human + AI delivery system
+                  {t("home.board.subtitle")}
                 </div>
               </div>
               <div
@@ -194,7 +197,7 @@ export default function HeroSection({
                   color: "var(--secondary-foreground)",
                 }}
               >
-                Live model
+                {t("home.board.status")}
               </div>
             </div>
 
@@ -215,7 +218,7 @@ export default function HeroSection({
                     className="mt-1 text-xs uppercase tracking-wide"
                     style={{ color: "var(--subtle-foreground)" }}
                   >
-                    {stat.label}
+                    {t(stat.label)}
                   </div>
                 </div>
               ))}
@@ -230,7 +233,7 @@ export default function HeroSection({
                   className="text-xs font-semibold uppercase tracking-widest mb-4"
                   style={{ color: "var(--subtle-foreground)" }}
                 >
-                  Lanes
+                  {t("home.board.lanes")}
                 </div>
                 <div className="space-y-2">
                   {operatingStack.map((item) => (
@@ -242,7 +245,7 @@ export default function HeroSection({
                         color: "var(--secondary-foreground)",
                       }}
                     >
-                      <span>{item}</span>
+                      <span>{t(item)}</span>
                       <span style={{ color: "var(--subtle-foreground)" }}>→</span>
                     </div>
                   ))}
@@ -254,13 +257,13 @@ export default function HeroSection({
                   className="text-xs font-semibold uppercase tracking-widest mb-4"
                   style={{ color: "var(--subtle-foreground)" }}
                 >
-                  Delivery rhythm
+                  {t("home.board.rhythm")}
                 </div>
                 <div className="space-y-4">
                   {[
-                    ["01", "Map the workflow and success metric"],
-                    ["02", "Build the smallest useful production slice"],
-                    ["03", "Demo, measure, iterate, and hand off"],
+                    ["01", "home.board.step.map"],
+                    ["02", "home.board.step.build"],
+                    ["03", "home.board.step.iterate"],
                   ].map(([step, label]) => (
                     <div key={step} className="flex gap-3">
                       <div
@@ -276,7 +279,7 @@ export default function HeroSection({
                         className="pt-1 text-sm leading-relaxed"
                         style={{ color: "var(--secondary-foreground)" }}
                       >
-                        {label}
+                        {t(label)}
                       </div>
                     </div>
                   ))}

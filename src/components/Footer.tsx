@@ -1,23 +1,26 @@
 "use client";
 
 import Link from "next/link";
+import { useI18n } from "@/i18n/LanguageProvider";
 
 const footerLinks = {
-  Services: [
-    { href: "/ai-agents", label: "AI Agent Operations" },
-    { href: "/shopify", label: "Shopify Development" },
-    { href: "/shopify", label: "Shopify B2B" },
-    { href: "/app-development", label: "Flutter Apps" },
-    { href: "/mailing", label: "Mailing Campaigns" },
+  "footer.services": [
+    { href: "/ai-agents", label: "service.aiAgents.title" },
+    { href: "/shopify", label: "service.shopify.title" },
+    { href: "/shopify", label: "service.shopifyB2B.title" },
+    { href: "/app-development", label: "footer.flutterApps" },
+    { href: "/mailing", label: "service.mailing.title" },
   ],
-  Company: [
-    { href: "/services", label: "All Services" },
-    { href: "/ai-agents", label: "AI Agents" },
-    { href: "/contact", label: "Contact Us" },
+  "footer.company": [
+    { href: "/services", label: "common.allServices" },
+    { href: "/ai-agents", label: "nav.aiAgents" },
+    { href: "/contact", label: "footer.contactUs" },
   ],
 };
 
 export default function Footer() {
+  const { t } = useI18n();
+
   return (
     <footer
       style={{
@@ -49,9 +52,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-sm leading-relaxed max-w-sm" style={{ color: "var(--muted-foreground)" }}>
-              Building the next generation of digital operations through human
-              + AI collaboration. From Shopify stores to AI-powered workflows,
-              we scale your business with precision.
+              {t("footer.body")}
             </p>
             <div className="mt-6 flex items-center gap-3">
               <a
@@ -71,7 +72,7 @@ export default function Footer() {
                 className="text-xs font-semibold uppercase tracking-widest mb-4"
                 style={{ color: "var(--subtle-foreground)" }}
               >
-                {title}
+                {t(title)}
               </h3>
               <ul className="space-y-2.5">
                 {links.map((link) => (
@@ -89,7 +90,7 @@ export default function Footer() {
                           "var(--muted-foreground)";
                       }}
                     >
-                      {link.label}
+                      {t(link.label)}
                     </Link>
                   </li>
                 ))}
@@ -103,10 +104,10 @@ export default function Footer() {
           style={{ borderTop: "1px solid var(--border)" }}
         >
           <p className="text-xs" style={{ color: "var(--subtle-foreground)" }}>
-            &copy; {new Date().getFullYear()} TheNextX. All rights reserved.
+            &copy; {new Date().getFullYear()} TheNextX. {t("footer.rights")}
           </p>
           <p className="text-xs" style={{ color: "var(--subtle-foreground)" }}>
-            Powered by Human + AI Collaboration
+            {t("footer.poweredBy")}
           </p>
         </div>
       </div>
