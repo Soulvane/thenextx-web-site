@@ -1,76 +1,95 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import SectionHeader from "@/components/SectionHeader";
+import T from "@/components/T";
 
 export const metadata: Metadata = {
-  title: "Shopify Development & B2B — TheNextX",
+  title: "Shopify Development, Marketing & B2B — TheNextX",
   description:
-    "Custom Shopify theme development, app integrations, maintenance, and enterprise B2B storefronts. TheNextX is your Shopify development partner.",
+    "Custom Shopify development, Shopify marketing, Shopify CRO, Shopify SEO, and enterprise B2B storefronts. TheNextX is your end-to-end Shopify growth partner.",
+  keywords: [
+    "Shopify development",
+    "Shopify marketing",
+    "Shopify growth agency",
+    "Shopify CRO",
+    "Shopify conversion optimization",
+    "Shopify SEO",
+    "Shopify email marketing",
+    "Shopify B2B",
+    "Shopify custom theme",
+    "Shopify app integration",
+    "Shopify maintenance",
+    "쇼피파이 마케팅",
+    "쇼피파이 SEO",
+    "쇼피파이 운영 대행",
+    "쇼피파이 광고 운영",
+    "쇼피파이 개발",
+  ],
 };
 
 const devServices = [
   {
     icon: "🎨",
-    title: "Custom Theme Development",
-    body: "Pixel-perfect storefronts built on Shopify's latest Dawn architecture or fully custom Liquid templates that match your brand identity.",
+    title: "shopify.dev.theme.title",
+    body: "shopify.dev.theme.body",
   },
   {
     icon: "🔌",
-    title: "App Integration",
-    body: "Seamless integration with Klaviyo, Recharge, Gorgias, Yotpo, ShipBob, Loop Returns, and hundreds of other Shopify apps.",
+    title: "shopify.dev.integration.title",
+    body: "shopify.dev.integration.body",
   },
   {
     icon: "⚡",
-    title: "Performance Optimization",
-    body: "Core Web Vitals tuning, image optimization, lazy loading, and Shopify CDN configuration for sub-2s page loads.",
+    title: "shopify.dev.performance.title",
+    body: "shopify.dev.performance.body",
   },
   {
     icon: "🛒",
-    title: "Checkout Customization",
-    body: "Checkout UI extensions, custom fields, upsell logic, and post-purchase flows using Shopify Functions and Extensions.",
+    title: "shopify.dev.checkout.title",
+    body: "shopify.dev.checkout.body",
   },
   {
     icon: "🔧",
-    title: "Ongoing Maintenance",
-    body: "Monthly retainer packages covering updates, bug fixes, new feature additions, and proactive theme audits.",
+    title: "shopify.dev.maintenance.title",
+    body: "shopify.dev.maintenance.body",
   },
   {
     icon: "📦",
-    title: "Shopify Plus Migration",
-    body: "Seamless migration from WooCommerce, BigCommerce, or Magento to Shopify Plus with zero data loss.",
+    title: "shopify.dev.migration.title",
+    body: "shopify.dev.migration.body",
   },
 ];
 
 const b2bFeatures = [
   {
     icon: "💰",
-    title: "Custom B2B Pricing",
-    body: "Account-specific pricing tiers, volume discounts, and negotiated rates — applied automatically at checkout.",
+    title: "shopify.b2b.pricing.title",
+    body: "shopify.b2b.pricing.body",
   },
   {
     icon: "📋",
-    title: "Net Terms & Credit",
-    body: "Net 30/60/90 payment terms, purchase order support, and credit limit management built into the checkout flow.",
+    title: "shopify.b2b.terms.title",
+    body: "shopify.b2b.terms.body",
   },
   {
     icon: "🏷️",
-    title: "Custom Catalogs",
-    body: "Restricted product catalogs per company or buyer group — show only what each B2B account is permitted to purchase.",
+    title: "shopify.b2b.catalogs.title",
+    body: "shopify.b2b.catalogs.body",
   },
   {
     icon: "👥",
-    title: "Account Management",
-    body: "Company accounts with multiple buyers, location-based shipping, approval workflows, and admin dashboards.",
+    title: "shopify.b2b.accounts.title",
+    body: "shopify.b2b.accounts.body",
   },
   {
     icon: "🔄",
-    title: "ERP / CRM Sync",
-    body: "Real-time bidirectional sync with NetSuite, SAP, Salesforce, and other enterprise systems via Shopify Flow or custom API.",
+    title: "shopify.b2b.sync.title",
+    body: "shopify.b2b.sync.body",
   },
   {
     icon: "📊",
-    title: "B2B Analytics",
-    body: "Detailed reporting on account-level revenue, order frequency, product mix, and replenishment cycles.",
+    title: "shopify.b2b.analytics.title",
+    body: "shopify.b2b.analytics.body",
   },
 ];
 
@@ -90,26 +109,24 @@ export default function ShopifyPage() {
               border: "1px solid var(--border)",
             }}
           >
-            Shopify Development & B2B
+            <T>shopify.hero.eyebrow</T>
           </span>
           <h1
             className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-6"
             style={{ color: "var(--foreground)" }}
           >
-            Shopify stores that{" "}
+            <T>shopify.hero.title</T>{" "}
             <span
               style={{ color: "var(--accent-2)" }}
             >
-              convert and scale
+              <T>shopify.hero.highlight</T>
             </span>
           </h1>
           <p
             className="text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto mb-10"
             style={{ color: "var(--muted-foreground)" }}
           >
-            From DTC storefronts to complex B2B portals — we build, optimize,
-            and maintain Shopify experiences that perform. Expert development
-            paired with deep platform knowledge.
+            <T>shopify.hero.body</T>
           </p>
           <Link
             href="/contact"
@@ -119,7 +136,7 @@ export default function ShopifyPage() {
               boxShadow: "0 8px 18px rgba(23, 23, 23, 0.12)",
             }}
           >
-            Start Your Shopify Project
+            <T>shopify.hero.primary</T>
           </Link>
         </div>
       </section>
@@ -131,10 +148,10 @@ export default function ShopifyPage() {
       >
         <div className="max-w-7xl mx-auto">
           <SectionHeader
-            eyebrow="Shopify Development"
-            title="Full-cycle DTC"
-            titleGradient="store development"
-            subtitle="We handle every layer of your Shopify store — from design to deployment and beyond."
+            eyebrow="shopify.dtc.eyebrow"
+            title="shopify.dtc.title"
+            titleGradient="shopify.dtc.highlight"
+            subtitle="shopify.dtc.body"
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {devServices.map((item) => (
@@ -151,13 +168,13 @@ export default function ShopifyPage() {
                   className="text-base font-semibold mb-2"
                   style={{ color: "var(--foreground)" }}
                 >
-                  {item.title}
+                  <T>{item.title}</T>
                 </h3>
                 <p
                   className="text-sm leading-relaxed"
                   style={{ color: "var(--muted-foreground)" }}
                 >
-                  {item.body}
+                  <T>{item.body}</T>
                 </p>
               </div>
             ))}
@@ -183,10 +200,10 @@ export default function ShopifyPage() {
       >
         <div className="max-w-7xl mx-auto">
           <SectionHeader
-            eyebrow="Shopify B2B"
-            title="Enterprise wholesale &"
-            titleGradient="B2B storefronts"
-            subtitle="Shopify Plus B2B features, extended and customized for your exact wholesale or distributor operation."
+            eyebrow="shopify.b2b.eyebrow"
+            title="shopify.b2b.title"
+            titleGradient="shopify.b2b.highlight"
+            subtitle="shopify.b2b.body"
           />
 
           {/* B2B highlight box */}
@@ -200,16 +217,16 @@ export default function ShopifyPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
               {[
                 {
-                  value: "Shopify Plus",
-                  label: "Native B2B features as foundation",
+                  value: "shopify.b2b.value.plus",
+                  label: "shopify.b2b.native",
                 },
                 {
-                  value: "Custom APIs",
-                  label: "Deep ERP & CRM integrations",
+                  value: "shopify.b2b.value.apis",
+                  label: "shopify.b2b.erp",
                 },
                 {
-                  value: "White-glove",
-                  label: "Onboarding & training included",
+                  value: "shopify.b2b.value.whiteGlove",
+                  label: "shopify.b2b.training",
                 },
               ].map((item) => (
                 <div key={item.label}>
@@ -217,10 +234,10 @@ export default function ShopifyPage() {
                     className="text-xl font-bold mb-1"
                     style={{ color: "var(--foreground)" }}
                   >
-                    {item.value}
+                    <T>{item.value}</T>
                   </div>
                   <div className="text-sm" style={{ color: "var(--muted-foreground)" }}>
-                    {item.label}
+                    <T>{item.label}</T>
                   </div>
                 </div>
               ))}
@@ -242,13 +259,13 @@ export default function ShopifyPage() {
                   className="text-base font-semibold mb-2"
                   style={{ color: "var(--foreground)" }}
                 >
-                  {item.title}
+                  <T>{item.title}</T>
                 </h3>
                 <p
                   className="text-sm leading-relaxed"
                   style={{ color: "var(--muted-foreground)" }}
                 >
-                  {item.body}
+                  <T>{item.body}</T>
                 </p>
               </div>
             ))}
@@ -266,11 +283,10 @@ export default function ShopifyPage() {
             className="text-3xl font-bold mb-4"
             style={{ color: "var(--foreground)" }}
           >
-            Let&apos;s build your Shopify store
+            <T>shopify.cta.title</T>
           </h2>
           <p className="mb-8" style={{ color: "var(--muted-foreground)" }}>
-            DTC or B2B — share your requirements and we&apos;ll respond with a
-            scoped proposal within 24 hours.
+            <T>shopify.cta.body</T>
           </p>
           <Link
             href="/contact"
@@ -280,7 +296,7 @@ export default function ShopifyPage() {
               boxShadow: "0 8px 18px rgba(23, 23, 23, 0.12)",
             }}
           >
-            Get a Proposal
+            <T>shopify.cta.button</T>
           </Link>
         </div>
       </section>

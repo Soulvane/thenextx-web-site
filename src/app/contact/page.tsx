@@ -1,10 +1,19 @@
 import type { Metadata } from "next";
 import ContactForm from "./ContactForm";
+import T from "@/components/T";
 
 export const metadata: Metadata = {
-  title: "Contact — TheNextX",
+  title: "Contact — TheNextX Marketing & Operations Agency",
   description:
-    "Get in touch with TheNextX. Tell us about your project and we'll respond within 24 hours with a clear plan and pricing.",
+    "Get in touch with TheNextX. Whether you need AI marketing automation, B2B lead generation, Shopify growth, or app development — tell us about your project and we'll respond within 24 hours.",
+  keywords: [
+    "contact marketing agency",
+    "hire AI marketing agency",
+    "Shopify agency contact",
+    "B2B lead generation agency",
+    "마케팅 대행사 문의",
+    "AI 마케팅 문의",
+  ],
 };
 
 export default function ContactPage() {
@@ -23,25 +32,24 @@ export default function ContactPage() {
               border: "1px solid var(--border)",
             }}
           >
-            Get in Touch
+            <T>contact.hero.eyebrow</T>
           </span>
           <h1
             className="text-4xl sm:text-5xl font-bold tracking-tight leading-tight mb-4"
             style={{ color: "var(--foreground)" }}
           >
-            Start your project with{" "}
+            <T>contact.hero.title</T>{" "}
             <span
               style={{ color: "var(--accent-2)" }}
             >
-              TheNextX
+              <T>contact.hero.highlight</T>
             </span>
           </h1>
           <p
             className="text-lg leading-relaxed max-w-xl mx-auto"
             style={{ color: "var(--muted-foreground)" }}
           >
-            Fill out the form and we&apos;ll respond within 24 hours with a
-            clear plan and next steps.
+            <T>contact.hero.body</T>
           </p>
         </div>
       </section>
@@ -59,15 +67,13 @@ export default function ContactPage() {
                 className="text-xl font-semibold mb-2"
                 style={{ color: "var(--foreground)" }}
               >
-                What to expect
+                <T>contact.expect.title</T>
               </h2>
               <p
                 className="text-sm leading-relaxed"
                 style={{ color: "var(--muted-foreground)" }}
               >
-                After receiving your message, a senior member of the TheNextX
-                team will review your requirements and respond with a proposed
-                approach, timeline, and indicative pricing.
+                <T>contact.expect.body</T>
               </p>
             </div>
 
@@ -75,18 +81,18 @@ export default function ContactPage() {
               {[
                 {
                   icon: "⏱️",
-                  title: "Response in 24 hours",
-                  body: "We review every enquiry the same business day.",
+                  title: "contact.expect.response.title",
+                  body: "contact.expect.response.body",
                 },
                 {
                   icon: "📋",
-                  title: "Detailed proposal",
-                  body: "Scoped deliverables, milestones, and fixed pricing.",
+                  title: "contact.expect.proposal.title",
+                  body: "contact.expect.proposal.body",
                 },
                 {
                   icon: "🔒",
-                  title: "NDA available",
-                  body: "Happy to sign before the discovery call if needed.",
+                  title: "contact.expect.nda.title",
+                  body: "contact.expect.nda.body",
                 },
               ].map((item) => (
                 <div
@@ -103,10 +109,10 @@ export default function ContactPage() {
                       className="text-sm font-semibold mb-0.5"
                       style={{ color: "var(--foreground)" }}
                     >
-                      {item.title}
+                      <T>{item.title}</T>
                     </div>
                     <div className="text-xs" style={{ color: "var(--muted-foreground)" }}>
-                      {item.body}
+                      <T>{item.body}</T>
                     </div>
                   </div>
                 </div>
@@ -124,7 +130,7 @@ export default function ContactPage() {
                 className="text-xs font-semibold uppercase tracking-widest mb-3"
                 style={{ color: "var(--subtle-foreground)" }}
               >
-                Direct contact
+                <T>contact.direct</T>
               </div>
               <a
                 href="mailto:info@thenextx.net"

@@ -1,55 +1,69 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import SectionHeader from "@/components/SectionHeader";
+import T from "@/components/T";
 
 export const metadata: Metadata = {
-  title: "Flutter App Development — TheNextX",
+  title: "Flutter App Development — iOS & Android — TheNextX",
   description:
-    "Cross-platform mobile app development with Flutter. Ship to iOS and Android simultaneously — beautiful, fast, and production-ready.",
+    "Cross-platform mobile app development with Flutter. Ship production-ready iOS and Android apps simultaneously — fast, beautiful, and scalable.",
+  keywords: [
+    "Flutter app development",
+    "cross-platform mobile app",
+    "iOS app development",
+    "Android app development",
+    "Flutter agency",
+    "mobile app development agency",
+    "Flutter developer",
+    "앱 개발",
+    "모바일 앱 개발",
+    "Flutter 개발",
+    "iOS Android 앱",
+  ],
 };
 
 const features = [
   {
     icon: "🎯",
-    title: "Single Codebase, Both Platforms",
-    body: "One Flutter codebase deployed to iOS and Android. Consistent UX, reduced maintenance overhead, and faster iteration cycles.",
+    title: "app.feature.codebase.title",
+    body: "app.feature.codebase.body",
   },
   {
     icon: "🎨",
-    title: "Pixel-Perfect UI",
-    body: "Custom widget development, animations, and design system implementation that brings your brand to life on mobile.",
+    title: "app.feature.ui.title",
+    body: "app.feature.ui.body",
   },
   {
     icon: "⚡",
-    title: "High Performance",
-    body: "Flutter compiles to native ARM code — no JavaScript bridge. Smooth 60/120fps rendering and fast startup times.",
+    title: "app.feature.performance.title",
+    body: "app.feature.performance.body",
   },
   {
     icon: "🔌",
-    title: "Backend Integration",
-    body: "REST API, GraphQL, Firebase, Supabase, WebSockets — we connect your app to any backend with clean, typed data layers.",
+    title: "app.feature.backend.title",
+    body: "app.feature.backend.body",
   },
   {
     icon: "🔔",
-    title: "Push Notifications",
-    body: "FCM-based push notification setup with segmented targeting, deep linking, and notification permission best practices.",
+    title: "app.feature.push.title",
+    body: "app.feature.push.body",
   },
   {
     icon: "🏪",
-    title: "App Store Launch",
-    body: "Full App Store and Google Play submission — assets, metadata, review preparation, and post-launch monitoring.",
+    title: "app.feature.launch.title",
+    body: "app.feature.launch.body",
   },
 ];
 
 const deliverables = [
-  "UI/UX design files (Figma)",
-  "Production Flutter codebase",
-  "iOS & Android builds",
-  "App Store / Play Store submission",
-  "Unit & integration test coverage",
-  "CI/CD pipeline setup",
-  "Backend API integration",
-  "Documentation & handoff",
+  "app.deliverable.design",
+  "app.deliverable.codebase",
+  "app.deliverable.builds",
+  "app.deliverable.submission",
+  "app.deliverable.tests",
+  "app.deliverable.cicd",
+  "app.deliverable.backend",
+  "app.deliverable.docs",
 ];
 
 export default function AppDevelopmentPage() {
@@ -68,26 +82,24 @@ export default function AppDevelopmentPage() {
               border: "1px solid var(--border)",
             }}
           >
-            Flutter App Development
+            <T>service.flutter.title</T>
           </span>
           <h1
             className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-6"
             style={{ color: "var(--foreground)" }}
           >
-            Beautiful apps on{" "}
+            <T>app.hero.title</T>{" "}
             <span
               style={{ color: "var(--accent-2)" }}
             >
-              iOS and Android
+              <T>app.hero.highlight</T>
             </span>
           </h1>
           <p
             className="text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto mb-10"
             style={{ color: "var(--muted-foreground)" }}
           >
-            We build production-ready Flutter applications from design to App
-            Store launch — fast, polished, and built to grow with your user
-            base.
+            <T>app.hero.body</T>
           </p>
           <Link
             href="/contact"
@@ -97,7 +109,7 @@ export default function AppDevelopmentPage() {
               boxShadow: "0 8px 18px rgba(23, 23, 23, 0.12)",
             }}
           >
-            Start Your App
+            <T>app.hero.primary</T>
           </Link>
         </div>
       </section>
@@ -116,15 +128,15 @@ export default function AppDevelopmentPage() {
             {[
               {
                 stat: "1 codebase",
-                label: "Runs on iOS, Android, and Web",
+                label: "app.stat.platforms",
               },
               {
                 stat: "60–120 fps",
-                label: "Native-quality rendering",
+                label: "app.stat.rendering",
               },
               {
                 stat: "~40% faster",
-                label: "Development vs. native dual-platform",
+                label: "app.stat.speed",
               },
             ].map((item) => (
               <div key={item.label}>
@@ -135,7 +147,7 @@ export default function AppDevelopmentPage() {
                   {item.stat}
                 </div>
                 <div className="text-sm" style={{ color: "var(--muted-foreground)" }}>
-                  {item.label}
+                  <T>{item.label}</T>
                 </div>
               </div>
             ))}
@@ -150,10 +162,10 @@ export default function AppDevelopmentPage() {
       >
         <div className="max-w-7xl mx-auto">
           <SectionHeader
-            eyebrow="What We Build"
-            title="Full-stack mobile"
-            titleGradient="app delivery"
-            subtitle="Every aspect of your app covered — from the first pixel to production monitoring."
+            eyebrow="app.features.eyebrow"
+            title="app.features.title"
+            titleGradient="app.features.highlight"
+            subtitle="app.features.body"
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((feat) => (
@@ -170,13 +182,13 @@ export default function AppDevelopmentPage() {
                   className="text-base font-semibold mb-2"
                   style={{ color: "var(--foreground)" }}
                 >
-                  {feat.title}
+                  <T>{feat.title}</T>
                 </h3>
                 <p
                   className="text-sm leading-relaxed"
                   style={{ color: "var(--muted-foreground)" }}
                 >
-                  {feat.body}
+                  <T>{feat.body}</T>
                 </p>
               </div>
             ))}
@@ -191,10 +203,10 @@ export default function AppDevelopmentPage() {
       >
         <div className="max-w-4xl mx-auto">
           <SectionHeader
-            eyebrow="Deliverables"
-            title="Everything you get"
-            titleGradient="at handoff"
-            subtitle="No black boxes. You own everything and have the documentation to maintain it."
+            eyebrow="app.deliverables.eyebrow"
+            title="app.deliverables.title"
+            titleGradient="app.deliverables.highlight"
+            subtitle="app.deliverables.body"
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {deliverables.map((item) => (
@@ -219,7 +231,7 @@ export default function AppDevelopmentPage() {
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
                 <span className="text-sm" style={{ color: "var(--secondary-foreground)" }}>
-                  {item}
+                  <T>{item}</T>
                 </span>
               </div>
             ))}
@@ -237,11 +249,10 @@ export default function AppDevelopmentPage() {
             className="text-3xl font-bold mb-4"
             style={{ color: "var(--foreground)" }}
           >
-            Have an app idea?
+            <T>app.cta.title</T>
           </h2>
           <p className="mb-8" style={{ color: "var(--muted-foreground)" }}>
-            Tell us about your app concept and we&apos;ll send back a scoped
-            proposal with timeline and cost estimate.
+            <T>app.cta.body</T>
           </p>
           <Link
             href="/contact"
@@ -251,7 +262,7 @@ export default function AppDevelopmentPage() {
               boxShadow: "0 8px 18px rgba(23, 23, 23, 0.12)",
             }}
           >
-            Discuss Your App
+            <T>app.cta.button</T>
           </Link>
         </div>
       </section>

@@ -3,111 +3,118 @@ import Link from "next/link";
 import HeroSection from "@/components/HeroSection";
 import ServiceCard from "@/components/ServiceCard";
 import SectionHeader from "@/components/SectionHeader";
+import T from "@/components/T";
 
 export const metadata: Metadata = {
-  title: "TheNextX — AI-Powered Agency for Modern Businesses",
+  title: "TheNextX — AI-Powered Marketing & Operations Agency",
   description:
-    "TheNextX delivers AI agent operations, Shopify development, Flutter apps, mailing campaigns, and business workflow automation through human + AI collaboration.",
+    "TheNextX is an AI-powered marketing and operations agency specializing in AI marketing automation, B2B lead generation, Shopify development, Flutter apps, and business workflow automation.",
+  keywords: [
+    "AI marketing agency",
+    "AI-powered agency",
+    "marketing agency",
+    "AI lead generation",
+    "AI sales automation",
+    "B2B lead generation",
+    "Shopify agency",
+    "마케팅 대행",
+    "AI 마케팅 자동화",
+    "B2B 영업 대행",
+    "쇼피파이 운영 대행",
+  ],
 };
 
 const services = [
   {
     icon: "🤖",
-    title: "AI Agent Operations",
-    description:
-      "Deploy intelligent AI agents that handle complex workflows, customer interactions, and operational tasks autonomously — 24/7.",
+    title: "service.aiAgents.title",
+    description: "service.aiAgents.short",
     href: "/ai-agents",
-    tags: ["Automation", "LLM", "Ops"],
+    tags: ["common.automation", "tag.llm", "common.ops"],
   },
   {
     icon: "🛍️",
-    title: "Shopify Development",
-    description:
-      "Custom Shopify themes, app integrations, and storefront optimizations that drive conversions and scale seamlessly.",
+    title: "service.shopify.title",
+    description: "service.shopify.short",
     href: "/shopify",
-    tags: ["Shopify", "eCommerce", "Custom Dev"],
+    tags: ["common.shopify", "common.ecommerce", "common.customDev"],
   },
   {
     icon: "🏢",
-    title: "Shopify B2B",
-    description:
-      "Enterprise-grade B2B storefronts with custom pricing, account management, bulk ordering, and ERP integrations.",
+    title: "service.shopifyB2B.title",
+    description: "service.shopifyB2B.short",
     href: "/shopify",
-    tags: ["B2B", "Enterprise", "Wholesale"],
+    tags: ["common.b2b", "common.enterprise", "common.wholesale"],
   },
   {
     icon: "📱",
-    title: "Flutter App Development",
-    description:
-      "Cross-platform mobile apps built with Flutter — beautiful, performant, and deployed to iOS and Android from a single codebase.",
+    title: "service.flutter.title",
+    description: "service.flutter.short",
     href: "/app-development",
-    tags: ["Flutter", "iOS", "Android"],
+    tags: ["common.flutter", "common.ios", "common.android"],
   },
   {
     icon: "✉️",
-    title: "Mailing Campaign Operations",
-    description:
-      "Offline direct mail marketing — postcards, brochures, and mailers designed, printed, and delivered to your target audience with full ROI tracking.",
+    title: "service.mailing.title",
+    description: "service.mailing.short",
     href: "/mailing",
-    tags: ["Postcards", "Direct Mail", "Print"],
+    tags: ["common.postcards", "common.directMail", "common.print"],
   },
   {
     icon: "📄",
-    title: "PDF to HTML Conversion",
-    description:
-      "Accurate, pixel-faithful conversion of PDF documents into clean, responsive, accessible HTML for web publishing.",
+    title: "service.pdf.title",
+    description: "service.pdf.short",
     href: "/services",
-    tags: ["Conversion", "HTML", "Web"],
+    tags: ["common.conversion", "common.html", "common.web"],
   },
   {
     icon: "⚙️",
-    title: "Business Workflow Automation",
-    description:
-      "Identify bottlenecks and replace manual processes with intelligent automation pipelines that save time and reduce errors.",
+    title: "service.workflow.title",
+    description: "service.workflow.short",
     href: "/services",
-    tags: ["Automation", "Workflow", "Integration"],
+    tags: ["common.automation", "common.workflow", "common.integration"],
   },
 ];
 
 const whyItems = [
   {
     icon: "⚡",
-    title: "Speed Without Compromise",
-    body: "AI-augmented delivery cycles cut timelines by up to 60% while maintaining quality you can put in production.",
+    title: "home.why.speed.title",
+    body: "home.why.speed.body",
   },
   {
     icon: "🧠",
-    title: "Embedded Expertise",
-    body: "Senior engineers, Shopify Partners, and AI specialists collaborate as one team aligned to your outcomes.",
+    title: "home.why.expertise.title",
+    body: "home.why.expertise.body",
   },
   {
     icon: "🔁",
-    title: "Iterative & Transparent",
-    body: "Weekly demos, clear milestones, and async communication keep you in the loop at every stage.",
+    title: "home.why.transparent.title",
+    body: "home.why.transparent.body",
   },
   {
     icon: "📈",
-    title: "Built to Scale",
-    body: "Every solution is architected for growth — from MVP to enterprise with no painful rewrites.",
+    title: "home.why.scale.title",
+    body: "home.why.scale.body",
   },
 ];
 
 const operatingMetrics = [
-  { label: "Strategy", value: "Discovery + scope" },
-  { label: "Build", value: "Weekly production slices" },
-  { label: "Launch", value: "Docs, handoff, support" },
+  { label: "home.metric.strategy", value: "home.metric.strategyValue" },
+  { label: "home.metric.build", value: "home.metric.buildValue" },
+  { label: "home.metric.launch", value: "home.metric.launchValue" },
 ];
 
 export default function HomePage() {
   return (
     <>
       <HeroSection
-        eyebrow="The Agent Workforce Is Here"
-        headline="Scale Your Business with"
-        headlineGradient="Human + AI Power"
-        subheadline="TheNextX blends elite human expertise with cutting-edge AI agents to deliver Shopify stores, mobile apps, direct mail campaigns, and automation workflows — faster than you thought possible."
-        primaryCTA={{ label: "Start a Project", href: "/contact" }}
-        secondaryCTA={{ label: "Explore Services", href: "/services" }}
+        eyebrow="home.hero.eyebrow"
+        headline="home.hero.title"
+        headlineGradient="home.hero.highlight"
+        subheadline="home.hero.body"
+        primaryCTA={{ label: "home.hero.primary", href: "/contact" }}
+        secondaryCTA={{ label: "home.hero.secondary", href: "/services" }}
         showBadges
       />
 
@@ -118,10 +125,10 @@ export default function HomePage() {
       >
         <div className="max-w-7xl mx-auto">
           <SectionHeader
-            eyebrow="What We Do"
-            title="Everything your business needs"
-            titleGradient="to grow"
-            subtitle="Seven core services, one integrated team. We handle execution so you can focus on strategy."
+            eyebrow="home.services.eyebrow"
+            title="home.services.title"
+            titleGradient="home.services.highlight"
+            subtitle="home.services.body"
           />
           <div className="mb-8 grid grid-cols-1 md:grid-cols-3 gap-3">
             {operatingMetrics.map((item) => (
@@ -130,13 +137,13 @@ export default function HomePage() {
                   className="text-xs font-semibold uppercase tracking-widest"
                   style={{ color: "var(--subtle-foreground)" }}
                 >
-                  {item.label}
+                  <T>{item.label}</T>
                 </div>
                 <div
                   className="mt-1 text-base font-semibold"
                   style={{ color: "var(--foreground)" }}
                 >
-                  {item.value}
+                  <T>{item.value}</T>
                 </div>
               </div>
             ))}
@@ -151,7 +158,7 @@ export default function HomePage() {
               href="/services"
               className="btn-secondary inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-200"
             >
-              View all services
+              <T>home.services.viewAll</T>
               <svg
                 width="16"
                 height="16"
@@ -176,10 +183,10 @@ export default function HomePage() {
       >
         <div className="max-w-7xl mx-auto">
           <SectionHeader
-            eyebrow="Why TheNextX"
-            title="The operating model that"
-            titleGradient="sets us apart"
-            subtitle="We don't just deliver features. We deliver outcomes — through a methodology built for the AI era."
+            eyebrow="home.why.eyebrow"
+            title="home.why.title"
+            titleGradient="home.why.highlight"
+            subtitle="home.why.body"
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {whyItems.map((item) => (
@@ -192,13 +199,13 @@ export default function HomePage() {
                   className="text-base font-semibold mb-2"
                   style={{ color: "var(--foreground)" }}
                 >
-                  {item.title}
+                  <T>{item.title}</T>
                 </h3>
                 <p
                   className="text-sm leading-relaxed"
                   style={{ color: "var(--muted-foreground)" }}
                 >
-                  {item.body}
+                  <T>{item.body}</T>
                 </p>
               </div>
             ))}
@@ -221,17 +228,16 @@ export default function HomePage() {
                   className="text-3xl sm:text-4xl font-bold tracking-tight mb-3"
                   style={{ color: "var(--foreground)" }}
                 >
-                  Ready to activate your{" "}
+                  <T>home.cta.title</T>{" "}
                   <span style={{ color: "var(--accent-2)" }}>
-                    agent workforce?
+                    <T>home.cta.highlight</T>
                   </span>
                 </h2>
                 <p
                   className="text-base sm:text-lg max-w-2xl"
                   style={{ color: "var(--muted-foreground)" }}
                 >
-                  Tell us about your project. We&apos;ll reply with a clear
-                  plan, timeline, and pricing within 24 hours.
+                  <T>home.cta.body</T>
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-3 lg:justify-end">
@@ -239,13 +245,13 @@ export default function HomePage() {
                   href="/contact"
                   className="btn-primary px-8 py-3.5 rounded-lg text-base font-semibold"
                 >
-                  Get in Touch
+                  <T>common.getInTouch</T>
                 </Link>
                 <Link
                   href="/services"
                   className="btn-secondary px-8 py-3.5 rounded-lg text-base font-semibold"
                 >
-                  Browse Services
+                  <T>common.browseServices</T>
                 </Link>
               </div>
             </div>

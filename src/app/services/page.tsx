@@ -2,69 +2,107 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import SectionHeader from "@/components/SectionHeader";
 import ServiceCard from "@/components/ServiceCard";
+import T from "@/components/T";
 
 export const metadata: Metadata = {
-  title: "Services — TheNextX",
+  title: "Services — AI Marketing, Shopify, Apps & Automation — TheNextX",
   description:
-    "Explore all seven TheNextX services: AI agents, Shopify development, B2B, Flutter apps, mailing campaigns, PDF to HTML, and workflow automation.",
+    "TheNextX full-service offerings: AI marketing automation, B2B lead generation, Shopify development & marketing, Flutter app development, direct mail, PDF conversion, and workflow automation.",
+  keywords: [
+    "AI marketing automation",
+    "B2B lead generation",
+    "Shopify marketing",
+    "Shopify development",
+    "Flutter app development",
+    "direct mail marketing",
+    "workflow automation",
+    "marketing agency services",
+    "마케팅 대행 서비스",
+    "AI 마케팅",
+    "쇼피파이 대행",
+    "앱 개발",
+  ],
 };
 
 const allServices = [
   {
     icon: "🤖",
-    title: "AI Agent Operations",
-    description:
-      "We design, deploy, and manage AI agent systems that operate continuously on your behalf. From customer support automation and lead qualification to document processing and data enrichment — our agents integrate directly into your existing tools and workflows.",
+    title: "service.aiAgents.title",
+    description: "service.aiAgents.short",
     href: "/ai-agents",
-    tags: ["LLM Integration", "Workflow Automation", "24/7 Ops", "API Agents"],
+    tags: [
+      "tag.llmIntegration",
+      "tag.workflowAutomation",
+      "tag.alwaysOnOps",
+      "tag.apiAgents",
+    ],
   },
   {
     icon: "🛍️",
-    title: "Shopify Development & Maintenance",
-    description:
-      "Full-cycle Shopify work — custom theme development, Liquid templating, app integrations (Klaviyo, Recharge, Gorgias, and more), performance optimization, and ongoing maintenance to keep your store running at peak performance.",
+    title: "service.shopifyMaintenance.title",
+    description: "service.shopifyMaintenance.body",
     href: "/shopify",
-    tags: ["Custom Themes", "Liquid", "App Integration", "Maintenance"],
+    tags: [
+      "tag.customThemes",
+      "tag.liquid",
+      "tag.appIntegration",
+      "tag.maintenance",
+    ],
   },
   {
     icon: "🏢",
-    title: "Shopify B2B",
-    description:
-      "Purpose-built B2B storefronts with net terms, tiered pricing by account, custom catalogs, approval workflows, and ERP/CRM sync. We leverage Shopify's native B2B features and extend them where your business demands more.",
+    title: "service.shopifyB2B.title",
+    description: "service.shopifyB2B.body",
     href: "/shopify",
-    tags: ["B2B Portal", "Net Terms", "Custom Pricing", "ERP Sync"],
+    tags: [
+      "tag.b2bPortal",
+      "tag.netTerms",
+      "tag.customPricing",
+      "tag.erpSync",
+    ],
   },
   {
     icon: "📱",
-    title: "Flutter App Development",
-    description:
-      "Native-quality mobile applications from a single Flutter codebase — deployed simultaneously to iOS and Android. We cover UI/UX, state management, backend integration, push notifications, and App Store / Play Store launch.",
+    title: "service.flutter.title",
+    description: "service.flutter.body",
     href: "/app-development",
-    tags: ["Flutter", "iOS", "Android", "Cross-platform"],
+    tags: [
+      "common.flutter",
+      "common.ios",
+      "common.android",
+      "tag.crossPlatform",
+    ],
   },
   {
     icon: "✉️",
-    title: "Mailing Campaign Operations",
-    description:
-      "End-to-end offline direct mail marketing: postcard campaigns, direct mail packages, catalog mailers, mailing list management, print production, and ROI tracking via QR codes and custom landing pages.",
+    title: "service.mailing.title",
+    description: "service.mailing.body",
     href: "/mailing",
-    tags: ["Postcards", "Direct Mail", "Print", "QR Tracking"],
+    tags: [
+      "common.postcards",
+      "common.directMail",
+      "common.print",
+      "tag.qrTracking",
+    ],
   },
   {
     icon: "📄",
-    title: "PDF to HTML Conversion",
-    description:
-      "Convert complex PDF documents — reports, catalogs, legal docs, manuals — into clean, semantic, responsive HTML. We preserve layouts, typography, and interactive elements, producing output ready for web or email publishing.",
+    title: "service.pdf.title",
+    description: "service.pdf.body",
     href: "/contact",
-    tags: ["Semantic HTML", "Responsive", "Pixel-faithful", "Bulk Processing"],
+    tags: [
+      "tag.semanticHtml",
+      "tag.responsive",
+      "tag.pixelFaithful",
+      "tag.bulkProcessing",
+    ],
   },
   {
     icon: "⚙️",
-    title: "Business Workflow Automation",
-    description:
-      "End-to-end process automation using n8n, Make (Integromat), Zapier, or custom-built solutions. We map your manual processes, identify automation opportunities, and build robust pipelines that reduce operational overhead by up to 70%.",
+    title: "service.workflow.title",
+    description: "service.workflow.body",
     href: "/contact",
-    tags: ["n8n", "Make", "Custom APIs", "Process Mining"],
+    tags: ["tag.n8n", "tag.make", "tag.customApis", "tag.processMining"],
   },
 ];
 
@@ -84,25 +122,24 @@ export default function ServicesPage() {
               border: "1px solid var(--border)",
             }}
           >
-            All Services
+            <T>services.hero.eyebrow</T>
           </span>
           <h1
             className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-6"
             style={{ color: "var(--foreground)" }}
           >
-            Seven services.{" "}
+            <T>services.hero.title</T>{" "}
             <span
               style={{ color: "var(--accent-2)" }}
             >
-              One team.
+              <T>services.hero.highlight</T>
             </span>
           </h1>
           <p
             className="text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto"
             style={{ color: "var(--muted-foreground)" }}
           >
-            Every service is designed to integrate with the others, creating a
-            compounding advantage for your business as you grow with TheNextX.
+            <T>services.hero.body</T>
           </p>
         </div>
       </section>
@@ -128,32 +165,32 @@ export default function ServicesPage() {
       >
         <div className="max-w-5xl mx-auto">
           <SectionHeader
-            eyebrow="How We Work"
-            title="A process built for"
-            titleGradient="clarity and speed"
-            subtitle="No ambiguity. No delays. A repeatable process that consistently delivers."
+            eyebrow="services.process.eyebrow"
+            title="services.process.title"
+            titleGradient="services.process.highlight"
+            subtitle="services.process.body"
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
                 step: "01",
-                title: "Discovery",
-                body: "We learn your business, goals, and existing stack in a focused kickoff call.",
+                title: "services.process.discovery.title",
+                body: "services.process.discovery.body",
               },
               {
                 step: "02",
-                title: "Scoping",
-                body: "We deliver a detailed proposal with milestones, deliverables, and fixed pricing.",
+                title: "services.process.scoping.title",
+                body: "services.process.scoping.body",
               },
               {
                 step: "03",
-                title: "Build",
-                body: "Weekly demo calls keep you in control as we ship iteratively and transparently.",
+                title: "services.process.build.title",
+                body: "services.process.build.body",
               },
               {
                 step: "04",
-                title: "Handoff",
-                body: "Full documentation, training, and optional ongoing support retainer.",
+                title: "services.process.handoff.title",
+                body: "services.process.handoff.body",
               },
             ].map((step) => (
               <div
@@ -174,13 +211,13 @@ export default function ServicesPage() {
                   className="text-base font-semibold mb-2"
                   style={{ color: "var(--foreground)" }}
                 >
-                  {step.title}
+                  <T>{step.title}</T>
                 </h3>
                 <p
                   className="text-sm leading-relaxed"
                   style={{ color: "var(--muted-foreground)" }}
                 >
-                  {step.body}
+                  <T>{step.body}</T>
                 </p>
               </div>
             ))}
@@ -198,11 +235,10 @@ export default function ServicesPage() {
             className="text-3xl font-bold mb-4"
             style={{ color: "var(--foreground)" }}
           >
-            Not sure which service you need?
+            <T>services.cta.title</T>
           </h2>
           <p className="mb-8" style={{ color: "var(--muted-foreground)" }}>
-            Tell us your goal and we&apos;ll recommend the right approach — no
-            commitment required.
+            <T>services.cta.body</T>
           </p>
           <Link
             href="/contact"
@@ -212,7 +248,7 @@ export default function ServicesPage() {
               boxShadow: "0 8px 18px rgba(23, 23, 23, 0.12)",
             }}
           >
-            Talk to Us
+            <T>common.talkToUs</T>
           </Link>
         </div>
       </section>

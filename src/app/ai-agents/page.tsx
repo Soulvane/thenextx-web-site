@@ -1,43 +1,60 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import SectionHeader from "@/components/SectionHeader";
+import T from "@/components/T";
 
 export const metadata: Metadata = {
-  title: "AI Agent Operations — TheNextX",
+  title: "AI Agent Operations & AI Marketing Automation — TheNextX",
   description:
-    "Deploy intelligent AI agents that run your workflows autonomously. TheNextX designs, builds, and manages AI agent systems integrated into your existing operations.",
+    "Deploy AI agents that run your marketing, sales, and business workflows autonomously. TheNextX specializes in AI marketing automation, AI lead generation, AI sales automation, and AI customer engagement.",
+  keywords: [
+    "AI agent operations",
+    "AI marketing automation",
+    "AI lead generation",
+    "AI sales automation",
+    "AI customer engagement",
+    "AI content automation",
+    "AI marketing operations",
+    "marketing automation agency",
+    "AI workflow automation",
+    "AI 마케팅 자동화",
+    "AI 영업 자동화",
+    "AI 업무 자동화",
+    "AI 고객지원",
+    "AI 콘텐츠 생성",
+  ],
 };
 
 const capabilities = [
   {
     icon: "💬",
-    title: "Conversational AI Agents",
-    body: "Customer-facing agents that handle support tickets, answer product questions, and qualify leads — indistinguishable from a human operator at scale.",
+    title: "ai.capability.conversation.title",
+    body: "ai.capability.conversation.body",
   },
   {
     icon: "🔍",
-    title: "Data Extraction & Enrichment",
-    body: "Agents that read, parse, and structure unstructured data from emails, PDFs, web pages, and APIs into clean databases or CRM records.",
+    title: "ai.capability.data.title",
+    body: "ai.capability.data.body",
   },
   {
     icon: "📋",
-    title: "Document Processing",
-    body: "Automated review, summarization, classification, and routing of contracts, invoices, reports, and forms — without human bottlenecks.",
+    title: "ai.capability.documents.title",
+    body: "ai.capability.documents.body",
   },
   {
     icon: "🔔",
-    title: "Monitoring & Alerting",
-    body: "Agents that watch your systems, detect anomalies, and take corrective action or alert the right person before issues escalate.",
+    title: "ai.capability.monitoring.title",
+    body: "ai.capability.monitoring.body",
   },
   {
     icon: "🔗",
-    title: "Multi-System Orchestration",
-    body: "Chain actions across Shopify, HubSpot, Slack, Google Workspace, and any REST API — triggered by events or on a schedule.",
+    title: "ai.capability.orchestration.title",
+    body: "ai.capability.orchestration.body",
   },
   {
     icon: "📊",
-    title: "Reporting & Analysis",
-    body: "Agents that pull data from disparate sources, compute KPIs, and deliver scheduled reports or real-time dashboards to your team.",
+    title: "ai.capability.reporting.title",
+    body: "ai.capability.reporting.body",
   },
 ];
 
@@ -71,39 +88,37 @@ export default function AIAgentsPage() {
                 animation: "pulse 2s infinite",
               }}
             />
-            AI Agent Operations
+            <T>service.aiAgents.title</T>
           </span>
           <h1
             className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-6"
             style={{ color: "var(--foreground)" }}
           >
-            Your business runs{" "}
+            <T>ai.hero.title</T>{" "}
             <span
               style={{ color: "var(--accent-2)" }}
             >
-              24/7 on autopilot
+              <T>ai.hero.highlight</T>
             </span>
           </h1>
           <p
             className="text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto mb-10"
             style={{ color: "var(--muted-foreground)" }}
           >
-            We design and deploy AI agent systems that take over repetitive,
-            high-volume, and complex tasks — integrated with your existing tools
-            and supervised by your team.
+            <T>ai.hero.body</T>
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
               className="btn-primary px-8 py-3.5 rounded-lg text-base font-semibold"
             >
-              Deploy Your First Agent
+              <T>ai.hero.primary</T>
             </Link>
             <Link
               href="/services"
               className="btn-secondary px-8 py-3.5 rounded-lg text-base font-semibold"
             >
-              All Services
+              <T>common.allServices</T>
             </Link>
           </div>
         </div>
@@ -120,10 +135,10 @@ export default function AIAgentsPage() {
       >
         <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
           {[
-            { value: "70%", label: "Reduction in manual ops" },
-            { value: "24/7", label: "Continuous operation" },
-            { value: "<48h", label: "Typical deployment time" },
-            { value: "10x", label: "Throughput increase" },
+            { value: "70%", label: "ai.stat.reduction" },
+            { value: "24/7", label: "ai.stat.operation" },
+            { value: "<48h", label: "ai.stat.deployment" },
+            { value: "10x", label: "ai.stat.throughput" },
           ].map((stat) => (
             <div key={stat.label}>
               <div
@@ -133,7 +148,7 @@ export default function AIAgentsPage() {
                 {stat.value}
               </div>
               <div className="text-xs" style={{ color: "var(--subtle-foreground)" }}>
-                {stat.label}
+                <T>{stat.label}</T>
               </div>
             </div>
           ))}
@@ -147,10 +162,10 @@ export default function AIAgentsPage() {
       >
         <div className="max-w-7xl mx-auto">
           <SectionHeader
-            eyebrow="Agent Capabilities"
-            title="What our agents"
-            titleGradient="can do for you"
-            subtitle="From simple task automation to multi-step reasoning pipelines — we build agents that fit your exact operational needs."
+            eyebrow="ai.capabilities.eyebrow"
+            title="ai.capabilities.title"
+            titleGradient="ai.capabilities.highlight"
+            subtitle="ai.capabilities.body"
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {capabilities.map((cap) => (
@@ -167,13 +182,13 @@ export default function AIAgentsPage() {
                   className="text-base font-semibold mb-2"
                   style={{ color: "var(--foreground)" }}
                 >
-                  {cap.title}
+                  <T>{cap.title}</T>
                 </h3>
                 <p
                   className="text-sm leading-relaxed"
                   style={{ color: "var(--muted-foreground)" }}
                 >
-                  {cap.body}
+                  <T>{cap.body}</T>
                 </p>
               </div>
             ))}
@@ -188,37 +203,37 @@ export default function AIAgentsPage() {
       >
         <div className="max-w-5xl mx-auto">
           <SectionHeader
-            eyebrow="Deployment Process"
-            title="From zero to operating agent"
-            titleGradient="in days"
-            subtitle="We handle the complexity of AI agent architecture so you don't have to."
+            eyebrow="ai.process.eyebrow"
+            title="ai.process.title"
+            titleGradient="ai.process.highlight"
+            subtitle="ai.process.body"
           />
           <div className="space-y-4">
             {[
               {
                 step: "01",
-                title: "Process Audit",
-                body: "We map your existing workflows, identify the highest-ROI automation targets, and define success metrics.",
+                title: "ai.process.audit.title",
+                body: "ai.process.audit.body",
               },
               {
                 step: "02",
-                title: "Agent Design",
-                body: "We architect the agent — selecting the right model, tools, memory, and retrieval strategy for your use case.",
+                title: "ai.process.design.title",
+                body: "ai.process.design.body",
               },
               {
                 step: "03",
-                title: "Integration",
-                body: "We connect the agent to your existing systems via API, webhook, or direct database access — no disruption to live operations.",
+                title: "ai.process.integration.title",
+                body: "ai.process.integration.body",
               },
               {
                 step: "04",
-                title: "Testing & Tuning",
-                body: "Rigorous evaluation against real-world edge cases before going live. We tune until accuracy meets your standard.",
+                title: "ai.process.testing.title",
+                body: "ai.process.testing.body",
               },
               {
                 step: "05",
-                title: "Monitoring & Improvement",
-                body: "Post-launch monitoring, performance dashboards, and continuous improvement cycles included in our support retainer.",
+                title: "ai.process.monitoring.title",
+                body: "ai.process.monitoring.body",
               },
             ].map((item) => (
               <div
@@ -240,10 +255,10 @@ export default function AIAgentsPage() {
                     className="font-semibold mb-1"
                     style={{ color: "var(--foreground)" }}
                   >
-                    {item.title}
+                    <T>{item.title}</T>
                   </h3>
                   <p className="text-sm leading-relaxed" style={{ color: "var(--muted-foreground)" }}>
-                    {item.body}
+                    <T>{item.body}</T>
                   </p>
                 </div>
               </div>
@@ -262,7 +277,7 @@ export default function AIAgentsPage() {
             className="text-xl font-semibold mb-8"
             style={{ color: "var(--subtle-foreground)" }}
           >
-            Technologies we work with
+            <T>common.technologies</T>
           </h2>
           <div className="flex flex-wrap justify-center gap-3">
             {techStack.map((tech) => (
@@ -292,11 +307,10 @@ export default function AIAgentsPage() {
             className="text-3xl font-bold mb-4"
             style={{ color: "var(--foreground)" }}
           >
-            Ready to deploy your first agent?
+            <T>ai.cta.title</T>
           </h2>
           <p className="mb-8" style={{ color: "var(--muted-foreground)" }}>
-            Share a workflow you want automated and we&apos;ll scope it within
-            24 hours.
+            <T>ai.cta.body</T>
           </p>
           <Link
             href="/contact"
@@ -306,7 +320,7 @@ export default function AIAgentsPage() {
               boxShadow: "0 8px 18px rgba(23, 23, 23, 0.12)",
             }}
           >
-            Start a Conversation
+            <T>ai.cta.button</T>
           </Link>
         </div>
       </section>

@@ -1,43 +1,59 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import SectionHeader from "@/components/SectionHeader";
+import T from "@/components/T";
 
 export const metadata: Metadata = {
-  title: "Direct Mail & Offline Marketing — TheNextX",
+  title: "Direct Mail & Offline Marketing Operations — TheNextX",
   description:
-    "End-to-end offline direct mail marketing operations. Postcards, mailers, catalogs, and print campaigns — strategy, design, print, and delivery managed for you.",
+    "End-to-end offline direct mail marketing. Postcard campaigns, catalog mailers, and print campaigns — strategy, design, print production, and delivery fully managed.",
+  keywords: [
+    "direct mail marketing",
+    "direct mail agency",
+    "postcard marketing",
+    "offline marketing",
+    "print marketing",
+    "direct mail campaigns",
+    "EDDM marketing",
+    "catalog mailers",
+    "direct mail management",
+    "우편 마케팅",
+    "오프라인 마케팅",
+    "엽서 마케팅",
+    "다이렉트 메일",
+  ],
 };
 
 const services = [
   {
     icon: "✉️",
-    title: "Postcard Campaigns",
-    body: "Design, print, and mail targeted postcard campaigns to prospects and customers. High-impact visuals that stand out in the mailbox.",
+    title: "mailing.service.postcards.title",
+    body: "mailing.service.postcards.body",
   },
   {
     icon: "📦",
-    title: "Direct Mail Packages",
-    body: "Full envelope packages including letters, brochures, and inserts. Perfect for premium offers, B2B outreach, and high-value customer acquisition.",
+    title: "mailing.service.packages.title",
+    body: "mailing.service.packages.body",
   },
   {
     icon: "📋",
-    title: "Catalog & Lookbook Mailers",
-    body: "Seasonal catalogs, product lookbooks, and brand magazines printed and distributed to your target audience.",
+    title: "mailing.service.catalogs.title",
+    body: "mailing.service.catalogs.body",
   },
   {
     icon: "🗂️",
-    title: "Mailing List Management",
-    body: "Audience list sourcing, segmentation, deduplication, and NCOA address verification to maximize deliverability and minimize waste.",
+    title: "mailing.service.lists.title",
+    body: "mailing.service.lists.body",
   },
   {
     icon: "🎨",
-    title: "Print Design & Production",
-    body: "Print-ready design for every format — postcards, flyers, brochures, and oversized mailers. On-brand, press-optimized files every time.",
+    title: "mailing.service.print.title",
+    body: "mailing.service.print.body",
   },
   {
     icon: "📊",
-    title: "Campaign Tracking & Reporting",
-    body: "Unique promo codes, QR codes, and dedicated landing pages to attribute offline conversions and measure true campaign ROI.",
+    title: "mailing.service.tracking.title",
+    body: "mailing.service.tracking.body",
   },
 ];
 
@@ -68,27 +84,24 @@ export default function MailingPage() {
               border: "1px solid var(--border)",
             }}
           >
-            Direct Mail & Offline Marketing
+            <T>mailing.hero.eyebrow</T>
           </span>
           <h1
             className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-6"
             style={{ color: "var(--foreground)" }}
           >
-            Offline mail that{" "}
+            <T>mailing.hero.title</T>{" "}
             <span
               style={{ color: "var(--accent-2)" }}
             >
-              drives real results
+              <T>mailing.hero.highlight</T>
             </span>
           </h1>
           <p
             className="text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto mb-10"
             style={{ color: "var(--muted-foreground)" }}
           >
-            We manage your physical mail marketing from start to finish —
-            strategy, design, print production, and delivery. Postcards,
-            brochures, and direct mail packages that reach customers where
-            digital can&apos;t.
+            <T>mailing.hero.body</T>
           </p>
           <Link
             href="/contact"
@@ -98,7 +111,7 @@ export default function MailingPage() {
               boxShadow: "0 8px 18px rgba(23, 23, 23, 0.12)",
             }}
           >
-            Start a Mail Campaign
+            <T>mailing.hero.primary</T>
           </Link>
         </div>
       </section>
@@ -114,10 +127,10 @@ export default function MailingPage() {
       >
         <div className="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
           {[
-            { value: "4.4%", label: "Avg. direct mail response rate" },
-            { value: "90%", label: "Of mail gets opened & read" },
-            { value: "27%", label: "Higher recall vs. digital ads" },
-            { value: "100%", label: "Fully managed — end-to-end" },
+            { value: "4.4%", label: "mailing.stat.response" },
+            { value: "90%", label: "mailing.stat.opened" },
+            { value: "27%", label: "mailing.stat.recall" },
+            { value: "100%", label: "mailing.stat.managed" },
           ].map((stat) => (
             <div key={stat.label}>
               <div
@@ -127,7 +140,7 @@ export default function MailingPage() {
                 {stat.value}
               </div>
               <div className="text-xs" style={{ color: "var(--subtle-foreground)" }}>
-                {stat.label}
+                <T>{stat.label}</T>
               </div>
             </div>
           ))}
@@ -141,10 +154,10 @@ export default function MailingPage() {
       >
         <div className="max-w-7xl mx-auto">
           <SectionHeader
-            eyebrow="What We Manage"
-            title="Every piece of your"
-            titleGradient="offline mail operation"
-            subtitle="From list sourcing to doorstep delivery — nothing falls through the cracks."
+            eyebrow="mailing.manage.eyebrow"
+            title="mailing.manage.title"
+            titleGradient="mailing.manage.highlight"
+            subtitle="mailing.manage.body"
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((svc) => (
@@ -161,13 +174,13 @@ export default function MailingPage() {
                   className="text-base font-semibold mb-2"
                   style={{ color: "var(--foreground)" }}
                 >
-                  {svc.title}
+                  <T>{svc.title}</T>
                 </h3>
                 <p
                   className="text-sm leading-relaxed"
                   style={{ color: "var(--muted-foreground)" }}
                 >
-                  {svc.body}
+                  <T>{svc.body}</T>
                 </p>
               </div>
             ))}
@@ -182,37 +195,37 @@ export default function MailingPage() {
       >
         <div className="max-w-4xl mx-auto">
           <SectionHeader
-            eyebrow="Our Process"
-            title="From brief to"
-            titleGradient="mailbox"
-            subtitle="A clear, repeatable process that gets your mail in front of the right people."
+            eyebrow="mailing.process.eyebrow"
+            title="mailing.process.title"
+            titleGradient="mailing.process.highlight"
+            subtitle="mailing.process.body"
           />
           <div className="space-y-4">
             {[
               {
                 step: "01",
-                title: "Strategy & Audience",
-                body: "Define campaign goals, select target geography or demographics, and build or source your mailing list.",
+                title: "mailing.process.strategy.title",
+                body: "mailing.process.strategy.body",
               },
               {
                 step: "02",
-                title: "Design & Copywriting",
-                body: "Print-ready creative with compelling copy, strong CTA, and tracking elements (QR code, promo code, or custom URL).",
+                title: "mailing.process.design.title",
+                body: "mailing.process.design.body",
               },
               {
                 step: "03",
-                title: "Print Production",
-                body: "Coordinate with print vendors for the right format, paper stock, and finish. Proof review before any production run.",
+                title: "mailing.process.print.title",
+                body: "mailing.process.print.body",
               },
               {
                 step: "04",
-                title: "Mail & Deliver",
-                body: "Postage, presort, and USPS/carrier submission. Tracking confirmation and delivery window estimates provided.",
+                title: "mailing.process.deliver.title",
+                body: "mailing.process.deliver.body",
               },
               {
                 step: "05",
-                title: "Measure & Optimize",
-                body: "Attribution reporting via QR scans, landing page visits, and promo code redemptions. Insights fed into the next campaign.",
+                title: "mailing.process.optimize.title",
+                body: "mailing.process.optimize.body",
               },
             ].map((item) => (
               <div
@@ -234,10 +247,10 @@ export default function MailingPage() {
                     className="text-base font-semibold mb-1"
                     style={{ color: "var(--foreground)" }}
                   >
-                    {item.title}
+                    <T>{item.title}</T>
                   </h3>
                   <p className="text-sm leading-relaxed" style={{ color: "var(--muted-foreground)" }}>
-                    {item.body}
+                    <T>{item.body}</T>
                   </p>
                 </div>
               </div>
@@ -256,7 +269,7 @@ export default function MailingPage() {
             className="text-xl font-semibold mb-8"
             style={{ color: "var(--subtle-foreground)" }}
           >
-            Mail formats we produce
+            <T>mailing.formats</T>
           </h2>
           <div className="flex flex-wrap justify-center gap-3">
             {formats.map((f) => (
@@ -286,11 +299,10 @@ export default function MailingPage() {
             className="text-3xl font-bold mb-4"
             style={{ color: "var(--foreground)" }}
           >
-            Ready to put your brand in every mailbox?
+            <T>mailing.cta.title</T>
           </h2>
           <p className="mb-8" style={{ color: "var(--muted-foreground)" }}>
-            Tell us about your target audience and goals — we&apos;ll propose a
-            direct mail campaign plan.
+            <T>mailing.cta.body</T>
           </p>
           <Link
             href="/contact"
@@ -300,7 +312,7 @@ export default function MailingPage() {
               boxShadow: "0 8px 18px rgba(23, 23, 23, 0.12)",
             }}
           >
-            Get a Campaign Plan
+            <T>mailing.cta.button</T>
           </Link>
         </div>
       </section>
