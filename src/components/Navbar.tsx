@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -84,8 +85,9 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* CTA */}
-          <div className="hidden md:block">
+          {/* Actions */}
+          <div className="hidden md:flex items-center gap-3">
+            <LanguageSwitcher />
             <Link
               href="/contact"
               className="px-4 py-2 rounded-lg text-sm font-semibold text-white transition-all duration-200"
@@ -174,6 +176,9 @@ export default function Navbar() {
               </Link>
             );
           })}
+          <div className="mt-2">
+            <LanguageSwitcher />
+          </div>
           <Link
             href="/contact"
             className="mt-2 px-4 py-2.5 rounded-lg text-sm font-semibold text-white text-center"
