@@ -19,6 +19,26 @@ export const metadata: Metadata = {
   description:
     "TheNextX is an AI-powered marketing and operations agency. We deliver AI marketing automation, B2B lead generation, Shopify growth, Flutter app development, email outreach, and business workflow automation through human + AI collaboration.",
   keywords: [
+    // Korean Agency
+    "Korean marketing agency",
+    "Korean digital marketing agency",
+    "Korean advertising agency",
+    "Korean marketing company",
+    // US ↔ Korea
+    "Korean market entry services",
+    "Korean market expansion",
+    "Korean business consulting",
+    "Korean localization services",
+    // Korean language marketing
+    "Korean language marketing",
+    "Korean content marketing",
+    "Korean social media marketing",
+    "Korean SEO services",
+    // US-Korea cross-border
+    "Korean-American marketing agency",
+    "cross-border marketing agency",
+    "US Korea marketing agency",
+    "Korea US business marketing",
     // AI Marketing
     "AI marketing automation",
     "AI lead generation",
