@@ -97,7 +97,7 @@ export default function ContactPage() {
                     border: "1px solid var(--border)",
                   }}
                 >
-                  <span className="text-2xl shrink-0">{item.icon}</span>
+                  <span className="mono-icon text-2xl shrink-0">{item.icon}</span>
                   <div>
                     <div
                       className="text-sm font-semibold mb-0.5"

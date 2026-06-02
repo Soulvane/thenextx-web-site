@@ -17,7 +17,6 @@ const allServices = [
       "We design, deploy, and manage AI agent systems that operate continuously on your behalf. From customer support automation and lead qualification to document processing and data enrichment — our agents integrate directly into your existing tools and workflows.",
     href: "/ai-agents",
     tags: ["LLM Integration", "Workflow Automation", "24/7 Ops", "API Agents"],
-    accentColor: "blue" as const,
   },
   {
     icon: "🛍️",
@@ -26,7 +25,6 @@ const allServices = [
       "Full-cycle Shopify work — custom theme development, Liquid templating, app integrations (Klaviyo, Recharge, Gorgias, and more), performance optimization, and ongoing maintenance to keep your store running at peak performance.",
     href: "/shopify",
     tags: ["Custom Themes", "Liquid", "App Integration", "Maintenance"],
-    accentColor: "violet" as const,
   },
   {
     icon: "🏢",
@@ -35,7 +33,6 @@ const allServices = [
       "Purpose-built B2B storefronts with net terms, tiered pricing by account, custom catalogs, approval workflows, and ERP/CRM sync. We leverage Shopify's native B2B features and extend them where your business demands more.",
     href: "/shopify",
     tags: ["B2B Portal", "Net Terms", "Custom Pricing", "ERP Sync"],
-    accentColor: "mixed" as const,
   },
   {
     icon: "📱",
@@ -44,7 +41,6 @@ const allServices = [
       "Native-quality mobile applications from a single Flutter codebase — deployed simultaneously to iOS and Android. We cover UI/UX, state management, backend integration, push notifications, and App Store / Play Store launch.",
     href: "/app-development",
     tags: ["Flutter", "iOS", "Android", "Cross-platform"],
-    accentColor: "blue" as const,
   },
   {
     icon: "✉️",
@@ -53,7 +49,6 @@ const allServices = [
       "End-to-end offline direct mail marketing: postcard campaigns, direct mail packages, catalog mailers, mailing list management, print production, and ROI tracking via QR codes and custom landing pages.",
     href: "/mailing",
     tags: ["Postcards", "Direct Mail", "Print", "QR Tracking"],
-    accentColor: "violet" as const,
   },
   {
     icon: "📄",
@@ -62,7 +57,6 @@ const allServices = [
       "Convert complex PDF documents — reports, catalogs, legal docs, manuals — into clean, semantic, responsive HTML. We preserve layouts, typography, and interactive elements, producing output ready for web or email publishing.",
     href: "/contact",
     tags: ["Semantic HTML", "Responsive", "Pixel-faithful", "Bulk Processing"],
-    accentColor: "mixed" as const,
   },
   {
     icon: "⚙️",
@@ -71,7 +65,6 @@ const allServices = [
       "End-to-end process automation using n8n, Make (Integromat), Zapier, or custom-built solutions. We map your manual processes, identify automation opportunities, and build robust pipelines that reduce operational overhead by up to 70%.",
     href: "/contact",
     tags: ["n8n", "Make", "Custom APIs", "Process Mining"],
-    accentColor: "blue" as const,
   },
 ];
 

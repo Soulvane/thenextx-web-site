@@ -22,7 +22,7 @@ export default function Navbar() {
     <header
       className="sticky top-0 z-50 w-full"
       style={{
-        background: "rgba(247, 247, 245, 0.86)",
+        background: "rgba(247, 247, 247, 0.88)",
         backdropFilter: "blur(16px)",
         WebkitBackdropFilter: "blur(16px)",
         borderBottom: "1px solid var(--border)",

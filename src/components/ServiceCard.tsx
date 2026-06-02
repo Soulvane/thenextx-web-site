@@ -8,7 +8,6 @@ interface ServiceCardProps {
   description: string;
   href?: string;
   tags?: string[];
-  accentColor?: "blue" | "violet" | "mixed";
 }
 
 export default function ServiceCard({
@@ -17,10 +16,7 @@ export default function ServiceCard({
   description,
   href,
   tags,
-  accentColor = "blue",
 }: ServiceCardProps) {
-  void accentColor;
-
   const card = (
     <div
       className="ui-card group rounded-lg p-6 h-full flex flex-col transition-all duration-300"
@@ -39,7 +35,7 @@ export default function ServiceCard({
     >
       {/* Icon */}
       <div
-        className="w-12 h-12 rounded-lg flex items-center justify-center text-2xl mb-5"
+        className="mono-icon w-12 h-12 rounded-lg flex items-center justify-center text-2xl mb-5"
         style={{ background: "var(--surface-2)" }}
       >
         {icon}

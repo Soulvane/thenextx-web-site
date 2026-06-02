@@ -18,7 +18,6 @@ const services = [
       "Deploy intelligent AI agents that handle complex workflows, customer interactions, and operational tasks autonomously — 24/7.",
     href: "/ai-agents",
     tags: ["Automation", "LLM", "Ops"],
-    accentColor: "blue" as const,
   },
   {
     icon: "🛍️",
@@ -27,7 +26,6 @@ const services = [
       "Custom Shopify themes, app integrations, and storefront optimizations that drive conversions and scale seamlessly.",
     href: "/shopify",
     tags: ["Shopify", "eCommerce", "Custom Dev"],
-    accentColor: "violet" as const,
   },
   {
     icon: "🏢",
@@ -36,7 +34,6 @@ const services = [
       "Enterprise-grade B2B storefronts with custom pricing, account management, bulk ordering, and ERP integrations.",
     href: "/shopify",
     tags: ["B2B", "Enterprise", "Wholesale"],
-    accentColor: "mixed" as const,
   },
   {
     icon: "📱",
@@ -45,7 +42,6 @@ const services = [
       "Cross-platform mobile apps built with Flutter — beautiful, performant, and deployed to iOS and Android from a single codebase.",
     href: "/app-development",
     tags: ["Flutter", "iOS", "Android"],
-    accentColor: "blue" as const,
   },
   {
     icon: "✉️",
@@ -54,7 +50,6 @@ const services = [
       "Offline direct mail marketing — postcards, brochures, and mailers designed, printed, and delivered to your target audience with full ROI tracking.",
     href: "/mailing",
     tags: ["Postcards", "Direct Mail", "Print"],
-    accentColor: "violet" as const,
   },
   {
     icon: "📄",
@@ -63,7 +58,6 @@ const services = [
       "Accurate, pixel-faithful conversion of PDF documents into clean, responsive, accessible HTML for web publishing.",
     href: "/services",
     tags: ["Conversion", "HTML", "Web"],
-    accentColor: "mixed" as const,
   },
   {
     icon: "⚙️",
@@ -72,7 +66,6 @@ const services = [
       "Identify bottlenecks and replace manual processes with intelligent automation pipelines that save time and reduce errors.",
     href: "/services",
     tags: ["Automation", "Workflow", "Integration"],
-    accentColor: "blue" as const,
   },
 ];
 
@@ -170,7 +163,7 @@ export default function HomePage() {
                 key={item.title}
                 className="ui-card rounded-lg p-6"
               >
-                <div className="text-3xl mb-4">{item.icon}</div>
+                <div className="mono-icon text-3xl mb-4">{item.icon}</div>
                 <h3
                   className="text-base font-semibold mb-2"
                   style={{ color: "var(--foreground)" }}
