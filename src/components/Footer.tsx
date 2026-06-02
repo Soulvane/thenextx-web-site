@@ -55,11 +55,11 @@ export default function Footer() {
             </p>
             <div className="mt-6 flex items-center gap-3">
               <a
-                href="mailto:hello@thenextx.com"
+                href="mailto:info@thenextx.net"
                 className="text-sm transition-colors duration-200"
                 style={{ color: "var(--foreground)" }}
               >
-                hello@thenextx.com
+                info@thenextx.net
               </a>
             </div>
           </div>

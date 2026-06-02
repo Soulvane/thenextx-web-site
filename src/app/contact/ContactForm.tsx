@@ -34,6 +34,7 @@ export default function ContactForm() {
     message: "",
   });
   const [status, setStatus] = useState<SubmitStatus>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   function handleChange(
     e: React.ChangeEvent<
@@ -43,13 +44,35 @@ export default function ContactForm() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("submitting");
-    // Simulate async submission (no backend connected)
-    setTimeout(() => {
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+
+      if (!response.ok) {
+        const data = (await response.json().catch(() => null)) as {
+          error?: string;
+        } | null;
+        throw new Error(data?.error ?? "Unable to send your message.");
+      }
+
       setStatus("success");
-    }, 1200);
+    } catch (error) {
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : "Unable to send your message. Please email info@thenextx.net."
+      );
+      setStatus("error");
+    }
   }
 
   const inputStyle: React.CSSProperties = {
@@ -290,8 +313,17 @@ export default function ContactForm() {
         {status === "submitting" ? "Sending..." : "Send Message"}
       </button>
 
+      {status === "error" && (
+        <p
+          className="text-sm text-center"
+          style={{ color: "var(--foreground)" }}
+        >
+          {errorMessage}
+        </p>
+      )}
+
       <p className="text-xs text-center" style={{ color: "var(--subtle-foreground)" }}>
-        We respond within 24 hours. No spam, ever.
+        We respond within 24 hours at info@thenextx.net. No spam, ever.
       </p>
     </form>
   );
