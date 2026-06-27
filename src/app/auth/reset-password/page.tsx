@@ -1,33 +1,66 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
+import { createClient } from '@supabase/supabase-js';
 
-const SUPABASE_URL = 'https://tyeulpyzsabnioxrzuep.supabase.co';
-const SUPABASE_ANON_KEY = 'sb_publishable_Wc7zSLUvzv9CR--WgI_5FA_vJaTiivW';
+const supabase = createClient(
+  'https://tyeulpyzsabnioxrzuep.supabase.co',
+  'sb_publishable_Wc7zSLUvzv9CR--WgI_5FA_vJaTiivW'
+);
 
 type Status = 'loading' | 'form' | 'submitting' | 'success' | 'error';
 
-export default function ResetPasswordPage() {
+function ResetPasswordContent() {
+  const searchParams = useSearchParams();
   const [status, setStatus] = useState<Status>('loading');
-  const [accessToken, setAccessToken] = useState('');
   const [password, setPassword] = useState('');
   const [confirm, setConfirm] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
 
   useEffect(() => {
-    const hash = window.location.hash.substring(1);
-    const params = new URLSearchParams(hash);
-    const token = params.get('access_token');
-    const type = params.get('type');
+    const initSession = async () => {
+      // PKCE flow: ?code=xxx 쿼리 파라미터
+      const code = searchParams.get('code');
+      if (code) {
+        const { error } = await supabase.auth.exchangeCodeForSession(code);
+        if (error) {
+          setStatus('error');
+          setErrorMsg('링크가 만료되었거나 유효하지 않습니다.');
+        } else {
+          setStatus('form');
+        }
+        return;
+      }
 
-    if (token && type === 'recovery') {
-      setAccessToken(token);
-      setStatus('form');
-    } else {
+      // Implicit flow: #access_token=xxx&type=recovery 해시
+      const hash = window.location.hash.substring(1);
+      const params = new URLSearchParams(hash);
+      const accessToken = params.get('access_token');
+      const refreshToken = params.get('refresh_token');
+      const type = params.get('type');
+
+      if (accessToken && type === 'recovery') {
+        const { error } = await supabase.auth.setSession({
+          access_token: accessToken,
+          refresh_token: refreshToken ?? '',
+        });
+        if (error) {
+          setStatus('error');
+          setErrorMsg('링크가 만료되었거나 유효하지 않습니다.');
+        } else {
+          setStatus('form');
+        }
+        return;
+      }
+
       setStatus('error');
       setErrorMsg('유효하지 않은 링크입니다.');
-    }
-  }, []);
+    };
+
+    initSession();
+  }, [searchParams]);
 
   const handleSubmit = async () => {
     if (password.length < 6) {
@@ -42,27 +75,12 @@ export default function ResetPasswordPage() {
     setErrorMsg('');
     setStatus('submitting');
 
-    try {
-      const res = await fetch(`${SUPABASE_URL}/auth/v1/user`, {
-        method: 'PUT',
-        headers: {
-          'apikey': SUPABASE_ANON_KEY,
-          'Authorization': `Bearer ${accessToken}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ password }),
-      });
-
-      if (res.ok) {
-        setStatus('success');
-      } else {
-        const data = await res.json();
-        setErrorMsg(data.message || '오류가 발생했습니다. 다시 시도해주세요.');
-        setStatus('form');
-      }
-    } catch {
-      setErrorMsg('네트워크 오류가 발생했습니다.');
+    const { error } = await supabase.auth.updateUser({ password });
+    if (error) {
+      setErrorMsg(error.message || '오류가 발생했습니다. 다시 시도해주세요.');
       setStatus('form');
+    } else {
+      setStatus('success');
     }
   };
 
@@ -159,7 +177,7 @@ export default function ResetPasswordPage() {
             <div className="space-y-2">
               <h1 className="text-2xl font-bold text-gray-900">링크 오류</h1>
               <p className="text-gray-500 text-sm leading-relaxed">
-                {errorMsg || '링크가 만료되었거나 유효하지 않아요.'}<br />
+                {errorMsg}<br />
                 앱에서 다시 시도해주세요.
               </p>
             </div>
@@ -174,5 +192,17 @@ export default function ResetPasswordPage() {
 
       </div>
     </main>
+  );
+}
+
+export default function ResetPasswordPage() {
+  return (
+    <Suspense fallback={
+      <main className="min-h-screen flex items-center justify-center bg-white">
+        <div className="w-16 h-16 border-4 border-gray-200 border-t-black rounded-full animate-spin" />
+      </main>
+    }>
+      <ResetPasswordContent />
+    </Suspense>
   );
 }
