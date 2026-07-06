@@ -2,10 +2,12 @@
 
 import { useEffect, useState } from "react";
 import { PLAY_OPTIN } from "./StoreCta";
+import { COPY, type Lang } from "@/app/yogylogy/dictionary";
 
-/** 스크롤하면 나타나 항상 붙어있는 다운로드 바 (길어도 CTA는 한 탭). */
-export default function StickyCta() {
+/** 스크롤하면 나타나 항상 붙어있는 다운로드 바 (길어도 CTA는 한 탭). 문구는 dictionary. */
+export default function StickyCta({ lang = "ko" }: { lang?: Lang }) {
   const [show, setShow] = useState(false);
+  const t = COPY[lang].cta;
 
   useEffect(() => {
     const onScroll = () => setShow(window.scrollY > 520);
@@ -39,10 +41,10 @@ export default function StickyCta() {
           />
           <div className="min-w-0">
             <p className="text-[13px] font-bold leading-tight" style={{ color: "#14231C" }}>
-              yogylogy 시작하기
+              {t.stickyTitle}
             </p>
             <p className="truncate text-[11px]" style={{ color: "#5B6B61" }}>
-              무료 · Android · iOS 오픈 베타
+              {t.stickySub}
             </p>
           </div>
           <a
@@ -52,7 +54,7 @@ export default function StickyCta() {
             className="ml-auto shrink-0 rounded-xl px-4 py-2.5 text-[14px] font-bold text-white active:scale-[0.98]"
             style={{ background: "#199B68", boxShadow: "0 8px 18px rgba(25,155,104,0.3)" }}
           >
-            무료로 시작
+            {t.stickyGet}
           </a>
         </div>
       </div>
