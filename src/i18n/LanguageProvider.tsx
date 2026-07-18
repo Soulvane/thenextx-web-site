@@ -6,7 +6,6 @@ import {
   useContext,
   useEffect,
   useMemo,
-  useState,
   type ReactNode,
 } from "react";
 import {
@@ -24,34 +23,34 @@ interface LanguageContextValue {
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>(DEFAULT_LOCALE);
-
-  useEffect(() => {
-    const stored = window.localStorage.getItem(LOCALE_STORAGE_KEY);
-    if (stored === "ko") setLocaleState("ko");
-  }, []);
+export function LanguageProvider({
+  children,
+  initialLocale = DEFAULT_LOCALE,
+}: {
+  children: ReactNode;
+  /** Locale resolved from the URL (`/en`, `/ko`) on the server. */
+  initialLocale?: Locale;
+}) {
+  // The URL is the single source of truth for locale; it updates on navigation.
+  const locale = initialLocale;
 
   useEffect(() => {
     document.documentElement.lang = locale;
   }, [locale]);
 
+  // Persist the preference so future direct visits to `/` can honor it.
   const setLocale = useCallback((nextLocale: Locale) => {
-    setLocaleState(nextLocale);
-    window.localStorage.setItem(LOCALE_STORAGE_KEY, nextLocale);
+    try {
+      window.localStorage.setItem(LOCALE_STORAGE_KEY, nextLocale);
+    } catch {
+      /* storage unavailable — locale still lives in the URL */
+    }
   }, []);
 
-  const t = useCallback(
-    (value: string) => translate(value, locale),
-    [locale]
-  );
+  const t = useCallback((value: string) => translate(value, locale), [locale]);
 
   const value = useMemo(
-    () => ({
-      locale,
-      setLocale,
-      t,
-    }),
+    () => ({ locale, setLocale, t }),
     [locale, setLocale, t]
   );
 

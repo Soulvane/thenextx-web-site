@@ -9,7 +9,6 @@ import { useI18n } from "@/i18n/LanguageProvider";
 const navLinks = [
   { href: "/", label: "nav.home" },
   { href: "/services", label: "nav.services" },
-  { href: "/ai-agents", label: "nav.aiAgents" },
   { href: "/shopify", label: "nav.shopify" },
   { href: "/app-development", label: "nav.appDevelopment" },
   { href: "/mailing", label: "nav.mailing" },
@@ -20,7 +19,10 @@ const navLinks = [
 export default function Navbar() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
+
+  const withLocale = (href: string) =>
+    href === "/" ? `/${locale}` : `/${locale}${href}`;
 
   return (
     <header
@@ -35,7 +37,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
+          <Link href={`/${locale}`} className="flex items-center gap-2 group">
             <div
               className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold text-sm"
               style={{
@@ -57,11 +59,12 @@ export default function Navbar() {
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => {
-              const active = pathname === link.href;
+              const href = withLocale(link.href);
+              const active = pathname === href;
               return (
                 <Link
                   key={link.href}
-                  href={link.href}
+                  href={href}
                   className="px-3 py-2 text-sm rounded-md transition-colors duration-200"
                   style={{
                     color: active ? "var(--accent)" : "var(--secondary-foreground)",
@@ -92,7 +95,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-3">
             <LanguageSwitcher />
             <Link
-              href="/contact"
+              href={withLocale("/contact")}
               className="px-4 py-2 rounded-lg text-sm font-semibold text-white transition-all duration-200"
               style={{
                 background: "var(--foreground)",
@@ -161,11 +164,12 @@ export default function Navbar() {
           style={{ borderTop: "1px solid var(--border)" }}
         >
           {navLinks.map((link) => {
-            const active = pathname === link.href;
+            const href = withLocale(link.href);
+            const active = pathname === href;
             return (
               <Link
                 key={link.href}
-                href={link.href}
+                href={href}
                 className="px-3 py-2.5 text-sm rounded-md"
                 style={{
                   color: active ? "var(--accent)" : "var(--secondary-foreground)",
@@ -183,7 +187,7 @@ export default function Navbar() {
             <LanguageSwitcher />
           </div>
           <Link
-            href="/contact"
+            href={withLocale("/contact")}
             className="mt-2 px-4 py-2.5 rounded-lg text-sm font-semibold text-white text-center"
             style={{
               background: "var(--foreground)",

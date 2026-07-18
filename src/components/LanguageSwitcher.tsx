@@ -1,12 +1,26 @@
 "use client";
 
+import { usePathname, useRouter } from "next/navigation";
 import { useI18n } from "@/i18n/LanguageProvider";
-import type { Locale } from "@/i18n/translations";
-
-const locales: Locale[] = ["en", "ko"];
+import { LOCALES, isLocale, type Locale } from "@/i18n/translations";
 
 export default function LanguageSwitcher() {
   const { locale, setLocale, t } = useI18n();
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const switchTo = (next: Locale) => {
+    if (next === locale) return;
+    setLocale(next);
+    const segments = pathname.split("/");
+    // segments[1] holds the current locale prefix (e.g. "" / "ko" / "services")
+    if (segments[1] && isLocale(segments[1])) {
+      segments[1] = next;
+    } else {
+      segments.splice(1, 0, next);
+    }
+    router.push(segments.join("/") || `/${next}`);
+  };
 
   return (
     <div
@@ -17,11 +31,11 @@ export default function LanguageSwitcher() {
       }}
       aria-label={t("language.selector")}
     >
-      {locales.map((item) => (
+      {LOCALES.map((item) => (
         <button
           key={item}
           type="button"
-          onClick={() => setLocale(item)}
+          onClick={() => switchTo(item)}
           className="rounded-md px-2.5 py-1.5 text-xs font-semibold transition-colors"
           style={{
             background: locale === item ? "var(--foreground)" : "transparent",

@@ -5,7 +5,6 @@ import { useI18n } from "@/i18n/LanguageProvider";
 
 const footerLinks = {
   "footer.services": [
-    { href: "/ai-agents", label: "service.aiAgents.title" },
     { href: "/shopify", label: "service.shopify.title" },
     { href: "/shopify", label: "service.shopifyB2B.title" },
     { href: "/app-development", label: "footer.flutterApps" },
@@ -13,13 +12,14 @@ const footerLinks = {
   ],
   "footer.company": [
     { href: "/services", label: "common.allServices" },
-    { href: "/ai-agents", label: "nav.aiAgents" },
     { href: "/contact", label: "footer.contactUs" },
   ],
 };
 
 export default function Footer() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
+  const withLocale = (href: string) =>
+    href === "/" ? `/${locale}` : `/${locale}${href}`;
 
   return (
     <footer
@@ -32,7 +32,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="md:col-span-2">
-            <Link href="/" className="flex items-center gap-2 mb-4 w-fit">
+            <Link href={`/${locale}`} className="flex items-center gap-2 mb-4 w-fit">
               <div
                 className="w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm"
                 style={{
@@ -78,7 +78,7 @@ export default function Footer() {
                 {links.map((link) => (
                   <li key={link.label}>
                     <Link
-                      href={link.href}
+                      href={withLocale(link.href)}
                       className="text-sm transition-colors duration-200"
                       style={{ color: "var(--muted-foreground)" }}
                       onMouseEnter={(e) => {

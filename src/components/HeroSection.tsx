@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/LocaleLink";
 import { useI18n } from "@/i18n/LanguageProvider";
 
 interface HeroSectionProps {
@@ -25,13 +25,12 @@ export default function HeroSection({
   const { t } = useI18n();
 
   const proofStats = [
-    { value: "7", label: "home.board.stat.services" },
+    { value: "6", label: "home.board.stat.services" },
     { value: "24h", label: "home.board.stat.response" },
     { value: "60%", label: "home.board.stat.cycles" },
   ];
 
   const operatingStack = [
-    "home.board.lane.ai",
     "home.board.lane.shopify",
     "home.board.lane.flutter",
     "home.board.lane.mailing",

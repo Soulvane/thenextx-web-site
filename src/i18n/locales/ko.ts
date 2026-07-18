@@ -1,7 +1,6 @@
 export const ko: Record<string, string> = {
   "nav.home": "홈",
   "nav.services": "서비스",
-  "nav.aiAgents": "AI 에이전트",
   "nav.shopify": "Shopify",
   "nav.appDevelopment": "앱 개발",
   "nav.mailing": "메일링",
@@ -16,7 +15,7 @@ export const ko: Record<string, string> = {
   "footer.contactUs": "문의하기",
   "footer.flutterApps": "플러터 앱",
   "footer.body":
-    "사람과 AI의 협업으로 차세대 디지털 운영을 구축합니다. Shopify 스토어부터 AI 기반 워크플로까지 비즈니스를 정교하게 확장합니다.",
+    "한국어 네이티브 · 한/영 이중언어 에이전시. 한국 브랜드의 미국 진출과 미국 기업의 성장을 사람 + AI 협업으로 실행합니다. Shopify, 앱 개발, AI 마케팅 자동화까지.",
   "footer.rights": "All rights reserved.",
   "footer.poweredBy": "Human + AI Collaboration 기반",
 
@@ -69,9 +68,6 @@ export const ko: Record<string, string> = {
   "tag.customApis": "커스텀 API",
   "tag.processMining": "프로세스 분석",
 
-  "service.aiAgents.title": "AI 에이전트 운영",
-  "service.aiAgents.short":
-    "복잡한 워크플로, 고객 응대, 운영 업무를 24시간 자율 처리하는 지능형 AI 에이전트를 배포합니다.",
   "service.shopify.title": "Shopify 개발",
   "service.shopify.short":
     "전환과 확장을 돕는 커스텀 Shopify 테마, 앱 연동, 스토어프론트 최적화를 제공합니다.",
@@ -104,17 +100,17 @@ export const ko: Record<string, string> = {
   "service.workflow.body":
     "n8n, Make, Zapier 또는 맞춤형 솔루션으로 수작업 프로세스를 분석하고 자동화 파이프라인을 구축합니다.",
 
-  "home.hero.eyebrow": "AI 에이전트 워크포스 시대",
-  "home.hero.title": "비즈니스를 확장하세요",
-  "home.hero.highlight": "사람과 AI의 힘으로",
+  "home.hero.eyebrow": "한국어 네이티브 · 한/영 이중언어 에이전시",
+  "home.hero.title": "한국어로 통하는",
+  "home.hero.highlight": "사람 + AI 실행팀",
   "home.hero.body":
-    "TheNextX는 전문 인력과 AI 에이전트를 결합해 Shopify 스토어, 모바일 앱, 다이렉트 메일 캠페인, 자동화 워크플로를 더 빠르게 실행합니다.",
+    "TheNextX는 한국어 네이티브 · 한/영 이중언어 에이전시입니다. 한국 브랜드의 미국 진출과 미국 기업의 성장을 AI 마케팅 자동화, Shopify, 앱 개발, 자동화 워크플로로 실행합니다.",
   "home.hero.primary": "프로젝트 시작",
   "home.hero.secondary": "서비스 보기",
-  "home.badge.aiFirst": "AI 우선 접근",
-  "home.badge.coreServices": "7개 핵심 서비스",
-  "home.badge.globalClients": "글로벌 클라이언트",
-  "home.badge.rapidDelivery": "빠른 실행",
+  "home.badge.aiFirst": "한국어 네이티브",
+  "home.badge.coreServices": "한/영 이중언어",
+  "home.badge.globalClients": "한국 브랜드 협업",
+  "home.badge.rapidDelivery": "미국 기반 한국팀",
   "home.board.title": "운영 보드",
   "home.board.subtitle": "사람 + AI 실행 시스템",
   "home.board.status": "운영 모델",
@@ -122,7 +118,6 @@ export const ko: Record<string, string> = {
   "home.board.stat.response": "스코프 응답",
   "home.board.stat.cycles": "빠른 사이클",
   "home.board.lanes": "실행 라인",
-  "home.board.lane.ai": "AI 에이전트 운영",
   "home.board.lane.shopify": "Shopify / B2B",
   "home.board.lane.flutter": "플러터 앱",
   "home.board.lane.mailing": "메일링 캠페인",
@@ -135,7 +130,7 @@ export const ko: Record<string, string> = {
   "home.services.title": "비즈니스에 필요한 모든 실행",
   "home.services.highlight": "성장을 위해",
   "home.services.body":
-    "7개 핵심 서비스를 하나의 팀으로 통합해 실행합니다. 전략에 집중할 수 있도록 구축과 운영을 맡습니다.",
+    "핵심 서비스를 하나의 팀으로 통합해 실행합니다. 전략에 집중할 수 있도록 구축과 운영을 맡습니다.",
   "home.metric.strategy": "전략",
   "home.metric.strategyValue": "디스커버리 + 범위 정의",
   "home.metric.build": "구축",
@@ -166,7 +161,7 @@ export const ko: Record<string, string> = {
     "프로젝트를 알려주시면 24시간 내에 명확한 계획, 일정, 견적을 전달드립니다.",
 
   "services.hero.eyebrow": "전체 서비스",
-  "services.hero.title": "7개 서비스.",
+  "services.hero.title": "필요한 모든 서비스.",
   "services.hero.highlight": "하나의 팀.",
   "services.hero.body":
     "각 서비스는 서로 연결되도록 설계되어 TheNextX와 함께 성장할수록 더 큰 운영 이점을 만듭니다.",
@@ -238,62 +233,6 @@ export const ko: Record<string, string> = {
   "contact.form.errorEmail":
     "메시지를 보낼 수 없습니다. info@thenextx.net으로 이메일을 보내주세요.",
 
-  "ai.hero.title": "비즈니스가",
-  "ai.hero.highlight": "24시간 자동으로 운영됩니다",
-  "ai.hero.body":
-    "반복적이고 대량으로 발생하는 복잡한 업무를 대신 처리하는 AI 에이전트 시스템을 설계하고 배포합니다. 기존 도구와 연동되고 팀이 직접 감독할 수 있습니다.",
-  "ai.hero.primary": "첫 에이전트 도입",
-  "ai.stat.reduction": "수작업 운영 감소",
-  "ai.stat.operation": "상시 운영",
-  "ai.stat.deployment": "일반 배포 시간",
-  "ai.stat.throughput": "처리량 증가",
-  "ai.capabilities.eyebrow": "에이전트 기능",
-  "ai.capabilities.title": "에이전트가",
-  "ai.capabilities.highlight": "할 수 있는 일",
-  "ai.capabilities.body":
-    "단순 업무 자동화부터 다단계 추론 파이프라인까지 운영 요구에 맞는 에이전트를 구축합니다.",
-  "ai.capability.conversation.title": "대화형 AI 에이전트",
-  "ai.capability.conversation.body":
-    "지원 티켓 처리, 제품 문의 응답, 리드 검증까지 대규모로 처리하는 고객 응대 에이전트를 구축합니다.",
-  "ai.capability.data.title": "데이터 추출 & 보강",
-  "ai.capability.data.body":
-    "이메일, PDF, 웹페이지, API의 비정형 데이터를 읽고 구조화해 데이터베이스나 CRM 레코드로 정리합니다.",
-  "ai.capability.documents.title": "문서 처리",
-  "ai.capability.documents.body":
-    "계약서, 인보이스, 보고서, 양식을 자동으로 검토, 요약, 분류, 라우팅해 병목을 줄입니다.",
-  "ai.capability.monitoring.title": "모니터링 & 알림",
-  "ai.capability.monitoring.body":
-    "시스템을 모니터링하고 이상 징후를 감지해 문제가 커지기 전에 조치하거나 담당자에게 알립니다.",
-  "ai.capability.orchestration.title": "다중 시스템 오케스트레이션",
-  "ai.capability.orchestration.body":
-    "Shopify, HubSpot, Slack, Google Workspace 및 REST API 전반의 작업을 이벤트나 일정에 따라 연결합니다.",
-  "ai.capability.reporting.title": "리포팅 & 분석",
-  "ai.capability.reporting.body":
-    "여러 소스의 데이터를 모아 KPI를 계산하고 예약 리포트나 실시간 대시보드로 제공합니다.",
-  "ai.process.eyebrow": "배포 프로세스",
-  "ai.process.title": "0에서 운영 에이전트까지",
-  "ai.process.highlight": "며칠 안에",
-  "ai.process.body":
-    "복잡한 AI 에이전트 아키텍처는 저희가 처리합니다.",
-  "ai.process.audit.title": "프로세스 진단",
-  "ai.process.audit.body":
-    "기존 워크플로를 분석하고 ROI가 높은 자동화 대상을 찾은 뒤 성공 지표를 정의합니다.",
-  "ai.process.design.title": "에이전트 설계",
-  "ai.process.design.body":
-    "사용 사례에 맞는 모델, 도구, 메모리, 검색 전략을 선택해 에이전트를 설계합니다.",
-  "ai.process.integration.title": "연동",
-  "ai.process.integration.body":
-    "API, 웹훅, 데이터베이스 접근으로 기존 시스템에 연결하며 운영 중단을 최소화합니다.",
-  "ai.process.testing.title": "테스트 & 튜닝",
-  "ai.process.testing.body":
-    "출시 전에 실제 예외 상황으로 엄격히 검증하고, 기준 정확도에 도달할 때까지 조정합니다.",
-  "ai.process.monitoring.title": "모니터링 & 개선",
-  "ai.process.monitoring.body":
-    "출시 후 모니터링, 성능 대시보드, 지속 개선 사이클을 지원 리테이너에 포함합니다.",
-  "ai.cta.title": "첫 에이전트를 배포할 준비가 되셨나요?",
-  "ai.cta.body":
-    "자동화하고 싶은 워크플로를 공유해주시면 24시간 내에 범위를 정리해드립니다.",
-  "ai.cta.button": "상담 시작",
 
   "app.hero.title": "아름다운 앱을",
   "app.hero.highlight": "iOS와 Android에",

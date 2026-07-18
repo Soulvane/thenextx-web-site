@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/yogylogy/get", "/api/"],
+      disallow: ["/api/"],
     },
     sitemap: "https://thenextx.net/sitemap.xml",
     host: "https://thenextx.net",

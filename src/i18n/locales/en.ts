@@ -1,7 +1,6 @@
 export const en: Record<string, string> = {
   "nav.home": "Home",
   "nav.services": "Services",
-  "nav.aiAgents": "AI Agents",
   "nav.shopify": "Shopify",
   "nav.appDevelopment": "App Dev",
   "nav.mailing": "Mailing",
@@ -16,7 +15,7 @@ export const en: Record<string, string> = {
   "footer.contactUs": "Contact Us",
   "footer.flutterApps": "Flutter Apps",
   "footer.body":
-    "Building the next generation of digital operations through human + AI collaboration. From Shopify stores to AI-powered workflows, we scale your business with precision.",
+    "Korean-native, bilingual (KO/EN) agency. We help Korean brands enter the US and US businesses grow through human + AI collaboration — Shopify, app development, and AI marketing automation.",
   "footer.rights": "All rights reserved.",
   "footer.poweredBy": "Powered by Human + AI Collaboration",
 
@@ -69,9 +68,6 @@ export const en: Record<string, string> = {
   "tag.customApis": "Custom APIs",
   "tag.processMining": "Process Mining",
 
-  "service.aiAgents.title": "AI Agent Operations",
-  "service.aiAgents.short":
-    "Deploy intelligent AI agents that handle complex workflows, customer interactions, and operational tasks autonomously — 24/7.",
   "service.shopify.title": "Shopify Development",
   "service.shopify.short":
     "Custom Shopify themes, app integrations, and storefront optimizations that drive conversions and scale seamlessly.",
@@ -104,17 +100,17 @@ export const en: Record<string, string> = {
   "service.workflow.body":
     "End-to-end process automation using n8n, Make (Integromat), Zapier, or custom-built solutions. We map your manual processes, identify automation opportunities, and build robust pipelines that reduce operational overhead by up to 70%.",
 
-  "home.hero.eyebrow": "The Agent Workforce Is Here",
-  "home.hero.title": "Scale Your Business with",
-  "home.hero.highlight": "Human + AI Power",
+  "home.hero.eyebrow": "Korean-Native · Bilingual (KO / EN) Agency",
+  "home.hero.title": "A Korean-Speaking",
+  "home.hero.highlight": "Human + AI Team",
   "home.hero.body":
-    "TheNextX blends elite human expertise with cutting-edge AI agents to deliver Shopify stores, mobile apps, direct mail campaigns, and automation workflows — faster than you thought possible.",
+    "TheNextX is a Korean-native, bilingual (KO/EN) agency. We help Korean brands enter the US market and US businesses grow — with AI marketing automation, Shopify, app development, and automation workflows.",
   "home.hero.primary": "Start a Project",
   "home.hero.secondary": "Explore Services",
-  "home.badge.aiFirst": "AI-First Approach",
-  "home.badge.coreServices": "7 Core Services",
-  "home.badge.globalClients": "Global Clients",
-  "home.badge.rapidDelivery": "Rapid Delivery",
+  "home.badge.aiFirst": "Korean-Native",
+  "home.badge.coreServices": "Bilingual KO / EN",
+  "home.badge.globalClients": "Works with Korean Brands",
+  "home.badge.rapidDelivery": "US-Based Korean Team",
   "home.board.title": "Operating board",
   "home.board.subtitle": "Human + AI delivery system",
   "home.board.status": "Live model",
@@ -122,7 +118,6 @@ export const en: Record<string, string> = {
   "home.board.stat.response": "scope response",
   "home.board.stat.cycles": "faster cycles",
   "home.board.lanes": "Lanes",
-  "home.board.lane.ai": "AI agent ops",
   "home.board.lane.shopify": "Shopify / B2B",
   "home.board.lane.flutter": "Flutter apps",
   "home.board.lane.mailing": "Mailing campaigns",
@@ -135,7 +130,7 @@ export const en: Record<string, string> = {
   "home.services.title": "Everything your business needs",
   "home.services.highlight": "to grow",
   "home.services.body":
-    "Seven core services, one integrated team. We handle execution so you can focus on strategy.",
+    "Our core services, one integrated team. We handle execution so you can focus on strategy.",
   "home.metric.strategy": "Strategy",
   "home.metric.strategyValue": "Discovery + scope",
   "home.metric.build": "Build",
@@ -166,7 +161,7 @@ export const en: Record<string, string> = {
     "Tell us about your project. We'll reply with a clear plan, timeline, and pricing within 24 hours.",
 
   "services.hero.eyebrow": "All Services",
-  "services.hero.title": "Seven services.",
+  "services.hero.title": "Every service you need.",
   "services.hero.highlight": "One team.",
   "services.hero.body":
     "Every service is designed to integrate with the others, creating a compounding advantage for your business as you grow with TheNextX.",
@@ -238,62 +233,6 @@ export const en: Record<string, string> = {
   "contact.form.errorEmail":
     "Unable to send your message. Please email info@thenextx.net.",
 
-  "ai.hero.title": "Your business runs",
-  "ai.hero.highlight": "24/7 on autopilot",
-  "ai.hero.body":
-    "We design and deploy AI agent systems that take over repetitive, high-volume, and complex tasks — integrated with your existing tools and supervised by your team.",
-  "ai.hero.primary": "Deploy Your First Agent",
-  "ai.stat.reduction": "Reduction in manual ops",
-  "ai.stat.operation": "Continuous operation",
-  "ai.stat.deployment": "Typical deployment time",
-  "ai.stat.throughput": "Throughput increase",
-  "ai.capabilities.eyebrow": "Agent Capabilities",
-  "ai.capabilities.title": "What our agents",
-  "ai.capabilities.highlight": "can do for you",
-  "ai.capabilities.body":
-    "From simple task automation to multi-step reasoning pipelines — we build agents that fit your exact operational needs.",
-  "ai.capability.conversation.title": "Conversational AI Agents",
-  "ai.capability.conversation.body":
-    "Customer-facing agents that handle support tickets, answer product questions, and qualify leads — indistinguishable from a human operator at scale.",
-  "ai.capability.data.title": "Data Extraction & Enrichment",
-  "ai.capability.data.body":
-    "Agents that read, parse, and structure unstructured data from emails, PDFs, web pages, and APIs into clean databases or CRM records.",
-  "ai.capability.documents.title": "Document Processing",
-  "ai.capability.documents.body":
-    "Automated review, summarization, classification, and routing of contracts, invoices, reports, and forms — without human bottlenecks.",
-  "ai.capability.monitoring.title": "Monitoring & Alerting",
-  "ai.capability.monitoring.body":
-    "Agents that watch your systems, detect anomalies, and take corrective action or alert the right person before issues escalate.",
-  "ai.capability.orchestration.title": "Multi-System Orchestration",
-  "ai.capability.orchestration.body":
-    "Chain actions across Shopify, HubSpot, Slack, Google Workspace, and any REST API — triggered by events or on a schedule.",
-  "ai.capability.reporting.title": "Reporting & Analysis",
-  "ai.capability.reporting.body":
-    "Agents that pull data from disparate sources, compute KPIs, and deliver scheduled reports or real-time dashboards to your team.",
-  "ai.process.eyebrow": "Deployment Process",
-  "ai.process.title": "From zero to operating agent",
-  "ai.process.highlight": "in days",
-  "ai.process.body":
-    "We handle the complexity of AI agent architecture so you don't have to.",
-  "ai.process.audit.title": "Process Audit",
-  "ai.process.audit.body":
-    "We map your existing workflows, identify the highest-ROI automation targets, and define success metrics.",
-  "ai.process.design.title": "Agent Design",
-  "ai.process.design.body":
-    "We architect the agent — selecting the right model, tools, memory, and retrieval strategy for your use case.",
-  "ai.process.integration.title": "Integration",
-  "ai.process.integration.body":
-    "We connect the agent to your existing systems via API, webhook, or direct database access — no disruption to live operations.",
-  "ai.process.testing.title": "Testing & Tuning",
-  "ai.process.testing.body":
-    "Rigorous evaluation against real-world edge cases before going live. We tune until accuracy meets your standard.",
-  "ai.process.monitoring.title": "Monitoring & Improvement",
-  "ai.process.monitoring.body":
-    "Post-launch monitoring, performance dashboards, and continuous improvement cycles included in our support retainer.",
-  "ai.cta.title": "Ready to deploy your first agent?",
-  "ai.cta.body":
-    "Share a workflow you want automated and we'll scope it within 24 hours.",
-  "ai.cta.button": "Start a Conversation",
 
   "app.hero.title": "Beautiful apps on",
   "app.hero.highlight": "iOS and Android",
